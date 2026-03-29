@@ -49,8 +49,8 @@
           { id: 5, category: 'residential', title: 'Sara´s Bedroom - Escazu', img: 'saras-bedroom-portada.png', gallery: ['saras-bedroom-1.png', 'saras-bedroom-2.png', 'saras-bedroom-3.png', 'saras-bedroom-4.png'] },
           { id: 6, category: 'residential', title: 'Corey Dept - Santa Ana', img: 'coreys-dept-portada.jpg', gallery: ['coreys-dept-1.png', 'coreys-dept-2.jpg', 'coreys-dept-3.jpg', 'coreys-dept-4.jpg', 'coreys-dept-5.jpg', 'coreys-dept-7.png', 'coreys-dept-8.jpeg', 'coreys-dept-9.png', 'coreys-dept-10.jpg'] },
           { id: 7, category: 'residential', title: 'Casa Desamparados - Ingrid', img: 'casa-desamparados-portada.png', gallery: ['casa-desamparados-1.png', 'casa-desamparados-2.png', 'casa-desamparados-3.png', 'casa-desamparados-4.png', 'casa-desamparados-5.png', 'casa-desamparados-6.png', 'casa-desamparados-7.png'] },
-          { id: 8, category: 'various', title: 'Mixed Projects - Render Portfolio', img: 'mixed-projects-portada.png', gallery: ['mixed-projects-1.png', 'mixed-projects-2.png', 'mixed-projects-3.png', 'mixed-projects-4.png', 'mixed-projects-5.png', 'mixed-projects-6.png', 'mixed-projects-7.png', 'mixed-projects-8.png', 'mixed-projects-9.png', 'mixed-projects-10.png', 'mixed-projects-11.png', 'mixed-projects-12.png', 'mixed-projects-13.png'] },
-          { id: 9, category: 'residential', title: 'Laurent - Tamarindo', img: 'laurent-portada.png', gallery: ['laurent-1.png', 'laurent-2.png', 'laurent-3.png', 'laurent-4.png', 'laurent-5.png', 'laurent-6.png', 'laurent-7.png', 'laurent-8.png', 'laurent-9.png'] }
+          { id: 8, category: 'comercial', title: 'Mixed Projects - Render Portfolio', img: 'mixed-projects-portada.png', gallery: ['mixed-projects-1.png', 'mixed-projects-2.png', 'mixed-projects-3.png', 'mixed-projects-4.png', 'mixed-projects-5.png', 'mixed-projects-6.png', 'mixed-projects-7.png', 'mixed-projects-8.png', 'mixed-projects-9.png', 'mixed-projects-10.png', 'mixed-projects-11.png', 'mixed-projects-12.png', 'mixed-projects-13.png'] },
+          { id: 9, category: 'comercial', title: 'Laurent - Tamarindo', img: 'laurent-portada.png', gallery: ['laurent-1.png', 'laurent-2.png', 'laurent-3.png', 'laurent-4.png', 'laurent-5.png', 'laurent-6.png', 'laurent-7.png', 'laurent-8.png', 'laurent-9.png'] }
         ];
 
         const ICONS = [ <PenTool size={32} />, <Ruler size={32} />, <Monitor size={32} />, <Briefcase size={32} />, <FileText size={32} /> ];
@@ -70,7 +70,7 @@
                     ], 
                     srvTitle: 'Services', srvDesc: 'Technical and visual solutions to take your project from initial idea to execution.', srvB1: 'High precision and technical detail.', srvB2: 'Deliveries in industry-standard formats.' 
                 },
-                portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', various: 'Various' } },
+                portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', comercial: 'Commercial' } },
                 about: { 
                     title: 'About Us', sub: 'Commitment to efficient and sustainable development.', p1: '<strong>JMM</strong> stands for Arq. Jafett Rivera, Arq. Melissa Rivera, and Eng. Melissa Santana, the founders of the company. At <strong>JMM Render Studio</strong>, we are more than image creators; we are technical translators. We convert complex specifications into visual experiences that communicate value and build trust.', p2: 'Our mission is to empower architects, developers, and designers through cutting-edge visual tools, ensuring every project is perfectly understood before the first stone is laid.', processTitle: 'The JMM Process', 
                     steps: [
@@ -100,7 +100,7 @@
                     ], 
                     srvTitle: 'Servicios', srvDesc: 'Soluciones técnicas y visuales para llevar tu proyecto desde la idea inicial hasta la ejecución.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.' 
                 },
-                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residencial: 'Residencial', various: 'Varios' } },
+                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residencial: 'Residencial', comercial: 'Comercial' } },
                 about: { 
                     title: 'Sobre Nosotros', sub: 'Compromiso con el desarrollo eficiente y sostenible.', p1: '<strong>JMM</strong> son las siglas de Arq. Jafett Rivera, Arq. Melissa Rivera e Ing. Melissa Santana, los fundadores de la empresa. En <strong>JMM Render Studio</strong>, somos más que creadores de imágenes; somos traductores técnicos. Convertimos especificaciones complejas en experiencias visuales que comunican valor y generan confianza.', p2: 'Nuestra misión es empoderar a arquitectos, desarrolladores y diseñadores mediante herramientas visuales de vanguardia, asegurando que cada proyecto se entienda a la perfección antes de colocar la primera piedra.', processTitle: 'El Proceso JMM', 
                     steps: [
@@ -123,6 +123,7 @@
           const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           const [activeProject, setActiveProject] = useState(null);
           const [currentImageIndex, setCurrentImageIndex] = useState(0);
+          const [isGalleryPaused, setIsGalleryPaused] = useState(false);
           const [lang, setLang] = useState('en');
 
           const t = TRANSLATIONS[lang];
@@ -131,14 +132,14 @@
             window.scrollTo(0, 0);
           }, [currentPage]);
 
-          // Autoplay para la galería
+          // Autoplay para la galería con pausa inteligente
           useEffect(() => {
-            if (!activeProject || activeProject.gallery.length <= 1) return;
+            if (!activeProject || activeProject.gallery.length <= 1 || isGalleryPaused) return;
             const timer = setTimeout(() => {
               setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
-            }, 2000);
+            }, 2500);
             return () => clearTimeout(timer);
-          }, [activeProject, currentImageIndex]);
+          }, [activeProject, currentImageIndex, isGalleryPaused]);
 
           const navigateTo = (page) => {
             setCurrentPage(page);
@@ -324,14 +325,22 @@
                   )}
 
                   <div className="relative w-full px-2 md:px-20 h-[70vh] md:h-[80vh] flex items-center justify-center mt-[-2rem] md:mt-0">
-                    <img 
-                      key={currentImageIndex}
-                      src={activeProject.gallery[currentImageIndex]} 
-                      alt={`${activeProject.title} - View ${currentImageIndex + 1}`} 
-                      className="w-full h-full object-contain drop-shadow-2xl animate-in fade-in duration-500"
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 md:bottom-8 md:right-8 h-20 md:h-32 w-auto invert opacity-30 pointer-events-none drop-shadow-2xl" />
+                    <div 
+                      className="relative inline-block max-w-full max-h-full"
+                      onMouseEnter={() => setIsGalleryPaused(true)}
+                      onMouseLeave={() => setIsGalleryPaused(false)}
+                      onTouchStart={() => setIsGalleryPaused(true)}
+                      onTouchEnd={() => setIsGalleryPaused(false)}
+                    >
+                      <img 
+                        key={currentImageIndex}
+                        src={activeProject.gallery[currentImageIndex]} 
+                        alt={`${activeProject.title} - View ${currentImageIndex + 1}`} 
+                        className="max-w-full max-h-[70vh] md:max-h-[80vh] w-auto h-auto object-contain drop-shadow-2xl animate-in fade-in duration-500"
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 md:bottom-6 md:right-6 h-12 md:h-20 w-auto invert opacity-40 pointer-events-none drop-shadow-2xl" />
+                    </div>
                   </div>
 
                   <div className="absolute bottom-6 md:bottom-8 left-0 right-0 text-center z-[105]" onClick={(e) => e.stopPropagation()}>
@@ -443,7 +452,7 @@
 
         function PortfolioView({ openGallery, t }) {
           const [filter, setFilter] = useState('all');
-          const categories = ['all', 'residential', 'various'];
+          const categories = ['all', 'residential', 'comercial'];
 
           const filteredItems = filter === 'all' ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter(item => item.category === filter);
 
