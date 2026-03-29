@@ -47,7 +47,7 @@
         } from 'lucide-react';
 
         // --- COMPONENTE DE ANIMACIÓN SCROLL ---
-        const Reveal = ({ children, delay = 0, direction = 'up', className = '' }) => {
+        const Reveal = ({ children, delay = 0, direction = 'up', className = '', onClick }) => {
           const [isVisible, setIsVisible] = useState(false);
           const ref = useRef(null);
 
@@ -76,6 +76,7 @@
           return (
             <div
               ref={ref}
+              onClick={onClick}
               className={`transition-all duration-[1200ms] cubic-bezier(0.16, 1, 0.3, 1) ${className} ${
                 isVisible ? `opacity-100 ${transformActive}` : `opacity-0 ${transformBase}`
               }`}
@@ -154,7 +155,7 @@
                     ], 
                     srvTitle: 'Servicios', srvDesc: 'Soluciones técnicas y visuales para llevar tu proyecto desde la idea inicial hasta la ejecución.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.' 
                 },
-                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residencial: 'Residencial', comercial: 'Comercial' } },
+                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residential: 'Residencial', comercial: 'Comercial' } },
                 about: { 
                     title: 'Sobre Nosotros', sub: 'Compromiso con el desarrollo eficiente y sostenible.', p1: '<strong>JMM</strong> son las siglas de Arq. Jafett Rivera, Arq. Melissa Rivera e Ing. Melissa Santana, los fundadores de la empresa. En <strong>JMM Render Studio</strong>, somos más que creadores de imágenes; somos traductores técnicos. Convertimos especificaciones complejas en experiencias visuales que comunican valor y generan confianza.', p2: 'Nuestra misión es empoderar a arquitectos, desarrolladores y diseñadores mediante herramientas visuales de vanguardia, asegurando que cada proyecto se entienda a la perfección antes de colocar la primera piedra.', processTitle: 'El Proceso JMM', 
                     steps: [
