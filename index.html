@@ -1,797 +1,695 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Menu, X, Instagram, Phone, Mail, 
-  MapPin, PenTool, Ruler, FileText, 
-  CheckCircle, Play, Maximize, ChevronRight, ChevronLeft,
-  Monitor, Compass, Briefcase
-} from 'lucide-react';
-
-const HERO_IMAGES = [
-  'Portada-1.png',
-  'Portada-2.png',
-  'Portada-3.png',
-  'Portada-4.png',
-  'Portada-5.png'
-];
-
-// --- MOCK DATA ---
-const PORTFOLIO_ITEMS = [
-  { 
-    id: 1, 
-    category: 'residencial', 
-    img: 'casa-chris-portada.png', 
-    gallery: [
-      'casa-chris-1.png', 'casa-chris-2.png', 'casa-chris-3.png', 
-      'casa-chris-4.png', 'casa-chris-5.png', 'casa-chris-6.png', 
-      'casa-chris-7.png'
-    ],
-    title: 'Casa Chris - Golfito Puntarenas' 
-  },
-  { 
-    id: 2, 
-    category: 'residencial', 
-    img: 'barak-lot-portada.png', 
-    gallery: [
-      'barak-lot-1.png', 'barak-lot-2.png', 'barak-lot-3.png', 
-      'barak-lot-4.png', 'barak-lot-5.png', 'barak-lot-6.png'
-    ],
-    title: 'Barak Lot C-08 - Playa Grande' 
-  },
-  { 
-    id: 3, 
-    category: 'residencial', 
-    img: 'villa-italia-portada.png', 
-    gallery: [
-      'villa-italia-1.png', 'villa-italia-2.png', 'villa-italia-3.png', 
-      'villa-italia-4.png', 'villa-italia-5.png'
-    ],
-    title: 'Villa Italia - Alajuela' 
-  },
-  { 
-    id: 4, 
-    category: 'residencial', 
-    img: 'hany-kitchen-1.png', 
-    gallery: [
-      'hany-kitchen-1.png', 'hany-kitchen-2.png', 'hany-kitchen-3.png', 
-      'hany-kitchen-4.png', 'hany-kitchen-5.png', 'hany-kitchen-6.jpg'
-    ],
-    title: 'Hany Kitchen - Playa Hermosa' 
-  },
-  { 
-    id: 5, 
-    category: 'residencial', 
-    img: 'saras-bedroom-portada.png', 
-    gallery: [
-      'saras-bedroom-1.png', 'saras-bedroom-2.png', 
-      'saras-bedroom-3.png', 'saras-bedroom-4.png'
-    ],
-    title: 'Sara´s Bedroom - Escazu' 
-  },
-  { 
-    id: 6, 
-    category: 'residencial', 
-    img: 'coreys-dept-portada.jpg', 
-    gallery: [
-      'coreys-dept-1.png', 'coreys-dept-2.jpg', 'coreys-dept-3.jpg', 
-      'coreys-dept-3.png', 'coreys-dept-4.jpg', 'coreys-dept-5.jpg', 
-      'coreys-dept-7.png', 'coreys-dept-8.jpeg', 'coreys-dept-10.jpg'
-    ],
-    title: 'Corey Dept - Santa Ana' 
-  },
-  { 
-    id: 7, 
-    category: 'residencial', 
-    img: 'casa-desamparados-portada.png', 
-    gallery: [
-      'casa-desamparados-1.png', 'casa-desamparados-2.png', 
-      'casa-desamparados-3.png', 'casa-desamparados-4.png', 
-      'casa-desamparados-5.png', 'casa-desamparados-6.png', 
-      'casa-desamparados-7.png'
-    ],
-    title: 'Casa Desamparados - Ingrid' 
-  },
-  { 
-    id: 8, 
-    category: 'varios', 
-    img: 'mixed-projects-portada.png', 
-    gallery: [
-      'mixed-projects-1.png', 'mixed-projects-2.png', 'mixed-projects-3.png', 
-      'mixed-projects-4.png', 'mixed-projects-5.png', 'mixed-projects-6.png', 
-      'mixed-projects-7.png', 'mixed-projects-8.png', 'mixed-projects-9.png', 
-      'mixed-projects-10.png', 'mixed-projects-11.png', 'mixed-projects-12.png', 
-      'mixed-projects-13.png'
-    ],
-    title: 'Mixed Projects - Render Portfolio' 
-  }
-];
-
-const SERVICES = [
-  { id: 'planos', icon: <PenTool size={32} />, title: 'Diseño y elaboración de planos', desc: 'Transformamos ideas en especificaciones técnicas precisas.' },
-  { id: 'levantamiento', icon: <Ruler size={32} />, title: 'Levantamiento arquitectónico en sitio', desc: 'Mediciones exactas y digitalización del estado actual de tu proyecto.' },
-  { id: 'render', icon: <Monitor size={32} />, title: 'Renderizado 3D y Soluciones Visuales', desc: 'Renders fotorrealistas con iluminación y texturas de alta calidad.' },
-  { id: 'mobiliario', icon: <Briefcase size={32} />, title: 'Diseño y fabricación de mobiliario', desc: 'Piezas personalizadas que se adaptan perfectamente a tus espacios.' },
-  { id: 'inspeccion', icon: <FileText size={32} />, title: 'Inspección y gestión de permisos', desc: 'Asesoría y control de calidad cumpliendo con las normativas vigentes.' },
-];
-
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Scroll al inicio al cambiar de página
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
-
-  // Auto-play de galería cada 2 segundos
-  useEffect(() => {
-    let intervalId;
-    if (activeProject && activeProject.gallery.length > 1) {
-      intervalId = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
-      }, 2000);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMM Render Studio | From Render to Reality</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react@18.2.0",
+            "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+            "lucide-react": "https://esm.sh/lucide-react@0.292.0"
+        }
     }
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-    };
-  }, [activeProject]);
+    </script>
+    
+    <style>
+        body { margin: 0; font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-neutral-900 text-white selection:bg-teal-500 selection:text-white">
+    <div id="root"></div>
 
-  const navigateTo = (page) => {
-    setCurrentPage(page);
-    setIsMobileMenuOpen(false);
-  };
+    <script type="text/babel" data-type="module">
+        import React, { useState, useEffect } from 'react';
+        import { createRoot } from 'react-dom/client';
+        import { 
+          Menu, X, Instagram, Phone, Mail, 
+          MapPin, PenTool, Ruler, FileText, 
+          CheckCircle, Play, Maximize, ChevronRight, ChevronLeft,
+          Monitor, Compass, Briefcase, Globe, MessageCircle, Send
+        } from 'lucide-react';
 
-  const openGallery = (project) => {
-    setActiveProject(project);
-    setCurrentImageIndex(0);
-  };
+        const HERO_IMAGES = [
+          'Portada-1.png', 'Portada-2.png', 'Portada-3.png', 'Portada-4.png', 'Portada-5.png'
+        ];
 
-  const closeGallery = () => {
-    setActiveProject(null);
-  };
+        const PORTFOLIO_ITEMS = [
+          { id: 1, category: 'residential', title: 'Casa Chris - Golfito Puntarenas', img: 'casa-chris-portada.png', gallery: ['casa-chris-1.png', 'casa-chris-2.png', 'casa-chris-3.png', 'casa-chris-4.png', 'casa-chris-5.png', 'casa-chris-6.png', 'casa-chris-7.png'] },
+          { id: 2, category: 'residential', title: 'Barak Lot C-08 - Playa Grande', img: 'barak-lot-portada.png', gallery: ['barak-lot-1.png', 'barak-lot-2.png', 'barak-lot-3.png', 'barak-lot-4.png', 'barak-lot-5.png', 'barak-lot-6.png'] },
+          { id: 3, category: 'residential', title: 'Villa Italia - Alajuela', img: 'villa-italia-portada.png', gallery: ['villa-italia-1.png', 'villa-italia-2.png', 'villa-italia-3.png', 'villa-italia-4.png', 'villa-italia-5.png'] },
+          { id: 4, category: 'residential', title: 'Hany Kitchen - Playa Hermosa', img: 'hany-kitchen-1.png', gallery: ['hany-kitchen-1.png', 'hany-kitchen-2.png', 'hany-kitchen-3.png', 'hany-kitchen-4.png', 'hany-kitchen-5.png', 'hany-kitchen-6.jpg'] },
+          { id: 5, category: 'residential', title: 'Sara´s Bedroom - Escazu', img: 'saras-bedroom-portada.png', gallery: ['saras-bedroom-1.png', 'saras-bedroom-2.png', 'saras-bedroom-3.png', 'saras-bedroom-4.png'] },
+          { id: 6, category: 'residential', title: 'Corey Dept - Santa Ana', img: 'coreys-dept-portada.jpg', gallery: ['coreys-dept-1.png', 'coreys-dept-2.jpg', 'coreys-dept-3.jpg', 'coreys-dept-4.jpg', 'coreys-dept-5.jpg', 'coreys-dept-7.png', 'coreys-dept-8.jpeg', 'coreys-dept-9.png', 'coreys-dept-10.jpg'] },
+          { id: 7, category: 'residential', title: 'Casa Desamparados - Ingrid', img: 'casa-desamparados-portada.png', gallery: ['casa-desamparados-1.png', 'casa-desamparados-2.png', 'casa-desamparados-3.png', 'casa-desamparados-4.png', 'casa-desamparados-5.png', 'casa-desamparados-6.png', 'casa-desamparados-7.png'] },
+          { id: 8, category: 'various', title: 'Mixed Projects - Render Portfolio', img: 'mixed-projects-portada.png', gallery: ['mixed-projects-1.png', 'mixed-projects-2.png', 'mixed-projects-3.png', 'mixed-projects-4.png', 'mixed-projects-5.png', 'mixed-projects-6.png', 'mixed-projects-7.png', 'mixed-projects-8.png', 'mixed-projects-9.png', 'mixed-projects-10.png', 'mixed-projects-11.png', 'mixed-projects-12.png', 'mixed-projects-13.png'] }
+        ];
 
-  const nextImage = (e) => {
-    e.stopPropagation();
-    if (activeProject && activeProject.gallery.length > 0) {
-      setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
-    }
-  };
+        const ICONS = [ <PenTool size={32} />, <Ruler size={32} />, <Monitor size={32} />, <Briefcase size={32} />, <FileText size={32} /> ];
 
-  const prevImage = (e) => {
-    e.stopPropagation();
-    if (activeProject && activeProject.gallery.length > 0) {
-      setCurrentImageIndex((prev) => (prev === 0 ? activeProject.gallery.length - 1 : prev - 1));
-    }
-  };
+        const TRANSLATIONS = {
+            en: {
+                nav: { home: 'Home', portfolio: 'Portfolio', services: 'Services', about: 'About', contact: 'Contact' },
+                hero: { sub: 'From Render to Reality', title: 'BRING YOUR VISION <br className="hidden md:block"/> TO LIFE WITH JMM', desc: 'Technical precision and realistic visual representation for projects demanding the highest quality.', btn: 'Explore Projects' },
+                services: { 
+                    title: 'Our Services', 
+                    items: [
+                        { title: 'Design and Drafting of Plans', desc: 'We transform ideas into precise technical specifications.' },
+                        { title: 'On-Site Architectural Survey', desc: 'Exact measurements and digitization of your project\'s current state.' },
+                        { title: '3D Rendering & Visual Solutions', desc: 'Photorealistic renders with high-quality lighting and textures.' },
+                        { title: 'Custom Furniture Design', desc: 'Custom pieces that perfectly adapt to your spaces.' },
+                        { title: 'Inspection & Permit Management', desc: 'Consulting and quality control complying with current regulations.' }
+                    ], 
+                    srvTitle: 'Services', srvDesc: 'Technical and visual solutions to take your project from initial idea to execution.', srvB1: 'High precision and technical detail.', srvB2: 'Deliveries in industry-standard formats.' 
+                },
+                portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', various: 'Various' } },
+                about: { 
+                    title: 'About Us', sub: 'Commitment to efficient and sustainable development.', p1: '<strong>JMM</strong> stands for Arq. Jafett Rivera, Arq. Melissa Rivera, and Eng. Melissa Santana, the founders of the company. At <strong>JMM Render Studio</strong>, we are more than image creators; we are technical translators. We convert complex specifications into visual experiences that communicate value and build trust.', p2: 'Our mission is to empower architects, developers, and designers through cutting-edge visual tools, ensuring every project is perfectly understood before the first stone is laid.', processTitle: 'The JMM Process', 
+                    steps: [
+                        { title: 'Blueprint', desc: 'Plan analysis and technical requirement gathering.' },
+                        { title: '3D Modeling', desc: 'Volumetric construction with exact proportions.' },
+                        { title: 'Materials & Light', desc: 'Realistic texture application and lighting study.' },
+                        { title: 'Reality', desc: 'High-resolution final rendering and post-production.' }
+                    ] 
+                },
+                contact: { 
+                    title: 'Contact Us', desc: 'Ready to visualize your next project? Write to us and let\'s get started.', infoTitle: 'Direct Information', quote: '"We specialize in converting technical abstraction into a comprehensible and spectacular visual reality."', formTitle: 'Request a Quote', name: 'Full Name', namePh: 'Your name or company', email: 'Email Address', emailPh: 'your@email.com', type: 'Project Type', typeOpt: ['Select an option', 'Residential Render', 'Commercial Render', 'Plan Design', 'Furniture Design', 'Architectural Surveys', 'Permits & Consulting', 'Technical Visits', 'Other Service'], msg: 'Message / Details', msgPh: 'Tell us briefly about the scale, timeline, and requirements of your project.', submit: 'Send Message', 
+                    lblPhone: 'WhatsApp', valPhone: 'Start Chat', lblEmail: 'Email', lblTelegram: 'Telegram', lblIg: 'Instagram' 
+                },
+                footer: { desc: 'From Render to Reality. Specialists in architectural visual representation and comprehensive project development.', links: 'Quick Links', contact: 'Contact', rights: 'All rights reserved.', design: 'Designed with love. <3' }
+            },
+            es: {
+                nav: { home: 'Inicio', portfolio: 'Portafolio', services: 'Servicios', about: 'Nosotros', contact: 'Contacto' },
+                hero: { sub: 'Del render a la realidad', title: 'TRAE A LA VIDA TU VISIÓN <br className="hidden md:block"/> CON JMM', desc: 'Precisión técnica y representación visual realista para proyectos que exigen la máxima calidad.', btn: 'Explorar Proyectos' },
+                services: { 
+                    title: 'Nuestros Servicios', 
+                    items: [
+                        { title: 'Diseño y elaboración de planos', desc: 'Transformamos ideas en especificaciones técnicas precisas.' },
+                        { title: 'Levantamiento arquitectónico en sitio', desc: 'Mediciones exactas y digitalización del estado actual de tu proyecto.' },
+                        { title: 'Renderizado 3D y Soluciones', desc: 'Renders fotorrealistas con iluminación y texturas de alta calidad.' },
+                        { title: 'Diseño y fabricación de mobiliario', desc: 'Piezas personalizadas que se adaptan perfectamente a tus espacios.' },
+                        { title: 'Inspección y gestión de permisos', desc: 'Asesoría y control de calidad cumpliendo con las normativas vigentes.' }
+                    ], 
+                    srvTitle: 'Servicios', srvDesc: 'Soluciones técnicas y visuales para llevar tu proyecto desde la idea inicial hasta la ejecución.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.' 
+                },
+                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residencial: 'Residencial', various: 'Varios' } },
+                about: { 
+                    title: 'Sobre Nosotros', sub: 'Compromiso con el desarrollo eficiente y sostenible.', p1: '<strong>JMM</strong> son las siglas de Arq. Jafett Rivera, Arq. Melissa Rivera e Ing. Melissa Santana, los fundadores de la empresa. En <strong>JMM Render Studio</strong>, somos más que creadores de imágenes; somos traductores técnicos. Convertimos especificaciones complejas en experiencias visuales que comunican valor y generan confianza.', p2: 'Nuestra misión es empoderar a arquitectos, desarrolladores y diseñadores mediante herramientas visuales de vanguardia, asegurando que cada proyecto se entienda a la perfección antes de colocar la primera piedra.', processTitle: 'El Proceso JMM', 
+                    steps: [
+                        { title: 'Blueprint', desc: 'Análisis de planos y levantamiento de requisitos técnicos.' },
+                        { title: 'Modelado 3D', desc: 'Construcción volumétrica con proporciones exactas.' },
+                        { title: 'Materiales & Luz', desc: 'Aplicación de texturas realistas y estudio de iluminación.' },
+                        { title: 'Realidad', desc: 'Renderizado final en alta resolución y postproducción.' }
+                    ] 
+                },
+                contact: { 
+                    title: 'Contáctanos', desc: '¿Listo para visualizar tu próximo proyecto? Escríbenos y comencemos a trabajar.', infoTitle: 'Información Directa', quote: '"Nos especializamos en convertir la abstracción técnica en una realidad visual comprensible y espectacular."', formTitle: 'Solicita una Cotización', name: 'Nombre Completo', namePh: 'Tu nombre o empresa', email: 'Correo Electrónico', emailPh: 'tucorreo@ejemplo.com', type: 'Tipo de Proyecto', typeOpt: ['Selecciona una opción', 'Render Residencial', 'Render Comercial', 'Diseño de Planos', 'Diseño de Mobiliario', 'Levantamientos Arquitectónicos', 'Permisos y Consultoría', 'Visitas Técnicas', 'Otro Servicio'], msg: 'Mensaje / Detalles', msgPh: 'Cuéntanos brevemente sobre la escala, tiempos y requerimientos del proyecto.', submit: 'Enviar Mensaje', 
+                    lblPhone: 'WhatsApp', valPhone: 'Iniciar Chat', lblEmail: 'Correo Electrónico', lblTelegram: 'Telegram', lblIg: 'Instagram' 
+                },
+                footer: { desc: 'From Render to Reality. Especialistas en representación visual arquitectónica y desarrollo de proyectos integrales.', links: 'Enlaces Rápidos', contact: 'Contacto', rights: 'Todos los derechos reservados.', design: 'Diseñado con amor. <3' }
+            }
+        };
 
-  return (
-    <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans selection:bg-teal-500 selection:text-white" style={{ fontFamily: "'Inter', 'Montserrat', sans-serif" }}>
-      {/* Navbar */}
-      <nav className="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={() => navigateTo('home')}>
-              <img src="Logo-JMM.png" alt="JMM Logo" className="h-10 w-auto invert" />
-              <div className="hidden sm:block">
-                <span className="text-2xl font-bold tracking-widest text-white">JMM<span className="text-teal-500">.</span></span>
-                <span className="block text-xs text-neutral-400 tracking-widest uppercase mt-[-4px]">Render Studio</span>
-              </div>
-            </div>
+        function App() {
+          const [currentPage, setCurrentPage] = useState('home');
+          const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+          const [activeProject, setActiveProject] = useState(null);
+          const [currentImageIndex, setCurrentImageIndex] = useState(0);
+          const [lang, setLang] = useState('en');
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
-                <button
-                  key={page}
-                  onClick={() => navigateTo(page)}
-                  className={`text-sm tracking-wide uppercase font-medium transition-colors hover:text-teal-400 ${
-                    currentPage === page ? 'text-teal-500' : 'text-neutral-300'
-                  }`}
-                >
-                  {page === 'home' ? 'Inicio' : page === 'about' ? 'Nosotros' : page}
-                </button>
-              ))}
-            </div>
+          const t = TRANSLATIONS[lang];
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-neutral-300 hover:text-white"
-              >
-                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
-          </div>
-        </div>
+          useEffect(() => {
+            window.scrollTo(0, 0);
+          }, [currentPage]);
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-neutral-950 border-b border-neutral-800">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
-                <button
-                  key={page}
-                  onClick={() => navigateTo(page)}
-                  className={`block w-full text-left px-3 py-4 text-base tracking-wide uppercase font-medium ${
-                    currentPage === page ? 'text-teal-500 bg-neutral-900' : 'text-neutral-300 hover:text-white hover:bg-neutral-800'
-                  }`}
-                >
-                  {page === 'home' ? 'Inicio' : page === 'about' ? 'Nosotros' : page}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+          // Autoplay para la galería
+          useEffect(() => {
+            if (!activeProject || activeProject.gallery.length <= 1) return;
+            const timer = setTimeout(() => {
+              setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
+            }, 2000);
+            return () => clearTimeout(timer);
+          }, [activeProject, currentImageIndex]);
 
-      {/* Main Content Area */}
-      <main className="pt-20">
-        {currentPage === 'home' && <HomeView navigateTo={navigateTo} />}
-        {currentPage === 'portfolio' && <PortfolioView openGallery={openGallery} />}
-        {currentPage === 'services' && <ServicesView />}
-        {currentPage === 'about' && <AboutView />}
-        {currentPage === 'contact' && <ContactView />}
-      </main>
+          const navigateTo = (page) => {
+            setCurrentPage(page);
+            setIsMobileMenuOpen(false);
+          };
 
-      {/* Footer */}
-      <footer className="bg-teal-800 text-teal-50 pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div>
-              <div className="mb-4">
-                <img src="Logo-JMM.png" alt="JMM Logo" className="h-12 w-auto invert" />
-              </div>
-              <p className="text-teal-100/80 mb-6 text-sm leading-relaxed max-w-xs mt-4">
-                From Render to Reality. Especialistas en representación visual arquitectónica y desarrollo de proyectos integrales.
-              </p>
-              <div className="flex space-x-4">
-                <a href="https://instagram.com/jmm_render_studio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-teal-700 flex items-center justify-center hover:bg-teal-600 transition-colors">
-                  <Instagram size={20} />
-                </a>
-                <a href="mailto:info@jmm-arquitectura.art" className="w-10 h-10 rounded-full bg-teal-700 flex items-center justify-center hover:bg-teal-600 transition-colors">
-                  <Mail size={20} />
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-6 uppercase tracking-wider">Enlaces Rápidos</h4>
-              <ul className="space-y-3">
-                {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
-                  <li key={page}>
-                    <button onClick={() => navigateTo(page)} className="text-teal-100/80 hover:text-white transition-colors text-sm uppercase tracking-wide">
-                      {page === 'home' ? 'Inicio' : page === 'about' ? 'Nosotros' : page}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          const toggleLanguage = () => {
+            setLang(prev => prev === 'en' ? 'es' : 'en');
+          };
 
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-6 uppercase tracking-wider">Contacto</h4>
-              <ul className="space-y-4 text-sm text-teal-100/80">
-                <li className="flex items-start">
-                  <Phone size={18} className="mr-3 mt-0.5 text-teal-300" />
-                  <span>+506 8878-3223</span>
-                </li>
-                <li className="flex items-start">
-                  <Mail size={18} className="mr-3 mt-0.5 text-teal-300" />
-                  <span>info@jmm-arquitectura.art</span>
-                </li>
-                <li className="flex items-start">
-                  <Instagram size={18} className="mr-3 mt-0.5 text-teal-300" />
-                  <span>@jmm_render_studio</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-teal-700 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-teal-200/60 gap-6 md:gap-4">
-            <p className="order-3 md:order-1 text-center md:text-left">&copy; {new Date().getFullYear()} JMM Render Studio. Todos los derechos reservados.</p>
-            
-            <div className="flex items-center space-x-4 order-1 md:order-2">
-              <span className="uppercase tracking-widest text-[10px] font-semibold text-teal-400">Powered by</span>
-              <img src="Logo-BCD.png" alt="BCD" className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-              <div className="h-4 w-px bg-teal-700"></div>
-              <img src="Logo-SGI.png" alt="SGI" className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
+          const openGallery = (project) => {
+            setActiveProject(project);
+            setCurrentImageIndex(0);
+          };
 
-            <p className="order-2 md:order-3 text-center md:text-right">Diseñado con amor. &lt;3</p>
-          </div>
-        </div>
-      </footer>
+          const closeGallery = () => setActiveProject(null);
 
-      {/* Gallery / Lightbox Overlay */}
-      {activeProject && (
-        <div 
-          className="fixed inset-0 z-[100] bg-black/98 flex flex-col items-center justify-center backdrop-blur-sm"
-          onClick={closeGallery}
-        >
-          <button 
-            onClick={closeGallery}
-            className="absolute top-4 right-4 md:top-6 md:right-6 text-white z-[110] transition-colors bg-neutral-800/80 hover:bg-teal-600 p-2 rounded-full"
-          >
-            <X size={28} />
-          </button>
+          const nextImage = (e) => {
+            e.stopPropagation();
+            if (activeProject && activeProject.gallery.length > 0) {
+              setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
+            }
+          };
 
-          {/* Navigation Arrows */}
-          {activeProject.gallery.length > 1 && (
-            <>
-              <button 
-                onClick={prevImage}
-                className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white z-[110] transition-all bg-teal-600/80 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg"
-              >
-                <ChevronLeft size={28} className="md:w-9 md:h-9" />
-              </button>
-              <button 
-                onClick={nextImage}
-                className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white z-[110] transition-all bg-teal-600/80 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg"
-              >
-                <ChevronRight size={28} className="md:w-9 md:h-9" />
-              </button>
-            </>
-          )}
+          const prevImage = (e) => {
+            e.stopPropagation();
+            if (activeProject && activeProject.gallery.length > 0) {
+              setCurrentImageIndex((prev) => (prev === 0 ? activeProject.gallery.length - 1 : prev - 1));
+            }
+          };
 
-          {/* Main Image */}
-          <div className="relative w-full px-2 md:px-20 h-[70vh] md:h-[80vh] flex items-center justify-center mt-[-2rem] md:mt-0">
-            <img 
-              key={currentImageIndex}
-              src={activeProject.gallery[currentImageIndex]} 
-              alt={`${activeProject.title} - Vista ${currentImageIndex + 1}`} 
-              className="w-full h-full object-contain drop-shadow-2xl animate-in fade-in duration-500"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
+          return (
+            <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans selection:bg-teal-500 selection:text-white">
+              <nav className="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 transition-all">
+                <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
+                  <div className="flex justify-between items-center h-24 md:h-32">
+                    <div className="flex-shrink-0 cursor-pointer flex items-center gap-4" onClick={() => navigateTo('home')}>
+                      <img src="Logo-JMM.png" alt="JMM Logo" className="h-14 md:h-24 w-auto invert" />
+                      <div className="hidden sm:block">
+                        <span className="text-2xl md:text-3xl font-bold tracking-widest text-white">JMM<span className="text-teal-500">.</span></span>
+                        <span className="block text-xs md:text-sm text-neutral-400 tracking-widest uppercase mt-[-4px]">Render Studio</span>
+                      </div>
+                    </div>
 
-          {/* Gallery Info & Indicators */}
-          <div className="absolute bottom-6 md:bottom-8 left-0 right-0 text-center z-[105]" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2 px-4">{activeProject.title}</h3>
-            {activeProject.gallery.length > 1 && (
-              <div className="flex items-center justify-center space-x-2 mt-2 md:mt-4">
-                {activeProject.gallery.map((_, idx) => (
-                  <button 
-                    key={idx}
-                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      currentImageIndex === idx ? 'w-8 bg-teal-500' : 'w-2 bg-neutral-600 hover:bg-neutral-400'
-                    }`}
-                    aria-label={`Ir a imagen ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+                    <div className="hidden md:flex items-center space-x-8">
+                      {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
+                        <button
+                          key={page}
+                          onClick={() => navigateTo(page)}
+                          className={`text-sm tracking-wide uppercase font-medium transition-colors hover:text-teal-400 ${
+                            currentPage === page ? 'text-teal-500' : 'text-neutral-300'
+                          }`}
+                        >
+                          {t.nav[page]}
+                        </button>
+                      ))}
+                      <div className="h-5 w-px bg-neutral-700 mx-2"></div>
+                      <button onClick={toggleLanguage} className="flex items-center text-sm font-bold text-teal-400 hover:text-white transition-colors">
+                        <Globe size={18} className="mr-1.5" /> {lang === 'en' ? 'ES' : 'EN'}
+                      </button>
+                    </div>
 
-// ==========================================
-// VIEWS COMPONENTS
-// ==========================================
-
-function HomeView({ navigateTo }) {
-  const [currentBg, setCurrentBg] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentBg((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="animate-in fade-in duration-700">
-      {/* Hero Section */}
-      <section className="relative h-[100svh] md:h-[90vh] w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-neutral-950">
-          {HERO_IMAGES.map((img, index) => (
-            <img 
-              key={index}
-              src={img} 
-              alt={`Hero Architectural Render ${index + 1}`} 
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentBg ? 'opacity-60' : 'opacity-0'}`} 
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h2 className="text-teal-400 font-medium tracking-[0.2em] mb-4 text-sm md:text-base uppercase">From Render to Reality</h2>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-            BRING YOUR VISION <br className="hidden md:block"/> TO LIFE WITH JMM
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
-            Precisión técnica y representación visual realista para proyectos que exigen la máxima calidad.
-          </p>
-          <button 
-            onClick={() => navigateTo('portfolio')}
-            className="bg-teal-600 hover:bg-teal-500 text-white px-8 py-4 rounded-sm font-medium tracking-wide uppercase transition-all flex items-center mx-auto space-x-2 group"
-          >
-            <span>Explorar Proyectos</span>
-            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </section>
-
-      {/* Services Summary */}
-      <section className="py-24 bg-neutral-900 border-b border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-white mb-4">Nuestros Servicios</h3>
-            <div className="w-16 h-1 bg-teal-500 mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {SERVICES.map((srv, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center group cursor-pointer" onClick={() => navigateTo('services')}>
-                <div className="w-20 h-20 rounded-full bg-neutral-800 flex items-center justify-center text-teal-500 mb-6 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
-                  {srv.icon}
-                </div>
-                <h4 className="text-neutral-200 font-semibold mb-2 text-sm uppercase tracking-wide">{srv.title}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Portfolio */}
-      <section className="py-24 bg-neutral-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-4">Proyectos Destacados</h3>
-              <div className="w-16 h-1 bg-teal-500"></div>
-            </div>
-            <button 
-              onClick={() => navigateTo('portfolio')}
-              className="hidden md:flex items-center text-teal-400 hover:text-teal-300 font-medium uppercase text-sm tracking-wide group"
-            >
-              Ver Galería Completa 
-              <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {PORTFOLIO_ITEMS.slice(0, 3).map((item) => (
-              <div key={item.id} className="group relative overflow-hidden rounded-sm aspect-[4/3] cursor-pointer" onClick={() => navigateTo('portfolio')}>
-                <img 
-                  src={item.img} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <span className="text-teal-400 text-xs font-bold uppercase tracking-wider mb-1">{item.category}</span>
-                  <h4 className="text-white text-xl font-bold">{item.title}</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <button 
-            onClick={() => navigateTo('portfolio')}
-            className="mt-8 w-full md:hidden border border-teal-600 text-teal-400 py-3 uppercase text-sm font-medium tracking-wide"
-          >
-            Ver Galería Completa
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-function PortfolioView({ openGallery }) {
-  const [filter, setFilter] = useState('all');
-  const categories = ['all', 'residencial', 'video', 'planos', 'varios'];
-
-  const filteredItems = filter === 'all' 
-    ? PORTFOLIO_ITEMS 
-    : PORTFOLIO_ITEMS.filter(item => item.category === filter);
-
-  return (
-    <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24">
-      {/* Header */}
-      <header className="py-20 bg-neutral-950 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Portafolio</h1>
-        <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
-        <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
-          La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.
-        </p>
-      </header>
-
-      {/* Filters */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider transition-colors border ${
-                filter === cat 
-                  ? 'bg-teal-600 border-teal-600 text-white' 
-                  : 'border-neutral-700 text-neutral-400 hover:border-teal-500 hover:text-teal-400'
-              }`}
-            >
-              {cat === 'all' ? 'Todos' : cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map(item => (
-            <div 
-              key={item.id} 
-              className="group relative overflow-hidden bg-neutral-800 rounded-sm aspect-square cursor-pointer"
-              onClick={() => openGallery(item)}
-            >
-              <img 
-                src={item.img} 
-                alt={item.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Maximize className="text-white mx-auto mb-3" size={32} />
-                  <span className="block text-teal-400 text-xs font-bold uppercase tracking-wider mb-1">{item.category}</span>
-                  <h4 className="text-white text-xl font-bold px-4">{item.title}</h4>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ServicesView() {
-  return (
-    <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24">
-      <header className="py-20 bg-neutral-950 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Servicios</h1>
-        <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
-        <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
-          Soluciones técnicas y visuales para llevar tu proyecto desde la idea inicial hasta la ejecución.
-        </p>
-      </header>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 space-y-8">
-        {SERVICES.map((srv, index) => (
-          <div key={srv.id} className="bg-neutral-950 border border-neutral-800 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start hover:border-teal-900 transition-colors rounded-sm group">
-            <div className="w-16 h-16 rounded-sm bg-neutral-900 flex-shrink-0 flex items-center justify-center text-teal-500 group-hover:bg-teal-900/30 transition-colors">
-              {srv.icon}
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-3">{srv.title}</h3>
-              <p className="text-neutral-400 leading-relaxed text-lg mb-4">{srv.desc}</p>
-              <ul className="space-y-2 text-neutral-300">
-                <li className="flex items-center text-sm"><CheckCircle size={16} className="text-teal-500 mr-2" /> Alta precisión y detalle técnico.</li>
-                <li className="flex items-center text-sm"><CheckCircle size={16} className="text-teal-500 mr-2" /> Entregas en formatos estándar de la industria.</li>
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function AboutView() {
-  const processSteps = [
-    { step: '01', title: 'Blueprint', desc: 'Análisis de planos y levantamiento de requisitos técnicos.' },
-    { step: '02', title: 'Modelado 3D', desc: 'Construcción volumétrica con proporciones exactas.' },
-    { step: '03', title: 'Materiales & Luz', desc: 'Aplicación de texturas realistas y estudio de iluminación.' },
-    { step: '04', title: 'Realidad', desc: 'Renderizado final en alta resolución y postproducción.' }
-  ];
-
-  return (
-    <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen">
-      {/* Hero About */}
-      <section className="relative py-32 bg-neutral-950 overflow-hidden">
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-teal-500 fill-current"><polygon points="0,100 100,0 100,100"/></svg>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Sobre Nosotros</h1>
-              <div className="w-16 h-1 bg-teal-500 mb-8"></div>
-              <h2 className="text-2xl text-teal-400 font-light mb-6">Compromiso con el desarrollo eficiente y sostenible.</h2>
-              <div className="space-y-6 text-neutral-300 text-lg leading-relaxed font-light">
-                <p>
-                  <strong>JMM</strong> son las siglas de Arq. Jafett Rivera, Arq. Melissa Rivera e Ing. Melissa Santana, los fundadores de la empresa. En <strong>JMM Render Studio</strong>, somos más que creadores de imágenes; somos traductores técnicos. Convertimos especificaciones complejas en experiencias visuales que comunican valor y generan confianza.
-                </p>
-                <p>
-                  Nuestra misión es empoderar a arquitectos, desarrolladores y diseñadores mediante herramientas visuales de vanguardia, asegurando que cada proyecto se entienda a la perfección antes de colocar la primera piedra.
-                </p>
-              </div>
-            </div>
-            <div className="relative mt-8 lg:mt-0 lg:p-8 mx-auto w-full max-w-lg lg:max-w-none">
-              <img 
-                src="about-us.png" 
-                alt="Studio space" 
-                className="w-full rounded-sm shadow-2xl relative z-10"
-                loading="lazy"
-              />
-              <div className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-2 lg:bottom-0 lg:left-0 w-48 h-48 md:w-64 md:h-64 bg-teal-600 rounded-sm z-0"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Process */}
-      <section className="py-24 bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-white mb-4">El Proceso JMM</h3>
-            <div className="w-16 h-1 bg-teal-500 mx-auto"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {processSteps.map((item, idx) => (
-              <div key={idx} className="relative pt-8">
-                {/* Connecting Line */}
-                {idx !== processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-1/2 w-full h-[1px] bg-neutral-800"></div>
-                )}
-                
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-neutral-950 border-2 border-teal-500 flex items-center justify-center text-xl font-bold text-teal-400 mb-6">
-                    {item.step}
+                    <div className="md:hidden flex items-center space-x-6">
+                      <button onClick={toggleLanguage} className="flex items-center text-sm font-bold text-teal-400 hover:text-white">
+                        <Globe size={18} className="mr-1.5" /> {lang === 'en' ? 'ES' : 'EN'}
+                      </button>
+                      <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-neutral-300 hover:text-white">
+                        {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+                      </button>
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
-                  <p className="text-neutral-400 text-sm px-4">{item.desc}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
 
-function ContactView() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name') || '';
-    const email = formData.get('email') || '';
-    const type = formData.get('project_type') || '';
-    const message = formData.get('message') || '';
-    
-    // Abre automáticamente el cliente de correos con la info lista.
-    const subject = encodeURIComponent(`Nuevo contacto web: ${name} - ${type}`);
-    const body = encodeURIComponent(`Nombre: ${name}\nCorreo de contacto: ${email}\nTipo de Proyecto: ${type}\n\nMensaje:\n${message}`);
-    
-    window.location.href = `mailto:info@jmm-arquitectura.art?subject=${subject}&body=${body}`;
-  };
+                {isMobileMenuOpen && (
+                  <div className="md:hidden bg-neutral-950 border-b border-neutral-800">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                      {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
+                        <button
+                          key={page}
+                          onClick={() => navigateTo(page)}
+                          className={`block w-full text-left px-4 py-5 text-base tracking-wide uppercase font-medium ${
+                            currentPage === page ? 'text-teal-500 bg-neutral-900' : 'text-neutral-300 hover:text-white hover:bg-neutral-800'
+                          }`}
+                        >
+                          {t.nav[page]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </nav>
 
-  return (
-    <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24">
-      <header className="py-20 bg-neutral-950 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contáctanos</h1>
-        <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
-        <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
-          ¿Listo para visualizar tu próximo proyecto? Escríbenos y comencemos a trabajar.
-        </p>
-      </header>
+              <main className="pt-24 md:pt-28 relative z-10">
+                {currentPage === 'home' && <HomeView navigateTo={navigateTo} t={t} />}
+                {currentPage === 'portfolio' && <PortfolioView openGallery={openGallery} t={t} />}
+                {currentPage === 'services' && <ServicesView t={t} />}
+                {currentPage === 'about' && <AboutView t={t} />}
+                {currentPage === 'contact' && <ContactView t={t} />}
+              </main>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8">Información Directa</h3>
-            
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-neutral-800 rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">Teléfono</h4>
-                  <p className="text-xl text-white">+506 8878-3223</p>
-                </div>
-              </div>
+              <footer className="relative z-20 bg-teal-800 text-teal-50 pt-20 pb-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                      <div className="mb-6">
+                        <img src="Logo-JMM.png" alt="JMM Logo" className="h-28 md:h-36 w-auto invert opacity-100 transition-opacity" />
+                      </div>
+                      <p className="text-teal-100/80 mb-8 text-sm leading-relaxed max-w-sm mt-4">
+                        {t.footer.desc}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-6 uppercase tracking-wider">{t.footer.links}</h4>
+                      <ul className="space-y-4">
+                        {['home', 'portfolio', 'services', 'about', 'contact'].map((page) => (
+                          <li key={page}>
+                            <button onClick={() => navigateTo(page)} className="text-teal-100/80 hover:text-white transition-colors text-sm uppercase tracking-wide">
+                              {t.nav[page]}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-neutral-800 rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">Correo Electrónico</h4>
-                  <a href="mailto:info@jmm-arquitectura.art" className="text-xl text-white hover:text-teal-400 transition-colors">info@jmm-arquitectura.art</a>
-                </div>
-              </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-6 uppercase tracking-wider">{t.footer.contact}</h4>
+                      <ul className="space-y-4 text-sm text-teal-100/90">
+                        <li className="flex items-center">
+                          <MessageCircle size={18} className="mr-3 text-teal-400 flex-shrink-0" />
+                          <a href="https://wa.me/qr/6M5XLFRJM3K6P1" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+                        </li>
+                        <li className="flex items-center">
+                          <Send size={18} className="mr-3 text-teal-400 flex-shrink-0" />
+                          <a href="https://t.me/JMM_RENDER_STUDIO" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Telegram</a>
+                        </li>
+                        <li className="flex items-center">
+                          <Mail size={18} className="mr-3 text-teal-400 flex-shrink-0" />
+                          <a href="mailto:info@jmm-arquitectura.art" className="hover:text-white transition-colors">info@jmm-arquitectura.art</a>
+                        </li>
+                        <li className="flex items-center">
+                          <Instagram size={18} className="mr-3 text-teal-400 flex-shrink-0" />
+                          <a href="https://instagram.com/jmm_render_studio" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">@jmm_render_studio</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="border-t border-teal-700 pt-10 flex flex-col md:flex-row items-center text-xs text-teal-200/60 gap-8 md:gap-0">
+                    <div className="order-3 md:order-1 flex-1 flex justify-center md:justify-start w-full">
+                      <p className="text-sm">&copy; {new Date().getFullYear()} JMM Render Studio. {t.footer.rights}</p>
+                    </div>
+                    
+                    <div className="order-1 md:order-2 flex-1 flex items-center justify-center space-x-6 w-full">
+                      <span className="uppercase tracking-widest text-xs md:text-sm font-semibold text-teal-400">Powered by</span>
+                      <img src="Logo-BCD.png" alt="BCD" className="h-16 md:h-28 w-auto opacity-100 transition-opacity" />
+                      <div className="h-12 md:h-20 w-px bg-teal-700"></div>
+                      <img src="Logo-SGI.png" alt="SGI" className="h-14 md:h-24 w-auto opacity-100 transition-opacity" />
+                    </div>
 
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-neutral-800 rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
-                  <Instagram size={24} />
+                    <div className="order-2 md:order-3 flex-1 flex justify-center md:justify-end w-full">
+                      <p className="text-sm">{t.footer.design}</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">Instagram</h4>
-                  <a href="https://instagram.com/jmm_render_studio" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-teal-400 transition-colors">@jmm_render_studio</a>
+              </footer>
+
+              {activeProject && (
+                <div className="fixed inset-0 z-[100] bg-black/98 flex flex-col items-center justify-center backdrop-blur-sm" onClick={closeGallery}>
+                  <button onClick={closeGallery} className="absolute top-4 right-4 md:top-6 md:right-6 text-white z-[110] transition-colors bg-neutral-800/80 hover:bg-teal-600 p-2 rounded-full">
+                    <X size={28} />
+                  </button>
+
+                  {activeProject.gallery.length > 1 && (
+                    <>
+                      <button onClick={prevImage} className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white z-[110] transition-all bg-teal-600/80 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg">
+                        <ChevronLeft size={28} className="md:w-9 md:h-9" />
+                      </button>
+                      <button onClick={nextImage} className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white z-[110] transition-all bg-teal-600/80 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg">
+                        <ChevronRight size={28} className="md:w-9 md:h-9" />
+                      </button>
+                    </>
+                  )}
+
+                  <div className="relative w-full px-2 md:px-20 h-[70vh] md:h-[80vh] flex items-center justify-center mt-[-2rem] md:mt-0">
+                    <img 
+                      key={currentImageIndex}
+                      src={activeProject.gallery[currentImageIndex]} 
+                      alt={`${activeProject.title} - View ${currentImageIndex + 1}`} 
+                      className="w-full h-full object-contain drop-shadow-2xl animate-in fade-in duration-500"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                    <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 md:bottom-8 md:right-8 h-20 md:h-32 w-auto invert opacity-30 pointer-events-none drop-shadow-2xl" />
+                  </div>
+
+                  <div className="absolute bottom-6 md:bottom-8 left-0 right-0 text-center z-[105]" onClick={(e) => e.stopPropagation()}>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 px-4">{activeProject.title}</h3>
+                    {activeProject.gallery.length > 1 && (
+                      <div className="flex items-center justify-center space-x-2 mt-2 md:mt-4">
+                        {activeProject.gallery.map((_, idx) => (
+                          <button 
+                            key={idx}
+                            onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${currentImageIndex === idx ? 'w-8 bg-teal-500' : 'w-2 bg-neutral-600 hover:bg-neutral-400'}`}
+                            aria-label={`Ir a imagen ${idx + 1}`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        function HomeView({ navigateTo, t }) {
+          const [currentBg, setCurrentBg] = useState(0);
+
+          useEffect(() => {
+            const timer = setInterval(() => {
+              setCurrentBg((prev) => (prev + 1) % HERO_IMAGES.length);
+            }, 5000);
+            return () => clearInterval(timer);
+          }, []);
+
+          return (
+            <div className="animate-in fade-in duration-700">
+              <section className="relative h-[100svh] md:h-[90vh] w-full flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-neutral-950">
+                  {HERO_IMAGES.map((img, index) => (
+                    <img 
+                      key={index} src={img} alt={`Hero Architectural Render ${index + 1}`} 
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentBg ? 'opacity-60' : 'opacity-0'}`} 
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
+                </div>
+                
+                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+                  <h2 className="text-teal-400 font-medium tracking-[0.2em] mb-4 text-sm md:text-base uppercase">{t.hero.sub}</h2>
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight" dangerouslySetInnerHTML={{ __html: t.hero.title }}></h1>
+                  <p className="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">{t.hero.desc}</p>
+                  <button onClick={() => navigateTo('portfolio')} className="bg-teal-600 hover:bg-teal-500 text-white px-8 py-4 rounded-sm font-medium tracking-wide uppercase transition-all flex items-center mx-auto space-x-2 group">
+                    <span>{t.hero.btn}</span>
+                    <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </section>
+
+              <section className="py-24 bg-neutral-900 border-b border-neutral-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center mb-16">
+                    <h3 className="text-3xl font-bold text-white mb-4">{t.services.title}</h3>
+                    <div className="w-16 h-1 bg-teal-500 mx-auto"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    {t.services.items.map((srv, idx) => (
+                      <div key={idx} className="flex flex-col items-center text-center group cursor-pointer" onClick={() => navigateTo('services')}>
+                        <div className="w-20 h-20 rounded-full bg-neutral-800 flex items-center justify-center text-teal-500 mb-6 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                          {ICONS[idx]}
+                        </div>
+                        <h4 className="text-neutral-200 font-semibold mb-2 text-sm uppercase tracking-wide">{srv.title}</h4>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              <section className="py-24 bg-neutral-950">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="flex justify-between items-end mb-12">
+                    <div>
+                      <h3 className="text-3xl font-bold text-white mb-4">{t.portfolio.featTitle}</h3>
+                      <div className="w-16 h-1 bg-teal-500"></div>
+                    </div>
+                    <button onClick={() => navigateTo('portfolio')} className="hidden md:flex items-center text-teal-400 hover:text-teal-300 font-medium uppercase text-sm tracking-wide group">
+                      {t.portfolio.featBtn} <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {PORTFOLIO_ITEMS.filter(item => [2, 6, 7].includes(item.id)).map((item) => (
+                      <div key={item.id} className="group relative overflow-hidden rounded-sm aspect-[4/3] cursor-pointer" onClick={() => navigateTo('portfolio')}>
+                        <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                          <span className="text-teal-400 text-xs font-bold uppercase tracking-wider mb-1">{t.portfolio.filters[item.category] || item.category}</span>
+                          <h4 className="text-white text-xl font-bold">{item.title}</h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <button onClick={() => navigateTo('portfolio')} className="mt-8 w-full md:hidden border border-teal-600 text-teal-400 py-3 uppercase text-sm font-medium tracking-wide">
+                    {t.portfolio.featBtn}
+                  </button>
+                </div>
+              </section>
+            </div>
+          );
+        }
+
+        function PortfolioView({ openGallery, t }) {
+          const [filter, setFilter] = useState('all');
+          const categories = ['all', 'residential', 'various'];
+
+          const filteredItems = filter === 'all' ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter(item => item.category === filter);
+
+          return (
+            <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24">
+              <header className="py-20 bg-neutral-950 text-center px-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.portfolio.title}</h1>
+                <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
+                <p className="text-neutral-400 max-w-2xl mx-auto text-lg">{t.portfolio.desc}</p>
+              </header>
+
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                  {categories.map(cat => (
+                    <button key={cat} onClick={() => setFilter(cat)} className={`px-6 py-2 rounded-full text-sm font-medium uppercase tracking-wider transition-colors border ${filter === cat ? 'bg-teal-600 border-teal-600 text-white' : 'border-neutral-700 text-neutral-400 hover:border-teal-500 hover:text-teal-400'}`}>
+                      {t.portfolio.filters[cat]}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredItems.map(item => (
+                    <div key={item.id} className="group relative overflow-hidden bg-neutral-800 rounded-sm aspect-square cursor-pointer" onClick={() => openGallery(item)}>
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" loading="lazy" />
+                      <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto invert opacity-30 pointer-events-none z-20 transition-opacity group-hover:opacity-50 drop-shadow-md" />
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-30">
+                        <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          <Maximize className="text-white mx-auto mb-3" size={32} />
+                          <span className="block text-teal-400 text-xs font-bold uppercase tracking-wider mb-1">{t.portfolio.filters[item.category] || item.category}</span>
+                          <h4 className="text-white text-xl font-bold px-4">{item.title}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+          );
+        }
 
-            <div className="mt-12 p-8 bg-neutral-950 border border-neutral-800 rounded-sm">
-              <p className="text-neutral-300 italic">
-                "Nos especializamos en convertir la abstracción técnica en una realidad visual comprensible y espectacular."
-              </p>
+        function ServicesView({ t }) {
+          return (
+            <div className="animate-in fade-in duration-500 relative min-h-screen pb-24">
+              <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
+                <img 
+                  src="Portada-2.png" alt="Background" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
+                />
+                <div className="absolute inset-0 bg-neutral-950/80"></div>
+              </div>
+
+              <header className="py-20 text-center px-4 relative z-10">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.services.srvTitle}</h1>
+                <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
+                <p className="text-neutral-400 max-w-2xl mx-auto text-lg">{t.services.srvDesc}</p>
+              </header>
+
+              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 space-y-8 relative z-10">
+                {t.services.items.map((srv, index) => (
+                  <div key={index} className="bg-neutral-950/80 backdrop-blur-md border border-neutral-800 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start hover:border-teal-900 transition-colors rounded-sm group">
+                    <div className="w-16 h-16 rounded-sm bg-neutral-900 flex-shrink-0 flex items-center justify-center text-teal-500 group-hover:bg-teal-900/30 transition-colors">
+                      {ICONS[index]}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-3">{srv.title}</h3>
+                      <p className="text-neutral-400 leading-relaxed text-lg mb-4">{t.services.items[index].desc}</p>
+                      <ul className="space-y-2 text-neutral-300">
+                        <li className="flex items-center text-sm"><CheckCircle size={16} className="text-teal-500 mr-2" /> {t.services.srvB1}</li>
+                        <li className="flex items-center text-sm"><CheckCircle size={16} className="text-teal-500 mr-2" /> {t.services.srvB2}</li>
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          );
+        }
 
-          {/* Form */}
-          <div className="bg-neutral-950 p-8 md:p-10 rounded-sm border border-neutral-800">
-            <h3 className="text-2xl font-bold text-white mb-8">Solicita una Cotización</h3>
+        function AboutView({ t }) {
+          return (
+            <div className="animate-in fade-in duration-500 relative min-h-screen">
+              <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
+                <img 
+                  src="Portada-2.png" alt="Background" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
+                />
+                <div className="absolute inset-0 bg-neutral-950/80"></div>
+              </div>
+
+              <section className="relative py-32 overflow-hidden z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div>
+                      <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.about.title}</h1>
+                      <div className="w-16 h-1 bg-teal-500 mb-8"></div>
+                      <h2 className="text-2xl text-teal-400 font-light mb-6">{t.about.sub}</h2>
+                      <div className="space-y-6 text-neutral-300 text-lg leading-relaxed font-light">
+                        <p dangerouslySetInnerHTML={{ __html: t.about.p1 }}></p>
+                        <p>{t.about.p2}</p>
+                      </div>
+                    </div>
+                    <div className="relative mt-8 lg:mt-0 lg:p-8 mx-auto w-full max-w-lg lg:max-w-none">
+                      <img src="about-us.png" alt="Studio space" className="w-full rounded-sm shadow-2xl relative z-10" loading="lazy" />
+                      <div className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-2 lg:bottom-0 lg:left-0 w-48 h-48 md:w-64 md:h-64 bg-teal-600 rounded-sm z-0"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="py-24 relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="text-center mb-16">
+                    <h3 className="text-3xl font-bold text-white mb-4">{t.about.processTitle}</h3>
+                    <div className="w-16 h-1 bg-teal-500 mx-auto"></div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    {t.about.steps.map((item, idx) => (
+                      <div key={idx} className="relative pt-8">
+                        {idx !== t.about.steps.length - 1 && (
+                          <div className="hidden md:block absolute top-12 left-1/2 w-full h-[1px] bg-neutral-800"></div>
+                        )}
+                        <div className="relative z-10 flex flex-col items-center text-center">
+                          <div className="w-16 h-16 rounded-full bg-neutral-950 border-2 border-teal-500 flex items-center justify-center text-xl font-bold text-teal-400 mb-6">
+                            0{idx + 1}
+                          </div>
+                          <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
+                          <p className="text-neutral-400 text-sm px-4">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </div>
+          );
+        }
+
+        function ContactView({ t }) {
+          const handleSubmit = (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const type = formData.get('project_type');
+            const message = formData.get('message');
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Nombre Completo</label>
-                <input 
-                  type="text" 
-                  name="name"
-                  required
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors"
-                  placeholder="Tu nombre o empresa"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Correo Electrónico</label>
-                <input 
-                  type="email" 
-                  name="email"
-                  required
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors"
-                  placeholder="tucorreo@ejemplo.com"
-                />
-              </div>
+            const subject = encodeURIComponent(`Nuevo contacto web: ${name} - ${type}`);
+            const body = encodeURIComponent(`Nombre: ${name}\nCorreo de contacto: ${email}\nTipo de Proyecto: ${type}\n\nMensaje:\n${message}`);
+            
+            window.location.href = `mailto:info@jmm-arquitectura.art?subject=${subject}&body=${body}`;
+            form.reset();
+          };
 
-              <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Tipo de Proyecto</label>
-                <select name="project_type" className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors appearance-none">
-                  <option value="">Selecciona una opción</option>
-                  <option value="render_residencial">Render Residencial</option>
-                  <option value="render_comercial">Render Comercial</option>
-                  <option value="planos">Diseño de Planos</option>
-                  <option value="mobiliario">Diseño de Mobiliario</option>
-                  <option value="otro">Otro Servicio</option>
-                </select>
+          return (
+            <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24">
+              <header className="py-20 bg-neutral-950 text-center px-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.contact.title}</h1>
+                <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
+                <p className="text-neutral-400 max-w-2xl mx-auto text-lg">{t.contact.desc}</p>
+              </header>
+
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                  
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-8">{t.contact.infoTitle}</h3>
+                    <div className="space-y-8">
+                      <div className="flex items-start">
+                        <div className="w-12 h-12 bg-neutral-800/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
+                          <MessageCircle size={24} />
+                        </div>
+                        <div>
+                          <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">{t.contact.lblPhone}</h4>
+                          <a href="https://wa.me/qr/6M5XLFRJM3K6P1" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-teal-400 transition-colors">{t.contact.valPhone}</a>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-12 h-12 bg-neutral-800/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
+                          <Send size={24} />
+                        </div>
+                        <div>
+                          <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">{t.contact.lblTelegram}</h4>
+                          <a href="https://t.me/JMM_RENDER_STUDIO" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-teal-400 transition-colors">t.me/JMM_RENDER_STUDIO</a>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-12 h-12 bg-neutral-800/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
+                          <Mail size={24} />
+                        </div>
+                        <div>
+                          <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">{t.contact.lblEmail}</h4>
+                          <a href="mailto:info@jmm-arquitectura.art" className="text-xl text-white hover:text-teal-400 transition-colors">info@jmm-arquitectura.art</a>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <div className="w-12 h-12 bg-neutral-800/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-teal-500 mr-6 flex-shrink-0">
+                          <Instagram size={24} />
+                        </div>
+                        <div>
+                          <h4 className="text-neutral-400 text-sm uppercase tracking-wider mb-1">{t.contact.lblIg}</h4>
+                          <a href="https://instagram.com/jmm_render_studio" target="_blank" rel="noopener noreferrer" className="text-xl text-white hover:text-teal-400 transition-colors">@jmm_render_studio</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-12 p-8 bg-neutral-950 border border-neutral-800 rounded-sm">
+                      <p className="text-neutral-300 italic">{t.contact.quote}</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-neutral-950 p-8 md:p-10 rounded-sm border border-neutral-800">
+                    <h3 className="text-2xl font-bold text-white mb-8">{t.contact.formTitle}</h3>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">{t.contact.name}</label>
+                        <input name="name" type="text" required className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors" placeholder={t.contact.namePh} />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">{t.contact.email}</label>
+                        <input name="email" type="email" required className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors" placeholder={t.contact.emailPh} />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">{t.contact.type}</label>
+                        <select name="project_type" className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors appearance-none">
+                          {t.contact.typeOpt.map((opt, idx) => (
+                            <option key={idx} value={idx === 0 ? "" : opt}>{opt}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">{t.contact.msg}</label>
+                        <textarea name="message" rows="4" required className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors resize-none" placeholder={t.contact.msgPh}></textarea>
+                      </div>
+                      <button type="submit" className="w-full bg-teal-600 hover:bg-teal-500 text-white font-medium uppercase tracking-widest py-4 rounded-sm transition-colors mt-4">
+                        {t.contact.submit}
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
+            </div>
+          );
+        }
 
-              <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Mensaje / Detalles</label>
-                <textarea 
-                  rows="4" 
-                  name="message"
-                  required
-                  className="w-full bg-neutral-900 border border-neutral-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-colors resize-none"
-                  placeholder="Cuéntanos brevemente sobre la escala, tiempos y requerimientos del proyecto."
-                ></textarea>
-              </div>
-
-              <button 
-                type="submit"
-                className="w-full bg-teal-600 hover:bg-teal-500 text-white font-medium uppercase tracking-widest py-4 rounded-sm transition-colors mt-4"
-              >
-                Enviar Mensaje
-              </button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  );
-}
+        const root = createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
