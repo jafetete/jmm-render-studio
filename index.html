@@ -586,14 +586,16 @@
 
               {/* GALERÍA MODAL OPTIMIZADA */}
               {activeProject && (
-                <div className="fixed inset-0 z-[100] bg-black/98 flex flex-col" onClick={closeGallery}>
+                <div className="fixed inset-0 z-[100] bg-black/98 flex flex-col fade-in" onClick={closeGallery}>
                   <button onClick={closeGallery} className="absolute top-4 right-4 md:top-8 md:right-8 text-white z-[110] transition-colors hover:text-teal-400 p-2">
                     <X size={32} />
                   </button>
 
                   <div className="flex-1 flex items-center justify-center p-4 md:p-12 relative w-full h-full overflow-hidden">
+                    
+                    {/* Contenedor de la Imagen (Aislado para que no arrastre los textos) */}
                     <div 
-                      className="relative inline-flex flex-col items-center justify-center max-w-full max-h-full"
+                      className="relative flex items-center justify-center w-full h-full max-w-full max-h-full"
                       onMouseEnter={() => setIsGalleryPaused(true)}
                       onMouseLeave={() => setIsGalleryPaused(false)}
                       onTouchStart={() => setIsGalleryPaused(true)}
@@ -603,42 +605,45 @@
                         key={currentImageIndex}
                         src={activeProject.gallery[currentImageIndex].src} 
                         alt={`${activeProject.title} - View ${currentImageIndex + 1}`} 
-                        className="block max-w-full max-h-[75vh] md:max-h-[85vh] object-contain drop-shadow-2xl animate-in fade-in duration-500 rounded-sm z-0"
+                        className="block max-w-full max-h-[75vh] md:max-h-[85vh] object-contain drop-shadow-2xl fade-in rounded-sm z-0"
                         onClick={(e) => e.stopPropagation()}
                       />
-                      
-                      {/* Sombra base estricta pegada a la imagen para proteger la legibilidad */}
-                      <div className="absolute inset-x-0 bottom-0 h-3/4 md:h-1/2 bg-gradient-to-t from-black/100 via-black/60 to-transparent opacity-100 pointer-events-none rounded-b-sm z-10"></div>
-
-                      <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-6 right-6 md:bottom-8 md:right-8 h-10 md:h-16 w-auto invert opacity-30 pointer-events-none z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" />
-                      
-                      <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 text-left z-20 pointer-events-none max-w-[85%]">
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-heading tracking-wide drop-shadow-[0_4px_6px_rgba(0,0,0,1)]">
-                            {activeProject.title}
-                        </h3>
-                        <p className="text-sm md:text-base text-neutral-100 mb-2 font-medium italic drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                            {activeProject.gallery[currentImageIndex].desc || t.portfolio.lblGallery}
-                        </p>
-                        <div className="text-teal-300 text-xs md:text-sm font-semibold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                           {activeProject.year && <span>{activeProject.year}</span>}
-                           {activeProject.area && <span className="mx-2 text-white/50">|</span>}
-                           {activeProject.area && <span>{activeProject.area}</span>}
-                           {activeProject.location && <span className="mx-2 text-white/50">|</span>}
-                           {activeProject.location && <span>{activeProject.location}</span>}
-                        </div>
-                      </div>
-
-                      {activeProject.gallery.length > 1 && (
-                        <>
-                          <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 text-white z-30 transition-all bg-black/40 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg hover:scale-110">
-                            <ChevronLeft size={24} className="md:w-7 md:h-7" />
-                          </button>
-                          <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 text-white z-30 transition-all bg-black/40 hover:bg-teal-500 p-2 md:p-3 rounded-full shadow-lg hover:scale-110">
-                            <ChevronRight size={24} className="md:w-7 md:h-7" />
-                          </button>
-                        </>
-                      )}
                     </div>
+                      
+                    {/* Sombra base estricta anclada A LA PANTALLA para proteger la legibilidad */}
+                    <div className="absolute inset-x-0 bottom-0 h-48 md:h-64 bg-gradient-to-t from-black/100 via-black/60 to-transparent opacity-100 pointer-events-none z-10"></div>
+
+                    {/* Logo Marca de agua anclado A LA PANTALLA */}
+                    <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-6 right-6 md:bottom-12 md:right-12 h-10 md:h-14 w-auto invert opacity-30 pointer-events-none z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] fade-in" />
+                    
+                    {/* Textos anclados A LA PANTALLA (Evita el bug del salto cuando la foto carga) */}
+                    <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-left z-20 pointer-events-none max-w-[85%] md:max-w-[60%] fade-in">
+                      <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 font-heading tracking-wide drop-shadow-[0_4px_6px_rgba(0,0,0,1)]">
+                          {activeProject.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-neutral-100 mb-3 font-medium italic drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                          {activeProject.gallery[currentImageIndex].desc || t.portfolio.lblGallery}
+                      </p>
+                      <div className="text-teal-300 text-xs md:text-sm font-semibold tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                         {activeProject.year && <span>{activeProject.year}</span>}
+                         {activeProject.area && <span className="mx-2 text-white/50">|</span>}
+                         {activeProject.area && <span>{activeProject.area}</span>}
+                         {activeProject.location && <span className="mx-2 text-white/50">|</span>}
+                         {activeProject.location && <span>{activeProject.location}</span>}
+                      </div>
+                    </div>
+
+                    {activeProject.gallery.length > 1 && (
+                      <>
+                        {/* Botones de navegación reposicionados y anclados a los costados de la pantalla */}
+                        <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white z-30 transition-all bg-black/40 hover:bg-teal-500 p-2 md:p-4 rounded-full shadow-lg hover:scale-110 fade-in">
+                          <ChevronLeft size={28} className="md:w-8 md:h-8" />
+                        </button>
+                        <button onClick={nextImage} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white z-30 transition-all bg-black/40 hover:bg-teal-500 p-2 md:p-4 rounded-full shadow-lg hover:scale-110 fade-in">
+                          <ChevronRight size={28} className="md:w-8 md:h-8" />
+                        </button>
+                      </>
+                    )}
                   </div>
 
                   {activeProject.gallery.length > 1 && (
@@ -729,8 +734,8 @@
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {PORTFOLIO_ITEMS.filter(item => [2, 6, 7].includes(item.id)).map((item, idx) => (
-                      <Reveal key={item.id} delay={idx * 200} direction="up" className="group relative overflow-hidden rounded-sm cursor-pointer block" onClick={() => navigateTo('portfolio')}>
-                        <img src={item.img} alt={item.title} className="w-full rounded-sm aspect-[4/3] object-cover transition-transform duration-[1500ms] md:group-hover:scale-110" loading="lazy" />
+                      <Reveal key={item.id} delay={idx * 200} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => navigateTo('portfolio')}>
+                        <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover transition-transform duration-[1500ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
                         
                         <div className="p-4 md:absolute md:inset-0 md:bg-gradient-to-t md:from-black/90 md:via-black/30 md:to-transparent md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:flex md:flex-col md:justify-end">
                           <span className="text-teal-400 text-xs font-bold uppercase tracking-widest mb-1 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500">{t.portfolio.filters[item.category] || item.category}</span>
@@ -775,8 +780,8 @@
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredItems.map((item, idx) => (
-                    <Reveal key={item.id} delay={idx * 150} direction="up" className="group relative overflow-hidden bg-neutral-800 rounded-sm cursor-pointer block" onClick={() => openGallery(item)}>
-                      <img src={item.img} alt={item.title} className="w-full aspect-square object-cover rounded-sm transition-transform duration-[2000ms] md:group-hover:scale-110 opacity-80 md:group-hover:opacity-100" loading="lazy" />
+                    <Reveal key={item.id} delay={idx * 150} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => openGallery(item)}>
+                      <img src={item.img} alt={item.title} className="w-full aspect-square object-cover transition-transform duration-[2000ms] scale-[1.02] md:group-hover:scale-110 opacity-80 md:group-hover:opacity-100" loading="lazy" />
                       <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto invert opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-50 md:group-hover:scale-110 drop-shadow-md" />
                       
                       <div className="p-4 md:absolute md:inset-0 md:bg-black/70 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:flex md:items-center md:justify-center md:z-30 md:backdrop-blur-[2px]">
