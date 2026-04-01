@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & METATAGS -->
     <title>JMM Render Studio | Renders 3D y Arquitectura en Costa Rica</title>
     <meta name="description" content="Estudio de arquitectura en Costa Rica especializado en renders 3D fotorrealistas, diseño de planos, levantamientos arquitectónicos y visualización de proyectos. Architectural 3D rendering and visualization studio in Costa Rica.">
     <meta name="keywords" content="renders 3D, arquitectura Costa Rica, diseño de interiores, levantamientos arquitectónicos, planos, visualización 3D, Heredia, renders inmobiliarios, JMM Render Studio, 3D rendering Costa Rica, architectural visualization, 3D architectural renders, interior design rendering, virtual tours, real estate renders, architectural drafting, Guanacaste, Puntarenas, Santa Elena, Papagayo, Barrio Escalante, Santa Ana, Escazú">
     <meta name="author" content="JMM Render Studio">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="JMM Render Studio | Del Render a la Realidad">
     <meta property="og:description" content="Especialistas en representación visual arquitectónica y desarrollo de proyectos integrales en Costa Rica. Architectural visualization experts.">
     <meta property="og:image" content="https://jmm-arquitectura.art/Portada-1.png">
     <meta property="og:url" content="https://jmm-arquitectura.art/">
 
-    <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,7 +36,6 @@
     
     <link rel="icon" type="image/png" href="Logo-JMM-blanco.png">
 
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-33ZSW33DCR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -101,11 +97,7 @@
             text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9), 0px 0px 4px rgba(0, 0, 0, 1);
         }
 
-        /* =============================================
-           ELEGANT ANIMATION SUITE
-           ============================================= */
-
-        /* Custom Cursor */
+        /* Animation Suite */
         @media (pointer: fine) {
             body { cursor: none; }
         }
@@ -134,13 +126,11 @@
         .cursor-hover .custom-cursor { width: 18px; height: 18px; opacity: 0.7; }
         .cursor-hover .custom-cursor-ring { width: 54px; height: 54px; border-color: rgba(20, 184, 166, 0.9); }
 
-        /* Hide cursor on touch devices */
         @media (pointer: coarse), (hover: none) {
             .custom-cursor, .custom-cursor-ring { display: none !important; }
             body { cursor: auto !important; }
         }
 
-        /* Floating Hero Particles */
         @keyframes floatParticle {
             0%   { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0; }
             10%  { opacity: 1; }
@@ -157,7 +147,6 @@
             pointer-events: none;
         }
 
-        /* Hover Shimmer Effect */
         @keyframes shimmer {
             0%   { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -171,7 +160,6 @@
             animation: shimmer 6s linear infinite;
         }
 
-        /* Animated Decorative Line */
         @keyframes lineExpand {
             from { transform: scaleX(0); }
             to   { transform: scaleX(1); }
@@ -181,14 +169,12 @@
             animation: lineExpand 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Teal Pulse Glow */
         @keyframes tealPulse {
             0%, 100% { box-shadow: 0 0 0px rgba(20, 184, 166, 0); }
             50%       { box-shadow: 0 0 24px rgba(20, 184, 166, 0.4); }
         }
         .pulse-glow { animation: tealPulse 3s ease-in-out infinite; }
 
-        /* Subtle Hero Scanline */
         @keyframes scanline {
             0%   { transform: translateY(-100%); }
             100% { transform: translateY(100vh); }
@@ -203,7 +189,6 @@
             z-index: 5;
         }
 
-        /* Animated Counter */
         @keyframes countUp {
             from { opacity: 0; transform: translateY(12px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -212,7 +197,6 @@
             animation: countUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Animated Service Cards */
         .service-card {
             position: relative;
             overflow: hidden;
@@ -237,12 +221,6 @@
             animation: shimmer 1.5s linear infinite;
         }
 
-        /* Hero Parallax Depth */
-        .hero-parallax-layer {
-            transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Animated Nav Link Underline */
         .nav-link-animated {
             position: relative;
         }
@@ -261,7 +239,6 @@
             width: 100%;
         }
 
-        /* Enhanced Reveal with Blur */
         .reveal-blur-in {
             animation: revealBlur 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
@@ -270,7 +247,6 @@
             to   { opacity: 1; filter: blur(0); transform: translateY(0); }
         }
 
-        /* Scroll Progress Bar */
         .scroll-progress {
             position: fixed;
             top: 0; left: 0;
@@ -281,7 +257,6 @@
             transition: none;
         }
 
-        /* 3D Perspective Portfolio Cards */
         .portfolio-card-3d {
             transform-style: preserve-3d;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -290,7 +265,6 @@
             transform: perspective(800px) rotateX(3deg) rotateY(-3deg) scale(1.02);
         }
 
-        /* Slogan Typing Animation */
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50%       { opacity: 0; }
@@ -299,7 +273,6 @@
             animation: blink 1s step-end infinite;
         }
 
-        /* Animated Footer Wave */
         @keyframes waveFloat {
             0%, 100% { transform: translateY(0); }
             50%       { transform: translateY(-8px); }
@@ -308,7 +281,6 @@
             animation: waveFloat 2s ease-in-out infinite;
         }
 
-        /* Ripple Effect Button */
         .btn-ripple {
             position: relative;
             overflow: hidden;
@@ -329,7 +301,6 @@
             opacity: 0;
         }
 
-        /* Contact Icon Bounce */
         @keyframes iconBounce {
             0%, 100% { transform: scale(1); }
             30%       { transform: scale(1.2) rotate(-8deg); }
@@ -339,7 +310,6 @@
             animation: iconBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
         }
 
-        /* Noise Texture Overlay */
         .noise-overlay::after {
             content: '';
             position: absolute;
@@ -350,7 +320,6 @@
             z-index: 1;
         }
 
-        /* Smooth Gallery Crossfade */
         @keyframes galleryFadeIn {
             from { opacity: 0; }
             to   { opacity: 1; }
@@ -359,7 +328,6 @@
             animation: galleryFadeIn 0.6s ease forwards;
         }
 
-        /* Gallery Text Fade */
         @keyframes galleryTextIn {
             from { opacity: 0; transform: translateY(6px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -623,7 +591,7 @@
                     ],
                     srvTitle: 'Services', srvDesc: 'Tap each service to explore technical details and visual examples.', srvB1: 'High precision and technical detail.', srvB2: 'Deliveries in industry-standard formats.' 
                 },
-                portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', comercial: 'Commercial' }, lblGallery: 'Gallery' },
+                portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', comercial: 'Commercial' }, lblGallery: 'Gallery', viewMore: 'View Project' },
                 about: { 
                     title: 'About Us', sub: 'Commitment to efficient and sustainable development.', p1: '<strong>JMM</strong> stands for Arq. Jafett Rivera, Arq. Melissa Rivera, and Eng. Melissa Santana, the founders of the company. At <strong>JMM Render Studio</strong>, we are more than image creators; we are technical translators. We convert complex specifications into visual experiences that communicate value and build trust.', p2: 'Our mission is to empower architects, developers, and designers through cutting-edge visual tools, ensuring every project is perfectly understood before the first stone is laid.', processTitle: 'The JMM Process', processDesc: 'Tap each step to learn more.',
                     steps: [
@@ -664,7 +632,7 @@
                     ],
                     srvTitle: 'Servicios', srvDesc: 'Toca cada servicio para explorar detalles técnicos y ejemplos visuales.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.' 
                 },
-                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residential: 'Residencial', comercial: 'Comercial' }, lblGallery: 'Galería' },
+                portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residential: 'Residencial', comercial: 'Comercial' }, lblGallery: 'Galería', viewMore: 'Ver más' },
                 about: { 
                     title: 'Sobre Nosotros', sub: 'Compromiso con el desarrollo eficiente y sostenible.', p1: '<strong>JMM</strong> son las siglas de Arq. Jafett Rivera, Arq. Melissa Rivera e Ing. Melissa Santana, los fundadores de la empresa. En <strong>JMM Render Studio</strong>, somos más que creadores de imágenes; somos traductores técnicos. Convertimos especificaciones complejas en experiencias visuales que comunican valor y generan confianza.', p2: 'Nuestra misión es empoderar a arquitectos, desarrolladores y diseñadores mediante herramientas visuales de vanguardia, asegurando que cada proyecto se entienda a la perfección antes de colocar la primera piedra.', processTitle: 'El Proceso JMM', processDesc: 'Toca cada paso para conocer nuestra metodología.',
                     steps: [
@@ -985,7 +953,7 @@
                   {HERO_IMAGES.map((img, index) => (
                     <img 
                       key={index} src={img} alt={`Hero Architectural Render ${index + 1}`} 
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-[4000ms] ease-in-out hero-parallax-layer ${
+                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out ${
                         index === currentBg ? 'opacity-60 scale-105' : 'opacity-0 scale-100'
                       }`} 
                       loading={index === 0 ? "eager" : "lazy"}
@@ -1076,7 +1044,7 @@
                           <span className="text-teal-400 text-xs font-bold uppercase tracking-widest mb-1 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 text-shadow-strong">{t.portfolio.filters[item.category] || item.category}</span>
                           <h4 className="text-white text-xl md:text-3xl font-bold font-heading tracking-wide transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 md:delay-75 text-shadow-strong">{item.title}</h4>
                           <div className="mt-3 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 md:delay-100 hidden md:block">
-                            <span className="inline-block px-5 py-1.5 bg-teal-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(20,184,166,0.5)] pointer-events-auto">Ver más</span>
+                            <span className="inline-block px-5 py-1.5 bg-teal-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(20,184,166,0.5)] pointer-events-auto">{t.portfolio.viewMore}</span>
                           </div>
                         </div>
                       </Reveal>
@@ -1130,7 +1098,7 @@
                           <h4 className="text-white text-xl md:text-3xl font-bold font-heading tracking-wide md:px-4 text-shadow-strong mb-2">{item.title}</h4>
                           <span className="block text-neutral-300 font-bold text-xs mb-4 md:hidden text-shadow-strong">{item.year} | {item.area} | {item.location}</span>
                           <span className="mt-2 inline-block px-6 py-2 bg-teal-600 text-white text-xs font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(20,184,166,0.4)] pointer-events-auto transition-colors">
-                            Ver más
+                            {t.portfolio.viewMore}
                           </span>
                         </div>
                       </div>
@@ -1531,10 +1499,6 @@
         root.render(<App />);
     </script>
     <script>
-    /* =============================================
-       ANIMATION ENGINE
-       ============================================= */
-
     if (window.matchMedia("(pointer: fine)").matches) {
         const cursor = document.getElementById('customCursor');
         const cursorRing = document.getElementById('customCursorRing');
@@ -1599,19 +1563,6 @@
         }
     }
     setTimeout(spawnParticles, 400);
-
-    document.addEventListener('mousemove', (e) => {
-        const layers = document.querySelectorAll('.hero-parallax-layer');
-        if (!layers.length) return;
-        const cx = window.innerWidth / 2;
-        const cy = window.innerHeight / 2;
-        const dx = (e.clientX - cx) / cx;
-        const dy = (e.clientY - cy) / cy;
-        layers.forEach((layer, i) => {
-            const depth = (i + 1) * 4;
-            layer.style.transform = `translate(${dx * depth}px, ${dy * depth}px)`;
-        });
-    });
 
     function animateCounter(el) {
         const target = parseInt(el.getAttribute('data-target'), 10);
