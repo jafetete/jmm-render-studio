@@ -528,7 +528,8 @@
             { src: 'coreys-dept-7.png', desc: 'Vista Exterior - Terraza Techada con Vista' },
             { src: 'coreys-dept-8.jpeg', desc: 'Realidad - Integración de Mobiliario Exterior' },
             { src: 'coreys-dept-9.png', desc: 'Vista Interior - Sala de Estar Moderna' },
-            { src: 'coreys-dept-10.jpg', desc: 'Visita Técnica - Terraza en construcción' }
+            { src: 'coreys-dept-10.jpg', desc: 'Visita Técnica - Terraza en construcción' },
+            { src: 'coreys-dept-11.png', desc: 'Vista Interior - Baño completo habitación principal' }
           ] },
           { id: 7, category: 'residential', title: 'Casa Ingrid', year: '2022', area: '120 m² - 230 m²', location: 'Desamparados', img: 'casa-desamparados-portada.png', gallery: [
             { src: 'casa-desamparados-1.png', desc: 'Vista Interior - Cocina y Comedor Amplio' },
@@ -552,7 +553,8 @@
             { src: 'mixed-projects-10.png', desc: 'Vista Interior - Habitación Principal con Ventanal' },
             { src: 'mixed-projects-11.png', desc: 'Vista Interior - Diseño de Mueble de TV' },
             { src: 'mixed-projects-12.png', desc: 'Vista Exterior - Hotel Vacacional' },
-            { src: 'mixed-projects-13.png', desc: 'Vista Exterior - Hotel Vacacional' }
+            { src: 'mixed-projects-13.png', desc: 'Vista Exterior - Hotel Vacacional' },
+            { src: 'mixed-projects-14.png', desc: 'Vista Exterior - Fachada exterior Steve' }
           ] },
           { id: 9, category: 'comercial', title: 'Laurent', year: '2025', area: '850 m²', location: 'Tamarindo', img: 'laurent-portada.png', gallery: [
             { src: 'laurent-1.png', desc: 'Vista Interior - Dormitorio Principal' },
@@ -565,6 +567,30 @@
             { src: 'laurent-8.png', desc: 'Vista Interior - Opciones de Materiales Cocina' },
             { src: 'laurent-10.png', desc: 'Vista Interior - Detalle de Cocina' },
             { src: 'laurent-9.png', desc: 'Vista Exterior - Exterior Condominio Nocturno' }
+          ] },
+          { id: 10, category: 'residential', title: 'Fritz & Sabine', year: '2023', area: '293 m²', location: 'Matapalo, Guanacaste', img: 'fritz-sabine-portada.png', gallery: [
+            { src: 'fritz-sabine-1.png', desc: 'Vista Exterior - Terraza' },
+            { src: 'fritz-sabine-2.png', desc: 'Vista Interior - Cocina' },
+            { src: 'fritz-sabine-3.png', desc: 'Vista Interior - Dormitorio' },
+            { src: 'fritz-sabine-4.png', desc: 'Vista Interior - Sala' },
+            { src: 'fritz-sabine-5.png', desc: 'Vista Exterior - Fachada externa' },
+            { src: 'fritz-sabine-6.png', desc: 'Vista Exterior - Fachada externa' }
+          ] },
+          { id: 11, category: 'residential', title: 'Greer', year: '2023', area: '310 m²', location: 'Playa Grande', img: 'greer-portada.png', gallery: [
+            { src: 'greer-1.png', desc: 'Vista Interior - Baño' },
+            { src: 'greer-2.png', desc: 'Vista Interior - Cocina' },
+            { src: 'greer-3.png', desc: 'Vista Exterior - Comedor y Terraza' },
+            { src: 'greer-4.png', desc: 'Vista Exterior - Ducha exterior' },
+            { src: 'greer-5.png', desc: 'Vista Interior - Dormitorio' },
+            { src: 'greer-6.png', desc: 'Vista Exterior - Piscina' },
+            { src: 'greer-7.png', desc: 'Vista Interior - Baño' }
+          ] },
+          { id: 12, category: 'residential', title: 'Alexis', year: '2024', area: '500 m²', location: 'Miami', img: 'alexis-portada.png', gallery: [
+            { src: 'alexis-1.png', desc: 'Vista Exterior - Fachada externa' },
+            { src: 'alexis-2.png', desc: 'Vista Exterior - Fachada externa' },
+            { src: 'alexis-3.png', desc: 'Vista Exterior - Fachada externa' },
+            { src: 'alexis-4.png', desc: 'Vista Exterior - Fachada externa' },
+            { src: 'alexis-5.png', desc: 'Vista Exterior - Fachada externa' }
           ] }
         ];
 
@@ -997,7 +1023,7 @@
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {[
-                      { num: 32, suffix: '+', label: t.portfolio.filters.all === 'All' ? 'Projects' : 'Proyectos' },
+                      { num: 47, suffix: '+', label: t.portfolio.filters.all === 'All' ? 'Projects' : 'Proyectos' },
                       { num: 8, suffix: '+', label: t.portfolio.filters.all === 'All' ? 'Years of experience' : 'Años de experiencia' },
                       { num: 100, suffix: '%', label: t.portfolio.filters.all === 'All' ? 'Satisfied clients' : 'Clientes satisfechos' },
                       { num: 5, suffix: '', label: t.portfolio.filters.all === 'All' ? 'Specialized services' : 'Servicios especializados' }
@@ -1216,7 +1242,7 @@
             <div className="animate-in fade-in duration-500 relative min-h-screen pb-24 overflow-hidden">
               <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
                 <img 
-                  src="Portada-2.png" alt="Background" 
+                  src="Portada-7.png" alt="Background" 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
                 />
                 <div className="absolute inset-0 bg-neutral-950/80"></div>
@@ -1269,7 +1295,7 @@
             <div className="animate-in fade-in duration-500 relative min-h-screen overflow-hidden">
               <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
                 <img 
-                  src="Portada-2.png" alt="Background" 
+                  src="Portada-7.png" alt="Background" 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
                 />
                 <div className="absolute inset-0 bg-neutral-950/80"></div>
@@ -1377,14 +1403,22 @@
           };
 
           return (
-            <div className="animate-in fade-in duration-500 bg-neutral-900 min-h-screen pb-24 overflow-hidden">
-              <Reveal direction="down" className="py-20 bg-neutral-950 text-center px-4">
+            <div className="animate-in fade-in duration-500 relative min-h-screen pb-24 overflow-hidden">
+              <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
+                <img 
+                  src="Portada-7.png" alt="Background" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
+                />
+                <div className="absolute inset-0 bg-neutral-950/80"></div>
+              </div>
+
+              <Reveal direction="down" className="py-20 text-center px-4 relative z-10">
                 <h1 className="text-5xl md:text-6xl font-heading font-normal tracking-wide text-white mb-4">{t.contact.title}</h1>
                 <div className="w-16 h-1 bg-teal-500 mx-auto mb-6"></div>
                 <p className="text-neutral-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">{t.contact.desc}</p>
               </Reveal>
 
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                   
                   <Reveal direction="left">
