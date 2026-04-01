@@ -145,6 +145,7 @@
             border-radius: 50%;
             animation: floatParticle linear infinite;
             pointer-events: none;
+            z-index: 25;
         }
 
         @keyframes shimmer {
@@ -940,33 +941,41 @@
           const [currentBg, setCurrentBg] = useState(0);
 
           useEffect(() => {
+            // Precargar imágenes en memoria para evitar salto sin animación en la primera ronda
+            HERO_IMAGES.forEach((src) => {
+              const img = new Image();
+              img.src = src;
+            });
+
             const timer = setInterval(() => {
               setCurrentBg((prev) => (prev + 1) % HERO_IMAGES.length);
-            }, 3500); 
+            }, 4500); // 3.5s de presencia real + 1s de transición (fade)
             return () => clearInterval(timer);
           }, []);
 
           return (
             <div className="animate-in fade-in duration-700">
-              <section className="relative h-[100svh] md:h-[90vh] w-full flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-neutral-950">
+              <section className="relative h-[100svh] md:h-[90vh] w-full flex items-center justify-center overflow-hidden bg-neutral-950">
+                <div className="absolute inset-0 z-0">
                   {HERO_IMAGES.map((img, index) => (
                     <img 
-                      key={index} src={img} alt={`Hero Architectural Render ${index + 1}`} 
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out ${
-                        index === currentBg ? 'opacity-60 scale-105' : 'opacity-0 scale-100'
+                      key={index} src={img} alt="" 
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1000ms] ease-in-out ${
+                        index === currentBg ? 'opacity-100 z-10' : 'opacity-0 z-0'
                       }`} 
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading="eager"
                     />
                   ))}
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
-                  <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1s both'}}></div>
-                  <div className="absolute top-8 right-8 w-16 h-16 border-t border-r border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1.2s both'}}></div>
-                  <div className="absolute bottom-8 left-8 w-16 h-16 border-b border-l border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1.4s both'}}></div>
-                  <div className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1.6s both'}}></div>
+                  <div className="absolute inset-0 bg-neutral-950/60 z-20 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent z-20 pointer-events-none"></div>
+                  {/* Decorative corner lines */}
+                  <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-teal-500/40 pointer-events-none z-30" style={{animation:'fadeIn 2s ease 1s both'}}></div>
+                  <div className="absolute top-8 right-8 w-16 h-16 border-t border-r border-teal-500/40 pointer-events-none z-30" style={{animation:'fadeIn 2s ease 1.2s both'}}></div>
+                  <div className="absolute bottom-8 left-8 w-16 h-16 border-b border-l border-teal-500/40 pointer-events-none z-30" style={{animation:'fadeIn 2s ease 1.4s both'}}></div>
+                  <div className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-teal-500/40 pointer-events-none z-30" style={{animation:'fadeIn 2s ease 1.6s both'}}></div>
                 </div>
                 
-                <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+                <div className="relative z-30 text-center px-4 max-w-5xl mx-auto">
                   <div className="mb-4 flex items-center justify-center gap-3" style={{opacity:0, animation:'fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards'}}>
                     <div className="h-px w-12 bg-teal-500/60"></div>
                     <h2 className="text-teal-400 font-normal tracking-[0.3em] text-sm md:text-base uppercase font-heading">{t.hero.sub}</h2>
