@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMM Render Studio | From Render to Reality</title>
+    
+    <!-- SEO & METATAGS -->
+    <title>JMM Render Studio | Renders 3D y Arquitectura en Costa Rica</title>
+    <meta name="description" content="Estudio de arquitectura en Costa Rica especializado en renders 3D fotorrealistas, diseño de planos, levantamientos arquitectónicos y visualización de proyectos. Architectural 3D rendering and visualization studio in Costa Rica.">
+    <meta name="keywords" content="renders 3D, arquitectura Costa Rica, diseño de interiores, levantamientos arquitectónicos, planos, visualización 3D, Heredia, renders inmobiliarios, JMM Render Studio, 3D rendering Costa Rica, architectural visualization, 3D architectural renders, interior design rendering, virtual tours, real estate renders, architectural drafting, Guanacaste, Puntarenas, Santa Elena, Papagayo, Barrio Escalante, Santa Ana, Escazú">
+    <meta name="author" content="JMM Render Studio">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JMM Render Studio | Del Render a la Realidad">
+    <meta property="og:description" content="Especialistas en representación visual arquitectónica y desarrollo de proyectos integrales en Costa Rica. Architectural visualization experts.">
+    <meta property="og:image" content="https://jmm-arquitectura.art/Portada-1.png">
+    <meta property="og:url" content="https://jmm-arquitectura.art/">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "JMM Render Studio",
+      "image": "https://jmm-arquitectura.art/Logo-JMM.png",
+      "description": "Estudio especializado en renders 3D fotorrealistas, diseño arquitectónico y visualización en Costa Rica. 3D Architectural Rendering Studio.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Heredia",
+        "addressCountry": "CR"
+      },
+      "url": "https://jmm-arquitectura.art/",
+      "telephone": "+506",
+      "priceRange": "$$"
+    }
+    </script>
     
     <link rel="icon" type="image/png" href="Logo-JMM.png">
 
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-33ZSW33DCR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -69,10 +102,10 @@
         }
 
         /* =============================================
-           ELEGANT ANIMATION SUITE — JMM Render Studio
+           ELEGANT ANIMATION SUITE
            ============================================= */
 
-        /* Cursor personalizado solo en pantallas con mouse */
+        /* Custom Cursor */
         @media (pointer: fine) {
             body { cursor: none; }
         }
@@ -101,13 +134,13 @@
         .cursor-hover .custom-cursor { width: 18px; height: 18px; opacity: 0.7; }
         .cursor-hover .custom-cursor-ring { width: 54px; height: 54px; border-color: rgba(20, 184, 166, 0.9); }
 
-        /* Ocultar cursor en dispositivos táctiles (móviles/tablets) */
+        /* Hide cursor on touch devices */
         @media (pointer: coarse), (hover: none) {
             .custom-cursor, .custom-cursor-ring { display: none !important; }
             body { cursor: auto !important; }
         }
 
-        /* Partículas flotantes en el hero */
+        /* Floating Hero Particles */
         @keyframes floatParticle {
             0%   { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0; }
             10%  { opacity: 1; }
@@ -124,7 +157,7 @@
             pointer-events: none;
         }
 
-        /* Texto con efecto de brillo al pasar cursor */
+        /* Hover Shimmer Effect */
         @keyframes shimmer {
             0%   { background-position: -200% center; }
             100% { background-position: 200% center; }
@@ -138,7 +171,7 @@
             animation: shimmer 6s linear infinite;
         }
 
-        /* Línea decorativa animada */
+        /* Animated Decorative Line */
         @keyframes lineExpand {
             from { transform: scaleX(0); }
             to   { transform: scaleX(1); }
@@ -148,14 +181,14 @@
             animation: lineExpand 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Glow pulsante en elementos teal */
+        /* Teal Pulse Glow */
         @keyframes tealPulse {
             0%, 100% { box-shadow: 0 0 0px rgba(20, 184, 166, 0); }
             50%       { box-shadow: 0 0 24px rgba(20, 184, 166, 0.4); }
         }
         .pulse-glow { animation: tealPulse 3s ease-in-out infinite; }
 
-        /* Scanline sutil en el hero */
+        /* Subtle Hero Scanline */
         @keyframes scanline {
             0%   { transform: translateY(-100%); }
             100% { transform: translateY(100vh); }
@@ -170,7 +203,7 @@
             z-index: 5;
         }
 
-        /* Counter animado */
+        /* Animated Counter */
         @keyframes countUp {
             from { opacity: 0; transform: translateY(12px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -179,7 +212,7 @@
             animation: countUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        /* Tarjetas de servicio con borde animado */
+        /* Animated Service Cards */
         .service-card {
             position: relative;
             overflow: hidden;
@@ -204,12 +237,12 @@
             animation: shimmer 1.5s linear infinite;
         }
 
-        /* Imagen hero con efecto de profundidad al mover mouse */
+        /* Hero Parallax Depth */
         .hero-parallax-layer {
             transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Nav link con underline animado */
+        /* Animated Nav Link Underline */
         .nav-link-animated {
             position: relative;
         }
@@ -228,7 +261,7 @@
             width: 100%;
         }
 
-        /* Reveal mejorado con blur */
+        /* Enhanced Reveal with Blur */
         .reveal-blur-in {
             animation: revealBlur 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
@@ -237,7 +270,7 @@
             to   { opacity: 1; filter: blur(0); transform: translateY(0); }
         }
 
-        /* Scroll progress bar */
+        /* Scroll Progress Bar */
         .scroll-progress {
             position: fixed;
             top: 0; left: 0;
@@ -248,7 +281,7 @@
             transition: none;
         }
 
-        /* Portfolio cards con efecto de perspectiva 3D */
+        /* 3D Perspective Portfolio Cards */
         .portfolio-card-3d {
             transform-style: preserve-3d;
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -257,7 +290,7 @@
             transform: perspective(800px) rotateX(3deg) rotateY(-3deg) scale(1.02);
         }
 
-        /* Animación de typing para el slogan */
+        /* Slogan Typing Animation */
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50%       { opacity: 0; }
@@ -266,7 +299,7 @@
             animation: blink 1s step-end infinite;
         }
 
-        /* Footer wave animado */
+        /* Animated Footer Wave */
         @keyframes waveFloat {
             0%, 100% { transform: translateY(0); }
             50%       { transform: translateY(-8px); }
@@ -275,7 +308,7 @@
             animation: waveFloat 2s ease-in-out infinite;
         }
 
-        /* Botón con ripple effect */
+        /* Ripple Effect Button */
         .btn-ripple {
             position: relative;
             overflow: hidden;
@@ -296,7 +329,7 @@
             opacity: 0;
         }
 
-        /* Icono de contacto con bounce */
+        /* Contact Icon Bounce */
         @keyframes iconBounce {
             0%, 100% { transform: scale(1); }
             30%       { transform: scale(1.2) rotate(-8deg); }
@@ -306,7 +339,7 @@
             animation: iconBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
         }
 
-        /* Noise texture overlay para profundidad */
+        /* Noise Texture Overlay */
         .noise-overlay::after {
             content: '';
             position: absolute;
@@ -317,7 +350,7 @@
             z-index: 1;
         }
 
-        /* Gallery crossfade suave */
+        /* Smooth Gallery Crossfade */
         @keyframes galleryFadeIn {
             from { opacity: 0; }
             to   { opacity: 1; }
@@ -326,7 +359,7 @@
             animation: galleryFadeIn 0.6s ease forwards;
         }
 
-        /* Texto de galería con fade */
+        /* Gallery Text Fade */
         @keyframes galleryTextIn {
             from { opacity: 0; transform: translateY(6px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -665,7 +698,6 @@
           const t = TRANSLATIONS[lang];
 
           useEffect(() => {
-            // Fuerza a la ventana a empezar arriba al recargar y en cada cambio de vista
             if ('scrollRestoration' in history) {
                 history.scrollRestoration = 'manual';
             }
@@ -680,7 +712,7 @@
             if (!activeProject || activeProject.gallery.length <= 1 || isGalleryPaused) return;
             const timer = setTimeout(() => {
               setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
-            }, 4000); 
+            }, 3500); 
             return () => clearTimeout(timer);
           }, [activeProject, currentImageIndex, isGalleryPaused]);
 
@@ -720,7 +752,7 @@
                 <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
                   <div className="flex justify-between items-center h-24 md:h-32">
                     <div className="flex-shrink-0 cursor-pointer flex items-center gap-4 initial-fade-up" onClick={() => navigateTo('home')}>
-                      <img src="Logo-JMM.png" alt="JMM Logo" className="h-14 md:h-24 w-auto invert" />
+                      <img src="Logo-JMM.png" alt="JMM Logo" className="h-14 md:h-24 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
                       <div className="hidden sm:block">
                         <span className="text-2xl md:text-3xl tracking-widest text-white font-heading font-normal">JMM<span className="text-teal-500">.</span></span>
                         <span className="block text-xs md:text-sm text-neutral-400 tracking-widest uppercase mt-[-4px] font-light">Render Studio</span>
@@ -788,7 +820,7 @@
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                       <div className="mb-6">
-                        <img src="Logo-JMM.png" alt="JMM Logo" className="h-28 md:h-36 w-auto invert opacity-100 transition-transform duration-500 hover:scale-105" />
+                        <img src="Logo-JMM.png" alt="JMM Logo" className="h-28 md:h-36 w-auto opacity-100 transition-transform duration-500 hover:scale-105" style={{ filter: 'brightness(0) invert(1)' }} />
                       </div>
                       <p className="text-teal-100/80 mb-8 text-sm leading-relaxed max-w-sm mt-4 font-light">
                         {t.footer.desc}
@@ -873,15 +905,13 @@
 
                   <div
                     className="flex-1 flex items-center justify-center p-4 md:p-12 relative w-full h-full overflow-hidden"
-                    onMouseEnter={() => setIsGalleryPaused(true)}
-                    onMouseLeave={() => setIsGalleryPaused(false)}
-                    onTouchStart={() => setIsGalleryPaused(true)}
-                    onTouchEnd={() => setIsGalleryPaused(false)}
                     onClick={closeGallery}
                   >
                     <div
                       className="relative inline-flex items-center justify-center max-w-full max-h-full"
                       onClick={(e) => e.stopPropagation()}
+                      onMouseEnter={() => setIsGalleryPaused(true)}
+                      onMouseLeave={() => setIsGalleryPaused(false)}
                     >
                       <img
                         key={`img-${currentImageIndex}`}
@@ -896,7 +926,8 @@
                         key={`wm-${currentImageIndex}`}
                         src="Logo-JMM.png"
                         alt="Watermark"
-                        className="gallery-img-enter absolute bottom-4 right-4 md:bottom-6 md:right-6 h-8 md:h-12 w-auto invert pointer-events-none z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] opacity-30"
+                        className="gallery-img-enter absolute bottom-4 right-4 md:bottom-6 md:right-6 h-8 md:h-12 w-auto pointer-events-none z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] opacity-30"
+                        style={{ filter: 'brightness(0) invert(1)' }}
                       />
 
                       <div
@@ -927,7 +958,7 @@
                           key={idx}
                           onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
                           className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${currentImageIndex === idx ? 'w-8 md:w-10 bg-teal-500 shadow-[0_0_10px_rgba(20,184,166,0.8)]' : 'w-1.5 md:w-2 bg-neutral-500 hover:bg-neutral-300'}`}
-                          aria-label={`Ir a imagen ${idx + 1}`}
+                          aria-label={`View ${idx + 1}`}
                         />
                       ))}
                     </div>
@@ -962,7 +993,6 @@
                     />
                   ))}
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent"></div>
-                  {/* Decorative corner lines */}
                   <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1s both'}}></div>
                   <div className="absolute top-8 right-8 w-16 h-16 border-t border-r border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1.2s both'}}></div>
                   <div className="absolute bottom-8 left-8 w-16 h-16 border-b border-l border-teal-500/40 pointer-events-none z-10" style={{animation:'fadeIn 2s ease 1.4s both'}}></div>
@@ -987,7 +1017,6 @@
 
               </section>
 
-              {/* Stats Strip */}
               <section className="py-12 bg-neutral-950 border-y border-neutral-800/60">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -1089,7 +1118,7 @@
                   {filteredItems.map((item, idx) => (
                     <Reveal key={item.id} delay={idx * 150} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => openGallery(item)}>
                       <img src={item.img} alt={item.title} className="w-full aspect-square object-cover transition-transform duration-[2000ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
-                      <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto invert opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-50 md:group-hover:scale-110 drop-shadow-md" />
+                      <img src="Logo-JMM.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto brightness-0 invert opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-50 md:group-hover:scale-110 drop-shadow-md" />
                       
                       <div className="p-4 md:absolute md:inset-0 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:flex md:items-center md:justify-center md:z-30">
                         <div className="md:text-center transform translate-y-0 md:translate-y-8 md:group-hover:translate-y-0 md:transition-transform md:duration-500 pointer-events-none">
@@ -1116,15 +1145,14 @@
               setExpandedIndex(null);
             } else {
               setExpandedIndex(idx);
-              // Esperar a que la transición CSS termine (500ms) para que el layout tome su altura real
               setTimeout(() => {
                 if (itemRefs.current[idx]) {
-                  const navHeight = window.innerWidth < 768 ? 96 : 128; // Descontar la barra fija superior
+                  const navHeight = window.innerWidth < 768 ? 96 : 128;
                   const element = itemRefs.current[idx];
                   const y = element.getBoundingClientRect().top + window.scrollY - navHeight - 20;
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
-              }, 500); 
+              }, 510); 
             }
           };
 
@@ -1138,12 +1166,12 @@
                     <p className="text-teal-400 font-light mb-6">{details.text}</p>
                     <div className="grid grid-cols-1 gap-6">
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="plano-plantas.jpg" alt="Plantas Arquitectónicas" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="plano-plantas.jpg" alt="Blueprint Plans" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><FileText size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl1}</div>
                       </div>
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="plano-isometrico.jpg" alt="Isométrico Estructural" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="plano-isometrico.jpg" alt="Structural Isometrics" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><Ruler size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl2}</div>
                       </div>
@@ -1156,12 +1184,12 @@
                     <p className="text-teal-400 font-light mb-6">{details.text}</p>
                     <div className="grid grid-cols-1 gap-6">
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="levantamiento-real.png" alt="Estado Real" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="levantamiento-real.png" alt="Real State Survey" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><Camera size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl1}</div>
                       </div>
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="levantamiento-plano.png" alt="Digitalización" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="levantamiento-plano.png" alt="Architectural Digitization" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><FileText size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl2}</div>
                       </div>
@@ -1498,10 +1526,9 @@
     </script>
     <script>
     /* =============================================
-       ANIMATION ENGINE — JMM Render Studio
+       ANIMATION ENGINE
        ============================================= */
 
-    // --- Custom Cursor ---
     if (window.matchMedia("(pointer: fine)").matches) {
         const cursor = document.getElementById('customCursor');
         const cursorRing = document.getElementById('customCursorRing');
@@ -1514,7 +1541,6 @@
             cursor.style.top  = mouseY + 'px';
         });
 
-        // Ring follows with lag
         function animateRing() {
             ringX += (mouseX - ringX) * 0.12;
             ringY += (mouseY - ringY) * 0.12;
@@ -1524,7 +1550,6 @@
         }
         animateRing();
 
-        // Cursor grows on hoverable elements
         document.addEventListener('mouseover', (e) => {
             const el = e.target.closest('button, a, [class*="cursor-pointer"], input, select, textarea, label');
             if (el) document.body.classList.add('cursor-hover');
@@ -1540,7 +1565,6 @@
         });
     }
 
-    // --- Scroll Progress Bar ---
     const scrollBar = document.getElementById('scrollProgress');
     window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop;
@@ -1549,7 +1573,6 @@
         scrollBar.style.width = (progress * 100) + '%';
     }, { passive: true });
 
-    // --- Hero Particles ---
     function spawnParticles() {
         const hero = document.querySelector('section');
         if (!hero) { setTimeout(spawnParticles, 500); return; }
@@ -1571,7 +1594,6 @@
     }
     setTimeout(spawnParticles, 400);
 
-    // --- Hero Parallax on Mouse ---
     document.addEventListener('mousemove', (e) => {
         const layers = document.querySelectorAll('.hero-parallax-layer');
         if (!layers.length) return;
@@ -1585,7 +1607,6 @@
         });
     });
 
-    // --- Animated Counter for Stats ---
     function animateCounter(el) {
         const target = parseInt(el.getAttribute('data-target'), 10);
         const duration = 1800;
@@ -1593,7 +1614,6 @@
         function update(now) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            // ease out cubic
             const eased = 1 - Math.pow(1 - progress, 3);
             el.textContent = Math.floor(eased * target);
             if (progress < 1) requestAnimationFrame(update);
@@ -1611,7 +1631,6 @@
         });
     }, { threshold: 0.5 });
 
-    // Observe counters once DOM is ready
     function observeCounters() {
         document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
     }
@@ -1619,7 +1638,6 @@
     mutationObs.observe(document.body, { childList: true, subtree: true });
     setTimeout(observeCounters, 1000);
 
-    // --- Staggered nav link underline inject ---
     function enhanceNavLinks() {
         document.querySelectorAll('nav button').forEach(btn => {
             if (!btn.classList.contains('nav-link-animated')) {
@@ -1629,7 +1647,6 @@
     }
     setTimeout(enhanceNavLinks, 600);
 
-    // --- Portfolio card 3D tilt ---
     function init3DCards() {
         document.querySelectorAll('.group.relative.overflow-hidden').forEach(card => {
             if (card.dataset.tilt3d) return;
@@ -1649,7 +1666,6 @@
     }
     setInterval(init3DCards, 1500);
 
-    // --- Apply pulse-glow to CTA button ---
     function applyPulseGlow() {
         document.querySelectorAll('button.bg-teal-600, button.bg-teal-500').forEach(btn => {
             if (!btn.classList.contains('pulse-glow')) btn.classList.add('pulse-glow', 'btn-ripple');
@@ -1658,7 +1674,6 @@
     setTimeout(applyPulseGlow, 800);
     setInterval(applyPulseGlow, 3000);
 
-    // --- Add scanline to hero ---
     function addScanline() {
         const hero = document.querySelector('section.relative');
         if (hero && !hero.querySelector('.hero-scanline')) {
@@ -1669,7 +1684,6 @@
     }
     setTimeout(addScanline, 600);
 
-    // --- Enhanced footer logos ---
     function enhanceFooter() {
         document.querySelectorAll('footer img').forEach(img => {
             img.classList.add('footer-logo-float');
@@ -1677,7 +1691,6 @@
     }
     setTimeout(enhanceFooter, 1000);
 
-    // --- Add noise overlay to hero ---
     function addNoiseToHero() {
         const hero = document.querySelector('section.relative');
         if (hero && !hero.classList.contains('noise-overlay')) {
@@ -1686,7 +1699,6 @@
     }
     setTimeout(addNoiseToHero, 500);
 
-    // --- Contact icon bounce class ---
     function enhanceContactIcons() {
         document.querySelectorAll('.flex.items-start.group').forEach(row => {
             const iconWrap = row.querySelector('.w-12');
@@ -1699,25 +1711,20 @@
     }
     setTimeout(enhanceContactIcons, 1000);
 
-    // --- Hero title shimmer ---
     function applyHeroShimmer() {
         const h1 = document.querySelector('section h1');
         if (h1 && !h1.classList.contains('hero-title-shimmer')) {
-            // Only apply shimmer if we're not breaking dangerouslySetInnerHTML
-            // Apply it as an overlay animation on the wrapping element instead
             h1.style.textShadow = '0 0 40px rgba(20,184,166,0.2)';
         }
     }
     setTimeout(applyHeroShimmer, 600);
 
-    // --- Smooth image reveal on load ---
     document.addEventListener('load', (e) => {
         if (e.target.tagName === 'IMG') {
             e.target.classList.add('reveal-blur-in');
         }
     }, true);
 
-    // --- Page transition overlay ---
     const style = document.createElement('style');
     style.textContent = `
         @keyframes pageIn {
