@@ -13,7 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="JMM Render Studio | Del Render a la Realidad">
     <meta property="og:description" content="Especialistas en representación visual arquitectónica y desarrollo de proyectos integrales en Costa Rica. Architectural visualization experts.">
-    <meta property="og:image" content="https://jmm-arquitectura.art/Portada-1.png">
+    <meta property="og:image" content="https://res.cloudinary.com/drqimcuhb/video/upload/q_auto/f_auto/v1775083660/portada_rf05rg.jpg">
     <meta property="og:url" content="https://jmm-arquitectura.art/">
 
     <script type="application/ld+json">
@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "JMM Render Studio",
-      "image": "https://jmm-arquitectura.art/Logo-JMM-blanco.png",
+      "image": "https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png",
       "description": "Estudio especializado en renders 3D fotorrealistas, diseño arquitectónico y visualización en Costa Rica. 3D Architectural Rendering Studio.",
       "address": {
         "@type": "PostalAddress",
@@ -34,7 +34,7 @@
     }
     </script>
     
-    <link rel="icon" type="image/png" href="Logo-JMM-blanco.png">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-33ZSW33DCR"></script>
     <script>
@@ -408,13 +408,13 @@
                     onMouseMove={onMouseMove}
                     onTouchMove={onTouchMove}
                 >
-                    <img src={afterSrc} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false" onError={(e) => { e.target.style.display='none'; }} />
+                    <img src={afterSrc} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" draggable="false" onError={(e) => { e.target.style.display='none'; }} />
                     <div className="absolute bottom-4 right-4 px-3 py-1.5 text-xs text-white rounded-sm z-10 font-medium pointer-events-none text-shadow-strong">{afterLabel}</div>
 
                     <img 
                         src={beforeSrc} 
                         alt={beforeLabel} 
-                        className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+                        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" 
                         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                         draggable="false" 
                         onError={(e) => { e.target.style.display='none'; }}
@@ -474,123 +474,119 @@
           );
         };
 
-        const HERO_IMAGES = [
-          'Portada-1.png', 'Portada-2.png', 'Portada-3.png', 'Portada-4.png', 'Portada-5.png', 'Portada-6.png', 'Portada-7.png'
-        ];
-
         const PORTFOLIO_ITEMS = [
-          { id: 1, category: 'residential', title: 'Casa Chris', year: '2023', area: '350 m²', location: 'Golfito, Puntarenas', img: 'casa-chris-portada.png', gallery: [
-            { src: 'casa-chris-1.png', desc: { es: 'Vista Exterior - Fachada Principal', en: 'Exterior View - Main Facade' } },
-            { src: 'casa-chris-2.png', desc: { es: 'Vista Interior - Dormitorio con balcón', en: 'Interior View - Bedroom with balcony' } },
-            { src: 'casa-chris-3.png', desc: { es: 'Vista Exterior - Fachada trasera y área social', en: 'Exterior View - Rear facade and social area' } },
-            { src: 'casa-chris-4.png', desc: { es: 'Vista Exterior - Área social y terraza', en: 'Exterior View - Social area and terrace' } },
-            { src: 'casa-chris-5.png', desc: { es: 'Vista Interior - Dormitorio con acabados de madera', en: 'Interior View - Bedroom with wood finishes' } },
-            { src: 'casa-chris-6.png', desc: { es: 'Vista Interior - Sala de estar de doble altura', en: 'Interior View - Double-height living room' } },
-            { src: 'casa-chris-7.png', desc: { es: 'Vista Interior - Área de TV', en: 'Interior View - TV Area' } }
+          { id: 1, category: 'residential', title: 'Casa Chris', year: '2023', area: '350 m²', location: 'Golfito, Puntarenas', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083612/casa-chris-portada_o74e1f.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083612/casa-chris-1_zsvvkl.png', desc: { es: 'Vista Exterior - Fachada Principal', en: 'Exterior View - Main Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083611/casa-chris-2_ntp55i.png', desc: { es: 'Vista Interior - Dormitorio con balcón', en: 'Interior View - Bedroom with balcony' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083614/casa-chris-3_d4twma.png', desc: { es: 'Vista Exterior - Fachada trasera y área social', en: 'Exterior View - Rear facade and social area' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083611/casa-chris-4_xzxfps.png', desc: { es: 'Vista Exterior - Área social y terraza', en: 'Exterior View - Social area and terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083609/casa-chris-5_bitxs7.png', desc: { es: 'Vista Interior - Dormitorio con acabados de madera', en: 'Interior View - Bedroom with wood finishes' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083609/casa-chris-6_ttw6an.png', desc: { es: 'Vista Interior - Sala de estar de doble altura', en: 'Interior View - Double-height living room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083609/casa-chris-7_d6kol1.png', desc: { es: 'Vista Interior - Área de TV', en: 'Interior View - TV Area' } }
           ] },
-          { id: 2, category: 'residential', title: 'Barak Lot C-08', year: '2024', area: '420 m²', location: 'Playa Grande', img: 'barak-lot-portada.png', gallery: [
-            { src: 'barak-lot-1.png', desc: { es: 'Vista Exterior - Fachada trasera y piscina', en: 'Exterior View - Rear facade and pool' } },
-            { src: 'barak-lot-2.png', desc: { es: 'Vista Exterior - Terraza azotea nocturna', en: 'Exterior View - Nighttime rooftop terrace' } },
-            { src: 'barak-lot-3.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
-            { src: 'barak-lot-4.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
-            { src: 'barak-lot-5.png', desc: { es: 'Vista Exterior - Terraza azotea de día', en: 'Exterior View - Daytime rooftop terrace' } },
-            { src: 'barak-lot-6.png', desc: { es: 'Vista Exterior - Balcón dormitorio principal', en: 'Exterior View - Master bedroom balcony' } }
+          { id: 2, category: 'residential', title: 'Barak Lot C-08', year: '2024', area: '420 m²', location: 'Playa Grande', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083612/barak-lot-portada_jk4wuy.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083615/barak-lot-1_t860l0.png', desc: { es: 'Vista Exterior - Fachada trasera y piscina', en: 'Exterior View - Rear facade and pool' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083614/barak-lot-2_rrdfor.png', desc: { es: 'Vista Exterior - Terraza azotea nocturna', en: 'Exterior View - Nighttime rooftop terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083614/barak-lot-3_amobhn.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083615/barak-lot-4_mpouvt.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083614/barak-lot-5_oxl8cf.png', desc: { es: 'Vista Exterior - Terraza azotea de día', en: 'Exterior View - Daytime rooftop terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083614/barak-lot-6_gaunaa.png', desc: { es: 'Vista Exterior - Balcón dormitorio principal', en: 'Exterior View - Master bedroom balcony' } }
           ] },
-          { id: 3, category: 'residential', title: 'Villa Italia', year: '2022', area: '500 m²', location: 'Alajuela', img: 'villa-italia-portada.png', gallery: [
-            { src: 'villa-italia-1.png', desc: { es: 'Vista Exterior - Fachada Principal', en: 'Exterior View - Main Facade' } },
-            { src: 'villa-italia-2.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
-            { src: 'villa-italia-3.png', desc: { es: 'Vista Interior - Habitación casa de invitados', en: 'Interior View - Guest house room' } },
-            { src: 'villa-italia-4.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
-            { src: 'villa-italia-5.png', desc: { es: 'Vista Exterior - Fuente en atrio y terraza trasera', en: 'Exterior View - Atrium fountain and rear terrace' } }
+          { id: 3, category: 'residential', title: 'Villa Italia', year: '2022', area: '500 m²', location: 'Alajuela', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083621/villa-italia-portada_mly5pd.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083623/villa-italia-1_sne7hs.png', desc: { es: 'Vista Exterior - Fachada Principal', en: 'Exterior View - Main Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083623/villa-italia-2_wutohf.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083622/villa-italia-3_pdq37s.png', desc: { es: 'Vista Interior - Habitación casa de invitados', en: 'Interior View - Guest house room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083622/villa-italia-4_dxutfg.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083622/villa-italia-5_qjoyzr.png', desc: { es: 'Vista Exterior - Fuente en atrio y terraza trasera', en: 'Exterior View - Atrium fountain and rear terrace' } }
           ] },
-          { id: 4, category: 'residential', title: 'Hany Kitchen', year: '2025', area: '210 m²', location: 'Playa Hermosa', img: 'hany-kitchen-portada.png', gallery: [
-            { src: 'hany-kitchen-1.png', desc: { es: 'Vista Interior - Cocina y Área de Trabajo', en: 'Interior View - Kitchen and Workspace' } },
-            { src: 'hany-kitchen-2.png', desc: { es: 'Vista Interior - Opciones de materiales para cocina', en: 'Interior View - Kitchen material options' } },
-            { src: 'hany-kitchen-3.png', desc: { es: 'Vista Interior - Opciones de materiales para cocina', en: 'Interior View - Kitchen material options' } },
-            { src: 'hany-kitchen-4.png', desc: { es: 'Vista Interior - Diseño de Gabinetes', en: 'Interior View - Cabinet Design' } },
-            { src: 'hany-kitchen-5.png', desc: { es: 'Vista Interior - Vista Amplia de Ventanal', en: 'Interior View - Wide Window View' } },
-            { src: 'hany-kitchen-6.jpg', desc: { es: 'Visita Técnica - Levantamiento inicial en obra gris', en: 'Technical Visit - Initial site survey' } }
+          { id: 4, category: 'residential', title: 'Hany Kitchen', year: '2025', area: '210 m²', location: 'Playa Hermosa', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083583/hany-kitchen-portada_hjugzv.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083582/hany-kitchen-1_wy3fbp.png', desc: { es: 'Vista Interior - Cocina y Área de Trabajo', en: 'Interior View - Kitchen and Workspace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083586/hany-kitchen-2_wah70a.png', desc: { es: 'Vista Interior - Opciones de materiales para cocina', en: 'Interior View - Kitchen material options' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083591/hany-kitchen-3_mvkibe.png', desc: { es: 'Vista Interior - Opciones de materiales para cocina', en: 'Interior View - Kitchen material options' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083581/hany-kitchen-4_gpygby.png', desc: { es: 'Vista Interior - Diseño de Gabinetes', en: 'Interior View - Cabinet Design' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083581/hany-kitchen-5_xqvwrg.png', desc: { es: 'Vista Interior - Vista Amplia de Ventanal', en: 'Interior View - Wide Window View' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083579/hany-kitchen-6_xwncu2.jpg', desc: { es: 'Visita Técnica - Levantamiento inicial en obra gris', en: 'Technical Visit - Initial site survey' } }
           ] },
-          { id: 5, category: 'residential', title: 'Sara´s Bedroom', year: '2023', area: '10 m²', location: 'Escazú', img: 'saras-bedroom-portada.png', gallery: [
-            { src: 'saras-bedroom-1.png', desc: { es: 'Vista Interior - Dormitorio Completo', en: 'Interior View - Full Bedroom' } },
-            { src: 'saras-bedroom-2.png', desc: { es: 'Vista Interior - Detalle de Cama', en: 'Interior View - Bed Detail' } },
-            { src: 'saras-bedroom-3.png', desc: { es: 'Vista Interior - Perspectiva de Habitación', en: 'Interior View - Room Perspective' } },
-            { src: 'saras-bedroom-4.png', desc: { es: 'Vista Interior - Decoración de Habitación', en: 'Interior View - Room Decoration' } }
+          { id: 5, category: 'residential', title: 'Sara´s Bedroom', year: '2023', area: '10 m²', location: 'Escazú', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083624/saras-bedroom-portada_lgcrnr.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083625/saras-bedroom-1_zo9vha.png', desc: { es: 'Vista Interior - Dormitorio Completo', en: 'Interior View - Full Bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083625/saras-bedroom-2_cnfjbn.png', desc: { es: 'Vista Interior - Detalle de Cama', en: 'Interior View - Bed Detail' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083625/saras-bedroom-3_nozyte.png', desc: { es: 'Vista Interior - Perspectiva de Habitación', en: 'Interior View - Room Perspective' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083625/saras-bedroom-4_zxejfa.png', desc: { es: 'Vista Interior - Decoración de Habitación', en: 'Interior View - Room Decoration' } }
           ] },
-          { id: 6, category: 'residential', title: 'Corey Dept', year: '2025', area: '310 m²', location: 'Santa Ana', img: 'coreys-dept-portada.jpg', gallery: [
-            { src: 'coreys-dept-1.png', desc: { es: 'Vista Interior - Dormitorio de Tonos Claros', en: 'Interior View - Light-toned Bedroom' } },
-            { src: 'coreys-dept-1b.jpeg', desc: { es: 'Realidad - Materialización de Dormitorio Principal', en: 'Reality - Master Bedroom Realization' } },
-            { src: 'coreys-dept-2.jpg', desc: { es: 'Vista Interior - Perspectiva de Cocina', en: 'Interior View - Kitchen Perspective' } },
-            { src: 'coreys-dept-2b.jpeg', desc: { es: 'Realidad - Ejecución de Cocina a Medida', en: 'Reality - Custom Kitchen Execution' } },
-            { src: 'coreys-dept-3.jpg', desc: { es: 'Vista Interior - Cocina Integrada', en: 'Interior View - Integrated Kitchen' } },
-            { src: 'coreys-dept-4.jpg', desc: { es: 'Vista Interior - Sala y Comedor', en: 'Interior View - Living and Dining Room' } },
-            { src: 'coreys-dept-5.jpg', desc: { es: 'Visita Técnica - Levantamiento y cocina original', en: 'Technical Visit - Survey and original kitchen' } },
-            { src: 'coreys-dept-7.png', desc: { es: 'Vista Exterior - Terraza Techada con Vista', en: 'Exterior View - Covered Terrace with View' } },
-            { src: 'coreys-dept-8.jpeg', desc: { es: 'Realidad - Integración de Mobiliario Exterior', en: 'Reality - Outdoor Furniture Integration' } },
-            { src: 'coreys-dept-9.png', desc: { es: 'Vista Interior - Sala de Estar Moderna', en: 'Interior View - Modern Living Room' } },
-            { src: 'coreys-dept-10.jpg', desc: { es: 'Visita Técnica - Terraza en construcción', en: 'Technical Visit - Terrace under construction' } },
-            { src: 'coreys-dept-11.png', desc: { es: 'Vista Interior - Baño completo habitación principal', en: 'Interior View - Master bedroom full bath' } }
+          { id: 6, category: 'residential', title: 'Corey Dept', year: '2025', area: '310 m²', location: 'Santa Ana', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083600/coreys-dept-portada_oky17i.jpg', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083606/coreys-dept-1_vzfybo.png', desc: { es: 'Vista Interior - Dormitorio de Tonos Claros', en: 'Interior View - Light-toned Bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083605/coreys-dept-1b_dynp2p.jpg', desc: { es: 'Realidad - Materialización de Dormitorio Principal', en: 'Reality - Master Bedroom Realization' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083606/coreys-dept-2_dstg0t.jpg', desc: { es: 'Vista Interior - Perspectiva de Cocina', en: 'Interior View - Kitchen Perspective' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083605/coreys-dept-2b_vopszd.jpg', desc: { es: 'Realidad - Ejecución de Cocina a Medida', en: 'Reality - Custom Kitchen Execution' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083604/coreys-dept-3_kx4awx.jpg', desc: { es: 'Vista Interior - Cocina Integrada', en: 'Interior View - Integrated Kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083603/coreys-dept-4_hbojhf.jpg', desc: { es: 'Vista Interior - Sala y Comedor', en: 'Interior View - Living and Dining Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083603/coreys-dept-5_hct1al.jpg', desc: { es: 'Visita Técnica - Levantamiento y cocina original', en: 'Technical Visit - Survey and original kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083603/coreys-dept-7_yct11g.png', desc: { es: 'Vista Exterior - Terraza Techada con Vista', en: 'Exterior View - Covered Terrace with View' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083602/coreys-dept-8_mstkda.jpg', desc: { es: 'Realidad - Integración de Mobiliario Exterior', en: 'Reality - Outdoor Furniture Integration' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083601/coreys-dept-9_t1komu.png', desc: { es: 'Vista Interior - Sala de Estar Moderna', en: 'Interior View - Modern Living Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083601/coreys-dept-10_wzifxe.jpg', desc: { es: 'Visita Técnica - Terraza en construcción', en: 'Technical Visit - Terrace under construction' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083602/coreys-dept-11_rcaym8.png', desc: { es: 'Vista Interior - Baño completo habitación principal', en: 'Interior View - Master bedroom full bath' } }
           ] },
-          { id: 7, category: 'residential', title: 'Casa Ingrid', year: '2026', area: '120 m² - 230 m²', location: 'Desamparados', img: 'casa-desamparados-portada.png', gallery: [
-            { src: 'casa-desamparados-1.png', desc: { es: 'Vista Interior - Cocina y Comedor Amplio', en: 'Interior View - Spacious Kitchen and Dining' } },
-            { src: 'casa-desamparados-2.png', desc: { es: 'Vista Interior - Sala desde Perspectiva Aérea', en: 'Interior View - Aerial Perspective Living Room' } },
-            { src: 'casa-desamparados-3.png', desc: { es: 'Vista Interior - Dormitorio con Luces LED', en: 'Interior View - Bedroom with LED Lights' } },
-            { src: 'casa-desamparados-4.png', desc: { es: 'Vista Interior - Diseño de Dormitorio Moderno', en: 'Interior View - Modern Bedroom Design' } },
-            { src: 'casa-desamparados-5.png', desc: { es: 'Vista Exterior - Terraza Exterior Nocturna', en: 'Exterior View - Nighttime Outdoor Terrace' } },
-            { src: 'casa-desamparados-6.png', desc: { es: 'Vista Interior - Comedor con Detalles de Madera', en: 'Interior View - Dining Room with Wood Details' } },
-            { src: 'casa-desamparados-7.png', desc: { es: 'Vista Interior - Habitación', en: 'Interior View - Room' } }
+          { id: 7, category: 'residential', title: 'Casa Ingrid', year: '2026', area: '120 m² - 230 m²', location: 'Desamparados', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083606/casa-desamparados-portada_pysbiu.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083609/casa-desamparados-1_fj19cb.png', desc: { es: 'Vista Interior - Cocina y Comedor Amplio', en: 'Interior View - Spacious Kitchen and Dining' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083608/casa-desamparados-2_vgkjqj.png', desc: { es: 'Vista Interior - Sala desde Perspectiva Aérea', en: 'Interior View - Aerial Perspective Living Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083607/casa-desamparados-3_q3drtb.png', desc: { es: 'Vista Interior - Dormitorio con Luces LED', en: 'Interior View - Bedroom with LED Lights' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083608/casa-desamparados-4_klmv4l.png', desc: { es: 'Vista Interior - Diseño de Dormitorio Moderno', en: 'Interior View - Modern Bedroom Design' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083607/casa-desamparados-5_dxunyk.png', desc: { es: 'Vista Exterior - Terraza Exterior Nocturna', en: 'Exterior View - Nighttime Outdoor Terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083607/casa-desamparados-6_otdaxg.png', desc: { es: 'Vista Interior - Comedor con Detalles de Madera', en: 'Interior View - Dining Room with Wood Details' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083607/casa-desamparados-7_mwrddp.png', desc: { es: 'Vista Interior - Habitación', en: 'Interior View - Room' } }
           ] },
-          { id: 8, category: 'comercial', title: 'Mixed Projects', year: '2020 - 2026', area: { es: 'Varios', en: 'Various' }, location: 'Costa Rica', img: 'mixed-projects-portada.png', gallery: [
-            { src: 'mixed-projects-1.png', desc: { es: 'Vista Interior - Cocina Integrada y Escaleras', en: 'Interior View - Integrated Kitchen and Stairs' } },
-            { src: 'mixed-projects-2.png', desc: { es: 'Vista Exterior - Parking de bicicletas', en: 'Exterior View - Bicycle Parking' } },
-            { src: 'mixed-projects-3.png', desc: { es: 'Vista Interior - Sala de Estar de Doble Altura', en: 'Interior View - Double-Height Living Room' } },
-            { src: 'mixed-projects-4.png', desc: { es: 'Vista Interior - Comedor y Pasillo', en: 'Interior View - Dining Room and Hallway' } },
-            { src: 'mixed-projects-5.png', desc: { es: 'Vista Exterior - Fachada Residencial Moderna', en: 'Exterior View - Modern Residential Facade' } },
-            { src: 'mixed-projects-6.png', desc: { es: 'Vista Exterior - Edificio de Apartamentos Propuesto (Barrio Escalante)', en: 'Exterior View - Proposed Apartment Building (Barrio Escalante)' } },
-            { src: 'mixed-projects-7.png', desc: { es: 'Vista Exterior - Área Pública Propuesta para Parque (Puriscal)', en: 'Exterior View - Proposed Public Area for Park (Puriscal)' } },
-            { src: 'mixed-projects-8.png', desc: { es: 'Vista Exterior - Área Pública Propuesta para Parque (Puriscal)', en: 'Exterior View - Proposed Public Area for Park (Puriscal)' } },
-            { src: 'mixed-projects-9.png', desc: { es: 'Vista Interior - Sala de Estar y Escaleras', en: 'Interior View - Living Room and Stairs' } },
-            { src: 'mixed-projects-10.png', desc: { es: 'Vista Interior - Habitación Principal con Ventanal', en: 'Interior View - Master Bedroom with Large Window' } },
-            { src: 'mixed-projects-11.png', desc: { es: 'Vista Interior - Diseño de Mueble de TV', en: 'Interior View - TV Cabinet Design' } },
-            { src: 'mixed-projects-12.png', desc: { es: 'Vista Exterior - Hotel Vacacional', en: 'Exterior View - Vacation Hotel' } },
-            { src: 'mixed-projects-13.png', desc: { es: 'Vista Exterior - Hotel Vacacional', en: 'Exterior View - Vacation Hotel' } },
-            { src: 'mixed-projects-14.png', desc: { es: 'Vista Exterior - Fachada exterior Steve', en: 'Exterior View - Steve\'s Exterior Facade' } }
+          { id: 8, category: 'comercial', title: 'Mixed Projects', year: '2020 - 2026', area: { es: 'Varios', en: 'Various' }, location: 'Costa Rica', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083634/mixed-projects-portada_sxwz4e.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/mixed-projects-1_y72aw0.png', desc: { es: 'Vista Interior - Cocina Integrada y Escaleras', en: 'Interior View - Integrated Kitchen and Stairs' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083642/mixed-projects-2_agk2nu.png', desc: { es: 'Vista Exterior - Parking de bicicletas', en: 'Exterior View - Bicycle Parking' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083641/mixed-projects-3_kydvlc.png', desc: { es: 'Vista Interior - Sala de Estar de Doble Altura', en: 'Interior View - Double-Height Living Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083641/mixed-projects-4_leukzw.png', desc: { es: 'Vista Interior - Comedor y Pasillo', en: 'Interior View - Dining Room and Hallway' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083641/mixed-projects-5_mjndvs.png', desc: { es: 'Vista Exterior - Fachada Residencial Moderna', en: 'Exterior View - Modern Residential Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083641/mixed-projects-6_ipw8hu.png', desc: { es: 'Vista Exterior - Edificio de Apartamentos Propuesto (Barrio Escalante)', en: 'Exterior View - Proposed Apartment Building (Barrio Escalante)' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083642/mixed-projects-7_kdx2b9.png', desc: { es: 'Vista Exterior - Área Pública Propuesta para Parque (Puriscal)', en: 'Exterior View - Proposed Public Area for Park (Puriscal)' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083639/mixed-projects-8_idvkap.png', desc: { es: 'Vista Exterior - Área Pública Propuesta para Parque (Puriscal)', en: 'Exterior View - Proposed Public Area for Park (Puriscal)' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083639/mixed-projects-9_ihbi0k.png', desc: { es: 'Vista Interior - Sala de Estar y Escaleras', en: 'Interior View - Living Room and Stairs' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083639/mixed-projects-10_whvyt1.png', desc: { es: 'Vista Interior - Habitación Principal con Ventanal', en: 'Interior View - Master Bedroom with Large Window' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083639/mixed-projects-11_vuu92e.png', desc: { es: 'Vista Interior - Diseño de Mueble de TV', en: 'Interior View - TV Cabinet Design' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083637/mixed-projects-12_w84t35.png', desc: { es: 'Vista Exterior - Hotel Vacacional', en: 'Exterior View - Vacation Hotel' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083635/mixed-projects-13_ypbqkq.png', desc: { es: 'Vista Exterior - Hotel Vacacional', en: 'Exterior View - Vacation Hotel' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083637/mixed-projects-14_v9unzd.png', desc: { es: 'Vista Exterior - Fachada exterior Steve', en: 'Exterior View - Steve\'s Exterior Facade' } }
           ] },
-          { id: 9, category: 'comercial', title: 'Laurent', year: '2025', area: '850 m²', location: 'Tamarindo', img: 'laurent-portada.png', gallery: [
-            { src: 'laurent-1.png', desc: { es: 'Vista Interior - Dormitorio Principal', en: 'Interior View - Master Bedroom' } },
-            { src: 'laurent-2.png', desc: { es: 'Vista Interior - Cocina Abierta Moderna', en: 'Interior View - Modern Open Kitchen' } },
-            { src: 'laurent-3.png', desc: { es: 'Vista Interior - Dormitorio con Vista', en: 'Interior View - Bedroom with View' } },
-            { src: 'laurent-4.png', desc: { es: 'Vista Interior - Habitación de Huéspedes', en: 'Interior View - Guest Room' } },
-            { src: 'laurent-5.png', desc: { es: 'Vista Interior - Diseño de Cocina', en: 'Interior View - Kitchen Design' } },
-            { src: 'laurent-6.png', desc: { es: 'Vista Interior - Sala y Comedor Integrado', en: 'Interior View - Integrated Living and Dining Room' } },
-            { src: 'laurent-7.png', desc: { es: 'Vista Interior - Diseño de Habitación', en: 'Interior View - Room Design' } },
-            { src: 'laurent-8.png', desc: { es: 'Vista Interior - Opciones de Materiales Cocina', en: 'Interior View - Kitchen Material Options' } },
-            { src: 'laurent-10.png', desc: { es: 'Vista Interior - Detalle de Cocina', en: 'Interior View - Kitchen Detail' } },
-            { src: 'laurent-9.png', desc: { es: 'Vista Exterior - Exterior Condominio Nocturno', en: 'Exterior View - Nighttime Condominium Exterior' } }
+          { id: 9, category: 'comercial', title: 'Laurent', year: '2025', area: '850 m²', location: 'Tamarindo', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083652/laurent-portada_ilpqr0.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775085444/laurent-1_orqye9.png', desc: { es: 'Vista Interior - Dormitorio Principal', en: 'Interior View - Master Bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083658/laurent-2_vgjhm6.png', desc: { es: 'Vista Interior - Cocina Abierta Moderna', en: 'Interior View - Modern Open Kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083652/laurent-3_d96pfy.png', desc: { es: 'Vista Interior - Dormitorio con Vista', en: 'Interior View - Bedroom with View' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083652/laurent-4_h1nt62.png', desc: { es: 'Vista Interior - Habitación de Huéspedes', en: 'Interior View - Guest Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083652/laurent-5_u0f1pw.png', desc: { es: 'Vista Interior - Diseño de Cocina', en: 'Interior View - Kitchen Design' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083651/laurent-6_jjfrze.png', desc: { es: 'Vista Interior - Sala y Comedor Integrado', en: 'Interior View - Integrated Living and Dining Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083648/laurent-7_cys6sf.png', desc: { es: 'Vista Interior - Diseño de Habitación', en: 'Interior View - Room Design' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083647/laurent-8_ws1jwd.png', desc: { es: 'Vista Interior - Opciones de Materiales Cocina', en: 'Interior View - Kitchen Material Options' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083653/laurent-10_jbpjfh.png', desc: { es: 'Vista Interior - Detalle de Cocina', en: 'Interior View - Kitchen Detail' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083644/laurent-9_wsqq1q.png', desc: { es: 'Vista Exterior - Exterior Condominio Nocturno', en: 'Exterior View - Nighttime Condominium Exterior' } }
           ] },
-          { id: 10, category: 'residential', title: 'Fritz & Sabine', year: '2023', area: '293 m²', location: 'Matapalo, Guanacaste', img: 'fritz-sabine-portada.png', gallery: [
-            { src: 'fritz-sabine-1.png', desc: { es: 'Vista Exterior - Terraza', en: 'Exterior View - Terrace' } },
-            { src: 'fritz-sabine-2.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
-            { src: 'fritz-sabine-3.png', desc: { es: 'Vista Interior - Dormitorio', en: 'Interior View - Bedroom' } },
-            { src: 'fritz-sabine-4.png', desc: { es: 'Vista Interior - Sala', en: 'Interior View - Living Room' } },
-            { src: 'fritz-sabine-5.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
-            { src: 'fritz-sabine-6.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
+          { id: 10, category: 'residential', title: 'Fritz & Sabine', year: '2023', area: '293 m²', location: 'Matapalo, Guanacaste', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083598/fritz-sabine-portada_nreuxz.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083604/fritz-sabine-1_lq6oju.png', desc: { es: 'Vista Exterior - Terraza', en: 'Exterior View - Terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083599/fritz-sabine-2_rkking.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083597/fritz-sabine-3_psxrne.png', desc: { es: 'Vista Interior - Dormitorio', en: 'Interior View - Bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083598/fritz-sabine-4_thjh6j.png', desc: { es: 'Vista Interior - Sala', en: 'Interior View - Living Room' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083602/fritz-sabine-5_vntlyg.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083603/fritz-sabine-6_m1dwyq.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
           ] },
-          { id: 11, category: 'residential', title: 'Greer', year: '2023', area: '310 m²', location: 'Playa Grande', img: 'greer-portada.png', gallery: [
-            { src: 'greer-1.png', desc: { es: 'Vista Interior - Baño', en: 'Interior View - Bathroom' } },
-            { src: 'greer-2.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
-            { src: 'greer-3.png', desc: { es: 'Vista Exterior - Comedor y Terraza', en: 'Exterior View - Dining Room and Terrace' } },
-            { src: 'greer-4.png', desc: { es: 'Vista Exterior - Ducha exterior', en: 'Exterior View - Outdoor Shower' } },
-            { src: 'greer-5.png', desc: { es: 'Vista Interior - Dormitorio', en: 'Interior View - Bedroom' } },
-            { src: 'greer-6.png', desc: { es: 'Vista Exterior - Piscina', en: 'Exterior View - Pool' } },
-            { src: 'greer-7.png', desc: { es: 'Vista Interior - Baño', en: 'Interior View - Bathroom' } }
+          { id: 11, category: 'residential', title: 'Greer', year: '2023', area: '310 m²', location: 'Playa Grande', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083586/greer-portada_yivw5k.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083595/greer-1_drnfvc.png', desc: { es: 'Vista Interior - Baño', en: 'Interior View - Bathroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083592/greer-2_aqqan1.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083592/greer-3_yoywat.png', desc: { es: 'Vista Exterior - Comedor y Terraza', en: 'Exterior View - Dining Room and Terrace' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083591/greer-4_x0hvpk.png', desc: { es: 'Vista Exterior - Ducha exterior', en: 'Exterior View - Outdoor Shower' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083592/greer-5_b1ysaw.png', desc: { es: 'Vista Interior - Dormitorio', en: 'Interior View - Bedroom' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083587/greer-6_qakbjb.png', desc: { es: 'Vista Exterior - Piscina', en: 'Exterior View - Pool' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083586/greer-7_m53uqq.png', desc: { es: 'Vista Interior - Baño', en: 'Interior View - Bathroom' } }
           ] },
-          { id: 12, category: 'residential', title: 'Alexis', year: '2024', area: '500 m²', location: 'Miami', img: 'alexis-portada.png', gallery: [
-            { src: 'alexis-1.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
-            { src: 'alexis-2.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
-            { src: 'alexis-3.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
-            { src: 'alexis-4.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
-            { src: 'alexis-5.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
+          { id: 12, category: 'residential', title: 'Alexis', year: '2024', area: '500 m²', location: 'Miami', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083618/alexis-portada_cj2n53.png', gallery: [
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083620/alexis-1_uvxfgy.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083621/alexis-2_qkbdgi.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083620/alexis-3_yudf0h.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083618/alexis-4_ncikv8.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
+            { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083619/alexis-5_t7xzw1.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
           ] }
         ];
 
@@ -747,7 +743,7 @@
                 <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
                   <div className="flex justify-between items-center h-24 md:h-32">
                     <div className="flex-shrink-0 cursor-pointer flex items-center gap-4 initial-fade-up group" onClick={() => navigateTo('home')}>
-                      <img src="Logo-JMM-blanco.png" alt="JMM Logo" className="h-14 md:h-24 w-auto transition-transform group-hover:scale-105 drop-shadow-md" />
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png" alt="JMM Logo" className="h-14 md:h-24 w-auto transition-transform group-hover:scale-105 drop-shadow-md" />
                       <div className="hidden sm:block">
                         <span className="text-2xl md:text-3xl tracking-widest text-white font-heading font-normal">JMM<span className="text-teal-500">.</span></span>
                         <span className="block text-xs md:text-sm text-neutral-400 tracking-widest uppercase mt-[-4px] font-light">Render Studio</span>
@@ -815,7 +811,7 @@
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                       <div className="mb-6 cursor-pointer group" onClick={() => window.scrollTo(0,0)}>
-                        <img src="Logo-JMM-blanco.png" alt="JMM Logo" className="h-28 md:h-36 w-auto transition-transform duration-500 group-hover:scale-105 drop-shadow-lg" />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png" alt="JMM Logo" className="h-28 md:h-36 w-auto transition-transform duration-500 group-hover:scale-105 drop-shadow-lg" />
                       </div>
                       <p className="text-teal-100/80 mb-8 text-sm leading-relaxed max-w-sm mt-4 font-light">
                         {t.footer.desc}
@@ -866,11 +862,11 @@
                     <div className="order-1 md:order-2 flex-1 flex items-center justify-center space-x-6 w-full">
                       <span className="uppercase tracking-widest text-xs md:text-sm font-normal text-teal-400">Powered by</span>
                       <a href="https://www.instagram.com/bcd_creations" target="_blank" rel="noopener noreferrer" className="cursor-pointer block">
-                        <img src="Logo-BCD.png" alt="BCD" className="h-16 md:h-28 w-auto opacity-100 transition-transform duration-500 hover:scale-105" />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-BCD_rddlv8.png" alt="BCD" className="h-16 md:h-28 w-auto opacity-100 transition-transform duration-500 hover:scale-105" />
                       </a>
                       <div className="h-12 md:h-20 w-px bg-teal-700 mx-2"></div>
                       <a href="https://www.instagram.com/bcd_creations" target="_blank" rel="noopener noreferrer" className="cursor-pointer block">
-                        <img src="Logo-SGI.png" alt="SGI" className="h-14 md:h-24 w-auto opacity-100 transition-transform duration-500 hover:scale-105" />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083642/Logo-SGI_jdknjr.png" alt="SGI" className="h-14 md:h-24 w-auto opacity-100 transition-transform duration-500 hover:scale-105" />
                       </a>
                     </div>
 
@@ -903,45 +899,56 @@
                     onClick={closeGallery}
                   >
                     <div
-                      className="relative inline-flex items-center justify-center max-w-full max-h-full"
+                      className="relative inline-flex items-center justify-center max-w-full max-h-full min-w-[150px] min-h-[150px]"
                       onClick={(e) => e.stopPropagation()}
                       onMouseEnter={() => setIsGalleryPaused(true)}
                       onMouseLeave={() => setIsGalleryPaused(false)}
                     >
+                      {!isImageLoaded && (
+                        <div className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none">
+                          <div className="w-12 h-12 border-4 border-teal-500/30 border-t-teal-500 rounded-full animate-spin"></div>
+                        </div>
+                      )}
+
                       <img
                         key={`img-${currentImageIndex}`}
                         src={activeProject.gallery[currentImageIndex].src}
                         alt={`${activeProject.title} - View ${currentImageIndex + 1}`}
-                        className="gallery-img-enter block max-w-full max-h-[75vh] md:max-h-[85vh] w-auto h-auto object-contain drop-shadow-2xl rounded-sm"
+                        className={`block max-w-full max-h-[75vh] md:max-h-[85vh] w-auto h-auto object-contain drop-shadow-2xl rounded-sm transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                         draggable="false"
-                        onError={(e) => { e.target.style.display = 'none'; }}
+                        onLoad={() => setIsImageLoaded(true)}
+                        onError={(e) => { e.target.style.display = 'none'; setIsImageLoaded(true); }}
                       />
 
-                      <img
-                        key={`wm-${currentImageIndex}`}
-                        src="Logo-JMM-blanco.png"
-                        alt="Watermark"
-                        className="gallery-img-enter absolute bottom-4 right-4 md:bottom-6 md:right-6 h-8 md:h-12 w-auto pointer-events-none z-20 opacity-50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                      />
+                      {isImageLoaded && (
+                        <>
+                          <img
+                            key={`wm-${currentImageIndex}`}
+                            src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png"
+                            alt="Watermark"
+                            className="gallery-img-enter absolute bottom-4 right-4 md:bottom-6 md:right-6 h-8 md:h-12 w-auto pointer-events-none z-20 opacity-50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                          />
 
-                      <div
-                        key={`txt-${currentImageIndex}`}
-                        className="gallery-text-enter absolute bottom-4 left-4 md:bottom-6 md:left-6 text-left z-20 pointer-events-none max-w-[85%] md:max-w-[70%]"
-                      >
-                        <h3 className="text-xl md:text-3xl font-bold text-white mb-1 font-heading tracking-wide text-shadow-strong">
-                          {activeProject.title}
-                        </h3>
-                        <p className="text-sm md:text-base text-neutral-100 mb-2 font-medium italic text-shadow-strong">
-                          {activeProject.gallery[currentImageIndex].desc[lang] || t.portfolio.lblGallery}
-                        </p>
-                        <div className="text-teal-300 text-xs md:text-sm font-semibold tracking-widest uppercase text-shadow-strong">
-                          {activeProject.year && <span>{activeProject.year}</span>}
-                          {activeProject.area && <span className="mx-2 text-white/50">|</span>}
-                          {activeProject.area && <span>{typeof activeProject.area === 'object' ? activeProject.area[lang] : activeProject.area}</span>}
-                          {activeProject.location && <span className="mx-2 text-white/50">|</span>}
-                          {activeProject.location && <span>{activeProject.location}</span>}
-                        </div>
-                      </div>
+                          <div
+                            key={`txt-${currentImageIndex}`}
+                            className="gallery-text-enter absolute bottom-4 left-4 md:bottom-6 md:left-6 text-left z-20 pointer-events-none max-w-[85%] md:max-w-[70%]"
+                          >
+                            <h3 className="text-xl md:text-3xl font-bold text-white mb-1 font-heading tracking-wide text-shadow-strong">
+                              {activeProject.title}
+                            </h3>
+                            <p className="text-sm md:text-base text-neutral-100 mb-2 font-medium italic text-shadow-strong">
+                              {activeProject.gallery[currentImageIndex].desc[lang] || t.portfolio.lblGallery}
+                            </p>
+                            <div className="text-teal-300 text-xs md:text-sm font-semibold tracking-widest uppercase text-shadow-strong">
+                              {activeProject.year && <span>{activeProject.year}</span>}
+                              {activeProject.area && <span className="mx-2 text-white/50">|</span>}
+                              {activeProject.area && <span>{typeof activeProject.area === 'object' ? activeProject.area[lang] : activeProject.area}</span>}
+                              {activeProject.location && <span className="mx-2 text-white/50">|</span>}
+                              {activeProject.location && <span>{activeProject.location}</span>}
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -964,35 +971,23 @@
         }
 
         function HomeView({ navigateTo, t }) {
-          const [currentBg, setCurrentBg] = useState(0);
-
-          useEffect(() => {
-            // Precargar imágenes en memoria para evitar salto sin animación en la primera ronda
-            HERO_IMAGES.forEach((src) => {
-              const img = new Image();
-              img.src = src;
-            });
-
-            const timer = setInterval(() => {
-              setCurrentBg((prev) => (prev + 1) % HERO_IMAGES.length);
-            }, 4500); // 3.5s de presencia real + 1s de transición (fade)
-            return () => clearInterval(timer);
-          }, []);
-
           return (
             <div className="animate-in fade-in duration-700">
               <section className="relative h-[100svh] md:h-[90vh] w-full flex items-center justify-center overflow-hidden bg-neutral-950">
                 <div className="absolute inset-0 z-0">
-                  {HERO_IMAGES.map((img, index) => (
-                    <img 
-                      key={index} src={img} alt="" 
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1000ms] ease-in-out ${
-                        index === currentBg ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                      }`} 
-                      loading="eager"
-                    />
-                  ))}
-                  <div className="absolute inset-0 bg-neutral-950/60 z-20 pointer-events-none"></div>
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    poster="https://res.cloudinary.com/drqimcuhb/video/upload/q_auto/f_auto/v1775083660/portada_rf05rg.jpg"
+                    className="absolute inset-0 w-full h-full object-cover z-10"
+                  >
+                    <source src="https://res.cloudinary.com/drqimcuhb/video/upload/q_auto/f_auto/v1775083660/portada_rf05rg.mp4" type="video/mp4" />
+                    Tu navegador no soporta videos HTML5.
+                  </video>
+                  
+                  <div className="absolute inset-0 bg-neutral-950/50 z-20 pointer-events-none"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent z-20 pointer-events-none"></div>
                   {/* Decorative corner lines */}
                   <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-teal-500/40 pointer-events-none z-30" style={{animation:'fadeIn 2s ease 1s both'}}></div>
@@ -1124,7 +1119,7 @@
                     <Reveal key={item.id} delay={idx * 150} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => openGallery(item)}>
                       <img src={item.img} alt={item.title} className="w-full aspect-square object-cover transition-transform duration-[2000ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
                       
-                      <img src="Logo-JMM-blanco.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-60 md:group-hover:scale-110 drop-shadow-lg" />
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-60 md:group-hover:scale-110 drop-shadow-lg" />
                       
                       <div className="p-4 md:absolute md:inset-0 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:flex md:items-center md:justify-center md:z-30">
                         <div className="md:text-center transform translate-y-0 md:translate-y-8 md:group-hover:translate-y-0 md:transition-transform md:duration-500 pointer-events-none flex flex-col items-center">
@@ -1175,12 +1170,12 @@
                     <p className="text-teal-400 font-light mb-6">{details.text}</p>
                     <div className="grid grid-cols-1 gap-6">
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="plano-plantas.jpg" alt="Blueprint Plans" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083637/plano-plantas_qqrqqc.jpg" alt="Blueprint Plans" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><FileText size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl1}</div>
                       </div>
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="plano-isometrico.jpg" alt="Structural Isometrics" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083640/plano-isometrico_nxepqu.jpg" alt="Structural Isometrics" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><Ruler size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl2}</div>
                       </div>
@@ -1193,12 +1188,12 @@
                     <p className="text-teal-400 font-light mb-6">{details.text}</p>
                     <div className="grid grid-cols-1 gap-6">
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="levantamiento-real.png" alt="Real State Survey" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083647/levantamiento-real_he3pzs.png" alt="Real State Survey" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><Camera size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl1}</div>
                       </div>
                       <div className="bg-neutral-950 rounded-sm relative group overflow-hidden border border-neutral-800 min-h-[300px]">
-                        <img src="levantamiento-plano.png" alt="Architectural Digitization" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/levantamiento-plano_eeb8ir.png" alt="Architectural Digitization" className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-700 relative z-10" onError={(e) => { e.target.style.display='none'; }} />
                         <div className="absolute inset-0 flex items-center justify-center text-neutral-800 z-0"><FileText size={64} /></div>
                         <div className="absolute bottom-4 left-4 px-3 py-1.5 text-xs text-white rounded-sm z-20 font-medium text-shadow-strong">{details.lbl2}</div>
                       </div>
@@ -1217,8 +1212,8 @@
                   <div className="mt-8 pt-6 border-t border-neutral-800 animate-in fade-in duration-500">
                     <p className="text-teal-400 font-light mb-6">{details.text}</p>
                     <ImageSlider 
-                        beforeSrc="mueble-render.jpeg" 
-                        afterSrc="mueble-real.jpeg" 
+                        beforeSrc="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083631/mueble-render_gn4nku.jpg" 
+                        afterSrc="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083631/mueble-real_wkn3y5.jpg" 
                         beforeLabel={details.lbl1} 
                         afterLabel={details.lbl2} 
                     />
@@ -1242,7 +1237,7 @@
             <div className="animate-in fade-in duration-500 relative min-h-screen pb-24 overflow-hidden">
               <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
                 <img 
-                  src="Portada-7.png" alt="Background" 
+                  src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775085323/Portada-7_c72bbm.png" alt="Background" 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
                 />
                 <div className="absolute inset-0 bg-neutral-950/80"></div>
@@ -1295,7 +1290,7 @@
             <div className="animate-in fade-in duration-500 relative min-h-screen overflow-hidden">
               <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
                 <img 
-                  src="Portada-7.png" alt="Background" 
+                  src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775085323/Portada-7_c72bbm.png" alt="Background" 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
                 />
                 <div className="absolute inset-0 bg-neutral-950/80"></div>
@@ -1314,10 +1309,10 @@
 
                     <div className="mt-12 bg-neutral-950/60 border border-neutral-800 p-8 flex flex-col items-center justify-center rounded-sm relative overflow-hidden group hover:border-teal-900 transition-colors duration-500 shadow-xl max-w-2xl mx-auto">
                       <div className="absolute opacity-[0.05] group-hover:opacity-15 transition-opacity duration-1000 pointer-events-none">
-                         <img src="Costa-Rica.png" alt="Map Background" className="w-full h-full object-cover scale-150" />
+                         <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083599/Costa-Rica_cjodgp.png" alt="Map Background" className="w-full h-full object-cover scale-150" />
                       </div>
                       <div className="w-40 h-40 sm:w-56 sm:h-56 relative z-10 flex items-center justify-center mb-6">
-                         <img src="Costa-Rica.png" alt="Costa Rica Map" className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-[1500ms] group-hover:scale-110 relative z-10" />
+                         <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083599/Costa-Rica_cjodgp.png" alt="Costa Rica Map" className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-[1500ms] group-hover:scale-110 relative z-10" />
                          <div className="absolute z-20 top-[30%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 text-teal-400 drop-shadow-[0_0_10px_rgba(20,184,166,0.8)]">
                              <MapPin size={28} className="animate-bounce" fill="currentColor" />
                          </div>
@@ -1406,7 +1401,7 @@
             <div className="animate-in fade-in duration-500 relative min-h-screen pb-24 overflow-hidden">
               <div className="fixed inset-0 z-0 pointer-events-none bg-neutral-950">
                 <img 
-                  src="Portada-7.png" alt="Background" 
+                  src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775085323/Portada-7_c72bbm.png" alt="Background" 
                   className="absolute inset-0 w-full h-full object-cover opacity-30 blur-[2px] scale-105" 
                 />
                 <div className="absolute inset-0 bg-neutral-950/80"></div>
