@@ -72,8 +72,10 @@
            ELEGANT ANIMATION SUITE — JMM Render Studio
            ============================================= */
 
-        /* Cursor personalizado */
-        body { cursor: none; }
+        /* Cursor personalizado solo en pantallas con mouse */
+        @media (pointer: fine) {
+            body { cursor: none; }
+        }
         .custom-cursor {
             position: fixed;
             width: 10px;
@@ -98,6 +100,12 @@
         }
         .cursor-hover .custom-cursor { width: 18px; height: 18px; opacity: 0.7; }
         .cursor-hover .custom-cursor-ring { width: 54px; height: 54px; border-color: rgba(20, 184, 166, 0.9); }
+
+        /* Ocultar cursor en dispositivos táctiles (móviles/tablets) */
+        @media (pointer: coarse), (hover: none) {
+            .custom-cursor, .custom-cursor-ring { display: none !important; }
+            body { cursor: auto !important; }
+        }
 
         /* Partículas flotantes en el hero */
         @keyframes floatParticle {
@@ -398,13 +406,13 @@
                     onMouseMove={onMouseMove}
                     onTouchMove={onTouchMove}
                 >
-                    <img src={afterSrc} alt={afterLabel} className="absolute inset-0 w-full h-full object-contain pointer-events-none" draggable="false" onError={(e) => { e.target.style.display='none'; }} />
+                    <img src={afterSrc} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable="false" onError={(e) => { e.target.style.display='none'; }} />
                     <div className="absolute bottom-4 right-4 px-3 py-1.5 text-xs text-white rounded-sm z-10 font-medium pointer-events-none text-shadow-strong">{afterLabel}</div>
 
                     <img 
                         src={beforeSrc} 
                         alt={beforeLabel} 
-                        className="absolute inset-0 w-full h-full object-contain pointer-events-none" 
+                        className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
                         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                         draggable="false" 
                         onError={(e) => { e.target.style.display='none'; }}
@@ -650,7 +658,6 @@
           const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           const [activeProject, setActiveProject] = useState(null);
           const [currentImageIndex, setCurrentImageIndex] = useState(0);
-          const [visibleImageIndex, setVisibleImageIndex] = useState(0); // el índice que realmente se ve
           const [isGalleryPaused, setIsGalleryPaused] = useState(false);
           const [lang, setLang] = useState('es');
           const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -658,19 +665,22 @@
           const t = TRANSLATIONS[lang];
 
           useEffect(() => {
-            window.scrollTo(0, 0);
+            // Fuerza a la ventana a empezar arriba al recargar y en cada cambio de vista
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
           }, [currentPage]);
 
           useEffect(() => {
             setIsImageLoaded(false);
-            // visibleImageIndex NO cambia aquí — cambia solo cuando la imagen nueva termina de cargar
           }, [currentImageIndex, activeProject]);
 
           useEffect(() => {
             if (!activeProject || activeProject.gallery.length <= 1 || isGalleryPaused) return;
             const timer = setTimeout(() => {
               setCurrentImageIndex((prev) => (prev === activeProject.gallery.length - 1 ? 0 : prev + 1));
-            }, 4000); // <-- Cambiado a 4 segundos
+            }, 4000); 
             return () => clearTimeout(timer);
           }, [activeProject, currentImageIndex, isGalleryPaused]);
 
@@ -686,7 +696,6 @@
           const openGallery = (project) => {
             setActiveProject(project);
             setCurrentImageIndex(0);
-            setVisibleImageIndex(0);
           };
 
           const closeGallery = () => setActiveProject(null);
@@ -874,7 +883,6 @@
                       className="relative inline-flex items-center justify-center max-w-full max-h-full"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {/* Una sola imagen con key — React la destruye/recrea y CSS la anima */}
                       <img
                         key={`img-${currentImageIndex}`}
                         src={activeProject.gallery[currentImageIndex].src}
@@ -884,7 +892,6 @@
                         onError={(e) => { e.target.style.display = 'none'; }}
                       />
 
-                      {/* Watermark — aparece con la imagen */}
                       <img
                         key={`wm-${currentImageIndex}`}
                         src="Logo-JMM.png"
@@ -892,7 +899,6 @@
                         className="gallery-img-enter absolute bottom-4 right-4 md:bottom-6 md:right-6 h-8 md:h-12 w-auto invert pointer-events-none z-20 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] opacity-30"
                       />
 
-                      {/* Texto — aparece ligeramente después con su propia animación */}
                       <div
                         key={`txt-${currentImageIndex}`}
                         className="gallery-text-enter absolute bottom-4 left-4 md:bottom-6 md:left-6 text-left z-20 pointer-events-none max-w-[85%] md:max-w-[70%]"
@@ -938,7 +944,7 @@
           useEffect(() => {
             const timer = setInterval(() => {
               setCurrentBg((prev) => (prev + 1) % HERO_IMAGES.length);
-            }, 4000); // <-- Carrusel del inicio también ajustado a 4 segundos por consistencia
+            }, 4000); 
             return () => clearInterval(timer);
           }, []);
 
@@ -1110,11 +1116,15 @@
               setExpandedIndex(null);
             } else {
               setExpandedIndex(idx);
+              // Esperar a que la transición CSS termine (500ms) para que el layout tome su altura real
               setTimeout(() => {
                 if (itemRefs.current[idx]) {
-                  itemRefs.current[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  const navHeight = window.innerWidth < 768 ? 96 : 128; // Descontar la barra fija superior
+                  const element = itemRefs.current[idx];
+                  const y = element.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
                 }
-              }, 100);
+              }, 500); 
             }
           };
 
@@ -1271,7 +1281,7 @@
                       </div>
                       <div className="w-40 h-40 sm:w-56 sm:h-56 relative z-10 flex items-center justify-center mb-6">
                          <img src="Costa-Rica.png" alt="Costa Rica Map" className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-[1500ms] group-hover:scale-110 relative z-10" />
-                         <div className="absolute z-20 top-[38%] left-[48%] transform -translate-x-1/2 -translate-y-1/2 text-teal-400 drop-shadow-[0_0_10px_rgba(20,184,166,0.8)]">
+                         <div className="absolute z-20 top-[30%] left-[58%] transform -translate-x-1/2 -translate-y-1/2 text-teal-400 drop-shadow-[0_0_10px_rgba(20,184,166,0.8)]">
                              <MapPin size={28} className="animate-bounce" fill="currentColor" />
                          </div>
                       </div>
@@ -1492,41 +1502,43 @@
        ============================================= */
 
     // --- Custom Cursor ---
-    const cursor = document.getElementById('customCursor');
-    const cursorRing = document.getElementById('customCursorRing');
-    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+    if (window.matchMedia("(pointer: fine)").matches) {
+        const cursor = document.getElementById('customCursor');
+        const cursorRing = document.getElementById('customCursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top  = mouseY + 'px';
-    });
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top  = mouseY + 'px';
+        });
 
-    // Ring follows with lag
-    function animateRing() {
-        ringX += (mouseX - ringX) * 0.12;
-        ringY += (mouseY - ringY) * 0.12;
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top  = ringY + 'px';
-        requestAnimationFrame(animateRing);
+        // Ring follows with lag
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top  = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Cursor grows on hoverable elements
+        document.addEventListener('mouseover', (e) => {
+            const el = e.target.closest('button, a, [class*="cursor-pointer"], input, select, textarea, label');
+            if (el) document.body.classList.add('cursor-hover');
+            else document.body.classList.remove('cursor-hover');
+        });
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+            cursorRing.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+            cursorRing.style.opacity = '1';
+        });
     }
-    animateRing();
-
-    // Cursor grows on hoverable elements
-    document.addEventListener('mouseover', (e) => {
-        const el = e.target.closest('button, a, [class*="cursor-pointer"], input, select, textarea, label');
-        if (el) document.body.classList.add('cursor-hover');
-        else document.body.classList.remove('cursor-hover');
-    });
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-        cursorRing.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
-        cursorRing.style.opacity = '1';
-    });
 
     // --- Scroll Progress Bar ---
     const scrollBar = document.getElementById('scrollProgress');
