@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import { ICONS, PORTFOLIO_ITEMS, TESTIMONIALS } from '../data/siteData';
@@ -11,7 +11,7 @@ export default function Home({ navigateTo, t, lang }) {
     if (TESTIMONIALS.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 8000);
+    }, 14000);
     return () => clearInterval(timer);
   }, []);
 
@@ -116,8 +116,18 @@ export default function Home({ navigateTo, t, lang }) {
           </div>
 
           <div className="relative bg-neutral-950/80 backdrop-blur-md py-12 px-2 md:px-16 rounded-sm border border-neutral-800 shadow-2xl flex items-center">
+            {TESTIMONIALS.length > 1 && (
+              <>
+                <button onClick={prevTestimonial} className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-neutral-700 bg-neutral-950/80 text-teal-400 flex items-center justify-center hover:border-teal-500 hover:text-white transition-colors">
+                  <ChevronLeft size={18} />
+                </button>
+                <button onClick={nextTestimonial} className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-neutral-700 bg-neutral-950/80 text-teal-400 flex items-center justify-center hover:border-teal-500 hover:text-white transition-colors">
+                  <ChevronRight size={18} />
+                </button>
+              </>
+            )}
             <div className="overflow-hidden w-full relative">
-              <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${0}%)` }}>
+              <div className="flex transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}>
                 {TESTIMONIALS.map((testimonial) => (
                   <div key={testimonial.id} className="w-full flex-shrink-0 px-4 md:px-16 flex flex-col items-center text-center">
                     <div className="w-32 h-32 md:w-40 md:h-40 border-2 border-teal-500 p-3 md:p-4 bg-neutral-950 mb-8 flex items-center justify-center shadow-[0_0_20px_rgba(20,184,166,0.3)]">
@@ -130,6 +140,18 @@ export default function Home({ navigateTo, t, lang }) {
               </div>
             </div>
           </div>
+          {TESTIMONIALS.length > 1 && (
+            <div className="mt-6 flex items-center justify-center gap-2">
+              {TESTIMONIALS.map((testimonial, idx) => (
+                <button
+                  key={testimonial.id}
+                  onClick={() => setCurrentTestimonial(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${currentTestimonial === idx ? 'w-8 bg-teal-500' : 'w-2 bg-neutral-600 hover:bg-neutral-400'}`}
+                  aria-label={`Testimonio ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </Reveal>
       </section>
     </div>

@@ -128,6 +128,15 @@ const PORTFOLIO_ITEMS = [
               es: 'Trabajar con JMM Render Studio fue una experiencia sumamente fluida y profesional. Destaco especialmente la calidad visual de los renders, la atención al detalle y la capacidad de comprender con claridad la intención conceptual del proyecto. En su colaboración con Venero Arquitectura, incluso bajo plazos muy reducidos, se consolidaron como un aliado estratégico clave, entregando cada pieza con excelencia, compromiso y una actitud siempre proactiva y colaborativa, elevando significativamente el resultado final.',
               en: 'Working with JMM Render Studio was an extremely smooth and professional experience. I especially highlight the visual quality of the renders, the attention to detail, and the ability to clearly understand the conceptual intention of the project. In their collaboration with Venero Arquitectura, even under very tight deadlines, they established themselves as a key strategic ally, delivering each piece with excellence, commitment, and an always proactive and collaborative attitude, significantly elevating the final result.'
             }
+          },
+          {
+            id: 2,
+            company: 'David Abergel',
+            logo: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775259163/betterlife_dydcsl.png',
+            text: {
+              es: 'JMM Render Studio destaca por su alto nivel profesional, precisión en cada detalle y consistencia en resultados de alta calidad. Son un aliado clave en nuestros proyectos en Monteverde, Puntarenas.',
+              en: 'JMM Render Studio stands out for its high professional standard, precision in every detail, and consistency in delivering high-quality results. They are a key partner in our projects in Monteverde, Puntarenas.'
+            }
           }
         ];
 

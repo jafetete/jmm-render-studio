@@ -764,12 +764,21 @@ export default function App() {
             const formData = new FormData(form);
             
             try {
-              const response = await fetch("https://api.web3forms.com/submit", {
+              const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
-                  "Accept": "application/json"
+                  "Accept": "application/json",
+                  "Content-Type": "application/json"
                 },
-                body: formData
+                body: JSON.stringify({
+                  name: formData.get('name'),
+                  email: formData.get('email'),
+                  phone: formData.get('phone'),
+                  country_code: formData.get('country_code'),
+                  project_type: formData.get('project_type'),
+                  message: formData.get('message'),
+                  botcheck: formData.get('botcheck')
+                })
               });
               
               const data = await response.json();
@@ -856,8 +865,7 @@ export default function App() {
                     <div className="bg-neutral-950 p-6 md:p-10 rounded-sm border border-neutral-800 hover:border-teal-900 transition-colors duration-500 shadow-2xl">
                       <h3 className="text-2xl md:text-3xl font-display tracking-wide text-white mb-8">{t.contact.formTitle}</h3>
                       
-                      <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 font-body">
-                        <input type="hidden" name="access_key" value="48ba5078-b90c-46ba-8145-954c30e768e1" />
+                      <form onSubmit={handleSubmit} className="space-y-6 font-body">
                         <input type="hidden" name="subject" value="Nueva Cotización desde la Web JMM" />
                         <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
