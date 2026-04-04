@@ -9,23 +9,6 @@ export default async function handler(req, res) {
     return res.status(500).json({ success: false, error: 'Missing server configuration' });
   }
 
-  const origin = req.headers.origin || '';
-  if (origin) {
-    try {
-      const hostname = new URL(origin).hostname;
-      const isAllowed =
-        hostname === 'jmm-arquitectura.art' ||
-        hostname === 'www.jmm-arquitectura.art' ||
-        hostname.endsWith('.vercel.app');
-
-      if (!isAllowed) {
-        return res.status(403).json({ success: false, error: 'Origin not allowed' });
-      }
-    } catch {
-      return res.status(403).json({ success: false, error: 'Invalid origin header' });
-    }
-  }
-
   const {
     name = '',
     email = '',
