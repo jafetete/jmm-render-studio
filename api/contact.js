@@ -51,18 +51,31 @@ export default async function handler(req, res) {
   };
 
   try {
+    const body = new URLSearchParams(payload);
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify(payload),
+      body: body.toString(),
     });
 
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { success: response.ok, message: text };
+    }
+
     return res.status(response.status).json(data);
   } catch (error) {
-    return res.status(502).json({ success: false, error: 'Upstream request failed' });
+    return res.status(502).json({
+      success: false,
+      error: 'Upstream request failed',
+      details: error instanceof Error ? error.message : 'Unknown error',
+    });
   }
 }
