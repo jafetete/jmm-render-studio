@@ -10,14 +10,20 @@ export default async function handler(req, res) {
   }
 
   const origin = req.headers.origin || '';
-  const allowedOrigins = new Set([
-    'https://jmm-arquitectura.art',
-    'https://www.jmm-arquitectura.art',
-    'https://jmm-render-studio.vercel.app',
-  ]);
+  if (origin) {
+    try {
+      const hostname = new URL(origin).hostname;
+      const isAllowed =
+        hostname === 'jmm-arquitectura.art' ||
+        hostname === 'www.jmm-arquitectura.art' ||
+        hostname.endsWith('.vercel.app');
 
-  if (origin && !allowedOrigins.has(origin)) {
-    return res.status(403).json({ success: false, error: 'Origin not allowed' });
+      if (!isAllowed) {
+        return res.status(403).json({ success: false, error: 'Origin not allowed' });
+      }
+    } catch {
+      return res.status(403).json({ success: false, error: 'Invalid origin header' });
+    }
   }
 
   const {
