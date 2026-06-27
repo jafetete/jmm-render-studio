@@ -363,7 +363,7 @@ const PORTFOLIO_ITEMS = [
             date: { es: '27 Junio 2026', en: 'June 27, 2026' },
             title: { es: 'La luz y la materia: El secreto de la visualización fotorrealista', en: 'Light and Matter: The Secret Behind Photorealistic Visualization' },
             author: 'Arq. Melissa Rivera',
-            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775169813/image_r4txtu.png',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782603396/melissa_rivera_iqskfd.jpg',
             coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png',
             content: {
               es: `
@@ -563,6 +563,226 @@ const PORTFOLIO_ITEMS = [
                   <div class="jmm-footer-note">
                     <div class="note-line"></div>
                     <p><strong>Final note -</strong> Every project is unique. Once the scope is defined, we prepare a formal proposal with guaranteed delivery timelines. For our clients' convenience, we also offer staged payment schemes. Ready to turn your vision into reality? Let's talk about your project.</p>
+                  </div>
+                </div>
+              `
+            }
+          },
+          {
+            id: 3,
+            date: { es: '17 Mayo 2026', en: 'May 17, 2026' },
+            title: { es: 'El auge de los condominios de uso mixto: La nueva frontera de la rentabilidad urbana', en: 'The Rise of Mixed-Use Condominiums: The New Frontier of Urban Profitability' },
+            author: 'Arq. Jafett Rivera',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775169813/image_r4txtu.png',
+            coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782604230/image_eogv1m.png',
+            content: {
+              es: `
+                <div class="jmm-guide">
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">I</div>
+                      <h2>La ciudad vertical: eficiencia y estilo de vida</h2>
+                    </div>
+                    <p class="jmm-phase-intro">La densificación urbana no es solo una tendencia; es la respuesta estratégica al crecimiento de nuestras ciudades. Los proyectos de uso mixto han dejado de ser una excepción para convertirse en el estándar de los desarrolladores que buscan maximizar la rentabilidad por metro cuadrado. Diseñar un edificio que combine locales comerciales, apartamentos y amenidades como rooftops es un reto que exige visión técnica, lectura normativa y una propuesta visual de alto nivel.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Densificación con criterio</strong><span>Un proyecto de uso mixto exitoso no consiste solo en apilar funciones; requiere jerarquizar accesos, flujos, privacidad y experiencia urbana para que el conjunto funcione como un ecosistema rentable.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Sinergia comercial y residencial</strong><span>La clave está en demostrar cómo el área comercial activa la base del edificio mientras las unidades residenciales y las amenidades elevan el valor percibido del conjunto completo.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Normativa como activo estratégico</strong><span>En JMM transformamos los requisitos de zonificación, retiros, alturas y lineamientos técnicos del CFIA en un lenguaje visual claro, convincente y útil para la toma de decisiones.</span></div></div>
+                    </div>
+
+                    <div class="jmm-note-box">
+                      <strong>Visión de preventa:</strong> Estos proyectos no se venden por planos; se venden por la proyección de estilo de vida, flujo económico y permanencia urbana que representan para el inversor.
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">II</div>
+                      <h2>El detalle técnico: el motor de la preventa</h2>
+                    </div>
+                    <p class="jmm-phase-intro">Para lograr una preventa sólida, el cliente debe sentir que está comprando una realidad, no una promesa. Ahí es donde nuestro proceso técnico se convierte en una herramienta comercial directa.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Modelado 3D de alta precisión</strong><span>La base de cualquier proyecto exitoso es un modelo digital que respete proporciones reales, estructura constructiva y lógica espacial. No modelamos formas vacías; modelamos soluciones que pueden convertirse en edificios reales.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Texturas, materiales y personalización</strong><span>La diferencia entre una caja de concreto y un desarrollo de alto nivel está en la materia. Trabajamos con texturas de alta definición que capturan porosidad, brillo y respuesta lumínica para que el cliente conecte con el carácter del proyecto.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Iluminación y ambientación</strong><span>Integramos mobiliario curado, vegetación y una iluminación calibrada según momentos específicos del día para que el espacio se sienta habitable, deseable y económicamente aspiracional.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Recorridos virtuales</strong><span>En proyectos de uso mixto, el inversor necesita comprender el flujo completo. Los recorridos virtuales permiten leer la transición entre comercio, residencia y rooftop de manera inmersiva y estratégica.</span></div></div>
+                    </div>
+
+                    <figure style="margin:2rem 0 0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1782604325/Captura_de_pantalla_2026-05-25_185714_am4o1e.png" alt="Proyecto en desarrollo - Monteverde" style="width:100%; display:block; object-fit:cover;" />
+                      <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Proyecto en desarrollo - Monteverde</figcaption>
+                    </figure>
+
+                    <div class="overflow-x-auto" style="margin-top:2rem;">
+                      <table class="jmm-pricing-table min-w-[600px]">
+                        <thead>
+                          <tr>
+                            <th style="width: 35%;">Concepto</th>
+                            <th style="width: 25%;">Valor estratégico</th>
+                            <th>Detalle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="service-name">Modelado 3D de precisión</span></td>
+                            <td><span class="service-price">Base crítica</span></td>
+                            <td><span class="service-desc">Representación exacta de proporciones, estructura y lógica funcional del edificio.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Personalización de acabados</span></td>
+                            <td><span class="service-price">Alto impacto</span></td>
+                            <td><span class="service-desc">Selección de materiales, paletas y atmósfera visual para elevar la percepción de lujo y valor.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Ambientación y staging</span></td>
+                            <td><span class="service-price">Incluido</span></td>
+                            <td><span class="service-desc">Mobiliario, vegetación y composición escénica para activar comercialmente cada espacio.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Recorridos virtuales</span></td>
+                            <td><span class="service-price">Diferenciador</span></td>
+                            <td><span class="service-desc">Lectura inmersiva del flujo entre áreas comerciales, residenciales y amenidades como rooftops.</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">III</div>
+                      <h2>Rentabilidad y cierre estratégico</h2>
+                    </div>
+
+                    <div class="jmm-pillars">
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                        <h4>Fidelidad técnica</h4>
+                        <p>Eliminamos la brecha entre el plano y la realidad. Un render que respeta el detalle constructivo previene errores en obra y genera confianza inmediata en el inversor.</p>
+                      </div>
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
+                        <h4>Visión integral</h4>
+                        <p>Diseñamos visualmente para que cada nivel del edificio, ya sea comercial, residencial o de esparcimiento, proyecte el valor agregado que justifique una inversión de alto nivel.</p>
+                      </div>
+                    </div>
+
+                    <figure style="margin:2rem 0 0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1782604230/image_eogv1m.png" alt="Visualización de condominio de uso mixto" style="width:100%; display:block; object-fit:cover;" />
+                      <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Visualización estratégica para desarrollo de uso mixto</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="jmm-footer-note">
+                    <div class="note-line"></div>
+                    <p><strong>Nota final -</strong> Cada proyecto de uso mixto es un ecosistema único con desafíos particulares. En JMM Render Studio nos encargamos de que, desde la etapa conceptual hasta los planos constructivos, cada detalle esté coordinado. Una vez definido el proyecto, realizaremos una oferta económica formal y estableceremos los plazos de entrega, acompañándole con total transparencia en cada paso.</p>
+                  </div>
+                </div>
+              `,
+              en: `
+                <div class="jmm-guide">
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">I</div>
+                      <h2>The vertical city: efficiency and lifestyle</h2>
+                    </div>
+                    <p class="jmm-phase-intro">Urban densification is not merely a trend; it is the strategic response to the growth of our cities. Mixed-use developments are no longer the exception but the standard for developers seeking to maximize profitability per square meter. Designing a building that combines commercial spaces, apartments, and amenities such as rooftops requires technical clarity, regulatory discipline, and a compelling visual strategy.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Densification with intent</strong><span>A successful mixed-use project is not just a stack of functions; it must organize access, circulation, privacy, and urban experience so the entire development performs as a profitable ecosystem.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Commercial and residential synergy</strong><span>The goal is to demonstrate how the commercial base activates the building while residential units and amenities raise the perceived value of the entire development.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Regulation as strategic value</strong><span>At JMM we translate zoning, setbacks, heights, and CFIA technical requirements into a clear visual language that supports investor confidence and decision-making.</span></div></div>
+                    </div>
+
+                    <div class="jmm-note-box">
+                      <strong>Pre-sale vision:</strong> These projects are not sold through plans alone; they are sold through the future lifestyle, economic flow, and urban permanence they promise.
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">II</div>
+                      <h2>Technical detail: the engine of pre-sales</h2>
+                    </div>
+                    <p class="jmm-phase-intro">To secure strong pre-sales, clients must feel they are buying a tangible reality, not a distant promise. That is where our technical process becomes a direct sales tool.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>High-precision 3D modeling</strong><span>The foundation of every successful project is a digital model that respects real proportions, constructive logic, and structural coherence. We do not model empty shapes; we model solutions that can become real buildings.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Textures, materials, and customization</strong><span>The difference between a concrete box and a premium development lies in the matter itself. We work with high-definition textures that capture porosity, gloss, and light response so the client can connect emotionally with the design.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Lighting and staging</strong><span>We integrate curated furniture, vegetation, and carefully timed lighting so spaces feel inhabited, desirable, and commercially persuasive.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Virtual walkthroughs</strong><span>In mixed-use developments, investors need to understand flow. Virtual walkthroughs allow them to move from the commercial base to the residential areas and rooftop amenities with immersive clarity.</span></div></div>
+                    </div>
+
+                    <figure style="margin:2rem 0 0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1782604325/Captura_de_pantalla_2026-05-25_185714_am4o1e.png" alt="Project in development - Monteverde" style="width:100%; display:block; object-fit:cover;" />
+                      <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Project in development - Monteverde</figcaption>
+                    </figure>
+
+                    <div class="overflow-x-auto" style="margin-top:2rem;">
+                      <table class="jmm-pricing-table min-w-[600px]">
+                        <thead>
+                          <tr>
+                            <th style="width: 35%;">Concept</th>
+                            <th style="width: 25%;">Strategic value</th>
+                            <th>Detail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="service-name">Precision 3D modeling</span></td>
+                            <td><span class="service-price">Critical base</span></td>
+                            <td><span class="service-desc">Accurate representation of proportions, structure, and the building's functional logic.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Finish customization</span></td>
+                            <td><span class="service-price">High impact</span></td>
+                            <td><span class="service-desc">Material selection, palettes, and atmosphere design to elevate the perception of luxury and value.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Staging</span></td>
+                            <td><span class="service-price">Included</span></td>
+                            <td><span class="service-desc">Furniture, vegetation, and scenographic composition to activate each space commercially.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Virtual walkthroughs</span></td>
+                            <td><span class="service-price">Differentiator</span></td>
+                            <td><span class="service-desc">Immersive reading of the flow between commercial, residential, and rooftop amenity areas.</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">III</div>
+                      <h2>Profitability and strategic conclusion</h2>
+                    </div>
+
+                    <div class="jmm-pillars">
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                        <h4>Technical fidelity</h4>
+                        <p>We remove the gap between plan and reality. A render that respects constructive detail helps prevent execution errors and builds immediate investor trust.</p>
+                      </div>
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
+                        <h4>Integrated vision</h4>
+                        <p>We visually design every level, whether commercial, residential, or leisure-oriented, so the project communicates the added value that justifies a high-level investment.</p>
+                      </div>
+                    </div>
+
+                    <figure style="margin:2rem 0 0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                      <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1782604230/image_eogv1m.png" alt="Mixed-use condominium visualization" style="width:100%; display:block; object-fit:cover;" />
+                      <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Strategic visualization for a mixed-use development</figcaption>
+                    </figure>
+                  </div>
+
+                  <div class="jmm-footer-note">
+                    <div class="note-line"></div>
+                    <p><strong>Final note -</strong> Every mixed-use development is a unique ecosystem with specific challenges. At JMM Render Studio, we coordinate each detail from the conceptual phase through the construction drawings. Once the project scope is defined, we prepare a formal proposal and delivery schedule, guiding the process with full transparency at every stage.</p>
                   </div>
                 </div>
               `
