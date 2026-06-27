@@ -155,7 +155,7 @@ const PORTFOLIO_ITEMS = [
             date: { es: '3 Abril 2026', en: 'April 3, 2026' },
             title: { es: 'Guía de Inversión: De la Visión a la Realidad Constructiva', en: 'Investment Guide: From Vision to Constructive Reality' },
             author: 'Arq. Jafett Rivera',
-            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775169813/image_r4txtu.png',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782603396/melissa_rivera_iqskfd.jpg',
             coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083637/plano-plantas_qqrqqc.jpg',
             content: {
               es: `
