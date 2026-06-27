@@ -137,6 +137,15 @@ const PORTFOLIO_ITEMS = [
               es: 'JMM Render Studio destaca por su alto nivel profesional, precisión en cada detalle y consistencia en resultados de alta calidad. Son un aliado clave en nuestros proyectos en Monteverde, Puntarenas.',
               en: 'JMM Render Studio stands out for its high professional standard, precision in every detail, and consistency in delivering high-quality results. They are a key partner in our projects in Monteverde, Puntarenas.'
             }
+          },
+          {
+            id: 3,
+            company: 'Fiorella Monge - Arch Fiiiorellaa',
+            logo: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782597013/WhatsApp_Image_2026-06-27_at_3.44.38_PM_pgt7gz.jpg',
+            text: {
+              es: 'Excelente equipo de trabajo, personas muy respetuosas, brillantes, empáticas y sobre todo creativas, es un gusto poder trabajar con ustedes.',
+              en: 'Excellent team to work with: very respectful, brilliant, empathetic, and above all creative people. It is a pleasure to work with you.'
+            }
           }
         ];
 

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Instagram, Mail, MessageCircle, Send } from 'lucide-react';
 import Reveal from './Reveal';
 
@@ -34,7 +34,7 @@ export default function Footer({ navigateTo, t }) {
                       <ul className="space-y-4 text-sm text-teal-100/90 font-body">
                         <li className="flex items-center justify-center md:justify-start hover:translate-x-1 transition-transform">
                           <MessageCircle size={18} className="mr-3 text-teal-400 flex-shrink-0" />
-                          <a href="https://wa.me/50670188160" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+                          <a href="https://wa.link/lip4pk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
                         </li>
                         <li className="flex items-center justify-center md:justify-start hover:translate-x-1 transition-transform">
                           <Send size={18} className="mr-3 text-teal-400 flex-shrink-0" />
@@ -76,3 +76,4 @@ export default function Footer({ navigateTo, t }) {
               </footer>
   );
 }
+

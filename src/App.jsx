@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Camera, ChevronLeft, ChevronRight, FileText, Instagram, Mail, MapPin, Maximize, MessageCircle, Ruler, Send, X } from 'lucide-react';
 import Footer from './components/Footer';
 import ImageSlider from './components/ImageSlider';
@@ -401,7 +401,7 @@ export default function App() {
                 </div>
               )}
 
-              {/* MODAL DEL ARTÍCULO DE BLOG */}
+              {/* MODAL DEL ARTÃCULO DE BLOG */}
               {activeArticle && (
                 <div className="fixed inset-0 z-[100] bg-neutral-950/95 backdrop-blur-sm overflow-y-auto" onClick={(e) => { if(e.target === e.currentTarget) setActiveArticle(null); }}>
                   <button onClick={() => setActiveArticle(null)} className="fixed top-4 right-4 md:top-8 md:right-8 text-white z-[110] transition-colors hover:text-teal-400 p-2 bg-neutral-900 rounded-full shadow-lg border border-neutral-700">
@@ -816,7 +816,7 @@ export default function App() {
                         </div>
                         <div>
                           <h4 className="text-neutral-400 text-sm font-heading uppercase tracking-wider mb-1">{t.contact.lblPhone}</h4>
-                          <a href="https://wa.me/50670188160" target="_blank" rel="noopener noreferrer" className="text-base md:text-xl text-white hover:text-teal-400 transition-colors break-words">{t.contact.valPhone}</a>
+                          <a href="https://wa.link/lip4pk" target="_blank" rel="noopener noreferrer" className="text-base md:text-xl text-white hover:text-teal-400 transition-colors break-words">{t.contact.valPhone}</a>
                         </div>
                       </div>
                       <div className="flex items-start group">
@@ -858,7 +858,7 @@ export default function App() {
                       
                       <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 font-body">
                         <input type="hidden" name="access_key" value="48ba5078-b90c-46ba-8145-954c30e768e1" />
-                        <input type="hidden" name="subject" value="Nueva Cotización desde la Web JMM" />
+                        <input type="hidden" name="subject" value="Nueva CotizaciÃ³n desde la Web JMM" />
                         <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                         <div>
@@ -923,3 +923,4 @@ export default function App() {
             </div>
           );
         }
+
