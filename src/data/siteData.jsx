@@ -155,7 +155,7 @@ const PORTFOLIO_ITEMS = [
             date: { es: '3 Abril 2026', en: 'April 3, 2026' },
             title: { es: 'Guía de Inversión: De la Visión a la Realidad Constructiva', en: 'Investment Guide: From Vision to Constructive Reality' },
             author: 'Arq. Jafett Rivera',
-            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782603396/melissa_rivera_iqskfd.jpg',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1775169813/image_r4txtu.png',
             coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083637/plano-plantas_qqrqqc.jpg',
             content: {
               es: `
@@ -363,7 +363,7 @@ const PORTFOLIO_ITEMS = [
             date: { es: '17 Mayo 2026', en: 'May 17, 2026' },
             title: { es: 'El auge de los condominios de uso mixto: La nueva frontera de la rentabilidad urbana', en: 'The Rise of Mixed-Use Condominiums: The New Frontier of Urban Profitability' },
             author: 'Arq. Jafett Rivera',
-            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775169813/image_r4txtu.png',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1775169813/image_r4txtu.png',
             coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782604230/image_eogv1m.png',
             content: {
               es: `
