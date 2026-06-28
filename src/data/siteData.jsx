@@ -359,216 +359,6 @@ const PORTFOLIO_ITEMS = [
             }
           },
           {
-            id: 2,
-            date: { es: '27 Junio 2026', en: 'June 27, 2026' },
-            title: { es: 'La luz y la materia: El secreto de la visualización fotorrealista', en: 'Light and Matter: The Secret Behind Photorealistic Visualization' },
-            author: 'Arq. Melissa Rivera',
-            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782603396/melissa_rivera_iqskfd.jpg',
-            coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png',
-            content: {
-              es: `
-                <div class="jmm-guide">
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">I</div>
-                      <h2>La luz como arquitectura</h2>
-                    </div>
-                    <p class="jmm-phase-intro">En la visualización arquitectónica de alto nivel, la luz no es simplemente un elemento decorativo; es el lenguaje fundamental que define el volumen, la atmósfera y la veracidad del espacio. En JMM Render Studio, la diferencia entre una imagen computarizada y una experiencia visual radica en nuestra simulación física de la iluminación.</p>
-
-                    <div class="jmm-checklist">
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Iluminación global y refracción</strong><span>Simulamos el comportamiento físico de la luz rebotando en superficies. Los materiales absorben y reflejan tonos reales, creando esa profundidad espacial que el ojo humano reconoce instintivamente como auténtica.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Temperatura de color</strong><span>No es lo mismo la luz de un atardecer que la de mediodía. Ajustamos meticulosamente la temperatura de color para evocar la emoción exacta que buscamos en cada espacio, desde la calidez de un hogar hasta la sobriedad de una oficina.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Estudio solar</strong><span>Un render que no estudia la posición solar real pierde credibilidad. En JMM integramos las coordenadas geográficas del terreno para garantizar que la sombra proyectada sea la que realmente tendrá la construcción.</span></div></div>
-                    </div>
-
-                    <div class="jmm-note-box">
-                      <strong>Lectura espacial realista:</strong> La luz bien trabajada no solo embellece una imagen; permite anticipar cómo se sentirá el proyecto en diferentes momentos del día y tomar mejores decisiones de diseño.
-                    </div>
-                  </div>
-
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">II</div>
-                      <h2>La materia: detalle, color y ambientación</h2>
-                    </div>
-                    <p class="jmm-phase-intro">La visualización fotorrealista requiere que cada superficie se sienta real. El realismo no nace de la imagen general, sino del detalle micro-constructivo que integramos en cada propuesta.</p>
-
-                    <div class="jmm-checklist">
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Modelado detallado y uniones</strong><span>El realismo está en los bordes. Modelamos cada junta, moldura y marco de puerta. La perfección técnica radica en que el usuario pueda percibir, incluso en el render, la calidad constructiva de la obra.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Personalización de materiales y paleta de colores</strong><span>Proponemos paletas de colores que armonizan con la iluminación natural del sitio. Personalizamos texturas, desde la fibra natural de la madera hasta la porosidad del concreto, para que cada diseño tenga una identidad única y coherente.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Ambientación (staging)</strong><span>Un espacio vacío es solo una caja. Creamos escenas con elementos decorativos, vegetación y mobiliario que dan vida al proyecto, permitiendo que el cliente final se proyecte viviendo o invirtiendo en él.</span></div></div>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:2rem;">
-                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
-                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png" alt="Ejemplo de visualización fotorrealista en cocina Hany" style="width:100%; display:block; object-fit:cover;" />
-                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Ejemplo 01 · Balance de materiales, luz natural y profundidad visual</figcaption>
-                      </figure>
-                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
-                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241851/hany-kitchen-2_wah70a.png" alt="Ejemplo de materiales y paleta de color del proyecto Hany Kitchen" style="width:100%; display:block; object-fit:cover;" />
-                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Ejemplo 02 · Variación de acabados, texturas y lectura de ambiente</figcaption>
-                      </figure>
-                    </div>
-
-                    <div class="overflow-x-auto" style="margin-top:2rem;">
-                      <table class="jmm-pricing-table min-w-[600px]">
-                        <thead>
-                          <tr>
-                            <th style="width: 35%;">Concepto</th>
-                            <th style="width: 25%;">Referencia</th>
-                            <th>Detalle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><span class="service-name">Modelado 3D base</span></td>
-                            <td><span class="service-price">Desde $600</span></td>
-                            <td><span class="service-desc">Creación del volumen digital con proporciones arquitectónicas exactas.</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="service-name">Personalización</span></td>
-                            <td><span class="service-price">Incluido</span></td>
-                            <td><span class="service-desc">Propuesta de paleta de colores y selección técnica de materiales.</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="service-name">Ambientación</span></td>
-                            <td><span class="service-price">Incluido</span></td>
-                            <td><span class="service-desc">Escenografía y estilismo para dar vida al proyecto.</span></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">III</div>
-                      <h2>Cierre estratégico</h2>
-                    </div>
-
-                    <div class="jmm-pillars">
-                      <div class="jmm-pillar">
-                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-                        <h4>Fidelidad técnica</h4>
-                        <p>Eliminamos la brecha entre el diseño y la realidad. Un render que respeta el detalle constructivo es una herramienta de prevención para la obra.</p>
-                      </div>
-                      <div class="jmm-pillar">
-                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
-                        <h4>Visión integral</h4>
-                        <p>Unificamos materiales, colores y sensaciones espaciales para que la propuesta no solo sea estética, sino también funcional y ejecutable.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="jmm-footer-note">
-                    <div class="note-line"></div>
-                    <p><strong>Nota final -</strong> Cada proyecto es único. Una vez definido el alcance, realizamos una oferta económica formal con plazos de entrega garantizados. Para facilidad de nuestros clientes, ofrecemos esquemas de pagos en tractos. ¿Está listo para convertir su visión en realidad? Conversemos sobre su proyecto.</p>
-                  </div>
-                </div>
-              `,
-              en: `
-                <div class="jmm-guide">
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">I</div>
-                      <h2>Light as architecture</h2>
-                    </div>
-                    <p class="jmm-phase-intro">In high-end architectural visualization, light is not merely decorative; it is the fundamental language that defines volume, atmosphere, and spatial credibility. At JMM Render Studio, the difference between a computer-generated image and a believable visual experience lies in our physically based lighting simulation.</p>
-
-                    <div class="jmm-checklist">
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Global illumination and refraction</strong><span>We simulate the physical behavior of light bouncing across surfaces. Materials absorb and reflect real tones, creating the depth the human eye instinctively reads as authentic.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Color temperature</strong><span>Sunset light is not the same as midday light. We carefully tune color temperature to evoke the exact emotion each space requires, from residential warmth to the restraint of a professional office.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Solar study</strong><span>A render that ignores the real sun path loses credibility. We integrate the project's geographic coordinates so projected shadows correspond to the actual future construction.</span></div></div>
-                    </div>
-
-                    <div class="jmm-note-box">
-                      <strong>Real spatial reading:</strong> Well-crafted light does more than beautify an image; it helps anticipate how a project will feel throughout the day and supports stronger design decisions.
-                    </div>
-                  </div>
-
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">II</div>
-                      <h2>Matter: detail, color, and staging</h2>
-                    </div>
-                    <p class="jmm-phase-intro">Photorealistic visualization requires every surface to feel tangible. Realism does not emerge from the general image alone, but from the micro-constructive detail embedded in every proposal.</p>
-
-                    <div class="jmm-checklist">
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Detailed modeling and joints</strong><span>Realism lives in the edges. We model joints, trims, and door frames so the viewer can perceive, even in the render, the constructive quality of the final work.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Material customization and color palette</strong><span>We propose palettes that harmonize with the site's natural light. Textures are customized, from the organic grain of wood to the porosity of concrete, so every design has a unique and coherent identity.</span></div></div>
-                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Staging</strong><span>An empty room is only a box. We build scenes with decor, vegetation, and furniture that give life to the project and help the final client imagine living or investing there.</span></div></div>
-                    </div>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:2rem;">
-                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
-                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png" alt="Photorealistic kitchen visualization example from Hany project" style="width:100%; display:block; object-fit:cover;" />
-                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Example 01 · Material balance, natural light, and visual depth</figcaption>
-                      </figure>
-                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
-                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241851/hany-kitchen-2_wah70a.png" alt="Material and color palette example from Hany Kitchen project" style="width:100%; display:block; object-fit:cover;" />
-                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Example 02 · Finish variations, texture work, and atmosphere reading</figcaption>
-                      </figure>
-                    </div>
-
-                    <div class="overflow-x-auto" style="margin-top:2rem;">
-                      <table class="jmm-pricing-table min-w-[600px]">
-                        <thead>
-                          <tr>
-                            <th style="width: 35%;">Concept</th>
-                            <th style="width: 25%;">Reference</th>
-                            <th>Detail</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td><span class="service-name">Base 3D modeling</span></td>
-                            <td><span class="service-price">From $600</span></td>
-                            <td><span class="service-desc">Creation of the digital volume with accurate architectural proportions.</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="service-name">Customization</span></td>
-                            <td><span class="service-price">Included</span></td>
-                            <td><span class="service-desc">Color palette proposal and technical material selection.</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="service-name">Staging</span></td>
-                            <td><span class="service-price">Included</span></td>
-                            <td><span class="service-desc">Scenography and styling to bring the project to life.</span></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div class="jmm-section">
-                    <div class="jmm-section-label">
-                      <div class="jmm-step-num">III</div>
-                      <h2>Strategic conclusion</h2>
-                    </div>
-
-                    <div class="jmm-pillars">
-                      <div class="jmm-pillar">
-                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-                        <h4>Technical fidelity</h4>
-                        <p>We close the gap between design and reality. A render that respects constructive detail becomes a preventive tool for the execution phase.</p>
-                      </div>
-                      <div class="jmm-pillar">
-                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
-                        <h4>Integrated vision</h4>
-                        <p>We align materials, colors, and spatial sensations so the proposal is not only beautiful, but also functional and buildable.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="jmm-footer-note">
-                    <div class="note-line"></div>
-                    <p><strong>Final note -</strong> Every project is unique. Once the scope is defined, we prepare a formal proposal with guaranteed delivery timelines. For our clients' convenience, we also offer staged payment schemes. Ready to turn your vision into reality? Let's talk about your project.</p>
-                  </div>
-                </div>
-              `
-            }
-          },
-          {
             id: 3,
             date: { es: '17 Mayo 2026', en: 'May 17, 2026' },
             title: { es: 'El auge de los condominios de uso mixto: La nueva frontera de la rentabilidad urbana', en: 'The Rise of Mixed-Use Condominiums: The New Frontier of Urban Profitability' },
@@ -783,6 +573,216 @@ const PORTFOLIO_ITEMS = [
                   <div class="jmm-footer-note">
                     <div class="note-line"></div>
                     <p><strong>Final note -</strong> Every mixed-use development is a unique ecosystem with specific challenges. At JMM Render Studio, we coordinate each detail from the conceptual phase through the construction drawings. Once the project scope is defined, we prepare a formal proposal and delivery schedule, guiding the process with full transparency at every stage.</p>
+                  </div>
+                </div>
+              `
+            }
+          },
+          {
+            id: 2,
+            date: { es: '27 Junio 2026', en: 'June 27, 2026' },
+            title: { es: 'La luz y la materia: El secreto de la visualización fotorrealista', en: 'Light and Matter: The Secret Behind Photorealistic Visualization' },
+            author: 'Arq. Melissa Rivera',
+            authorImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1782603396/melissa_rivera_iqskfd.jpg',
+            coverImg: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png',
+            content: {
+              es: `
+                <div class="jmm-guide">
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">I</div>
+                      <h2>La luz como arquitectura</h2>
+                    </div>
+                    <p class="jmm-phase-intro">En la visualización arquitectónica de alto nivel, la luz no es simplemente un elemento decorativo; es el lenguaje fundamental que define el volumen, la atmósfera y la veracidad del espacio. En JMM Render Studio, la diferencia entre una imagen computarizada y una experiencia visual radica en nuestra simulación física de la iluminación.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Iluminación global y refracción</strong><span>Simulamos el comportamiento físico de la luz rebotando en superficies. Los materiales absorben y reflejan tonos reales, creando esa profundidad espacial que el ojo humano reconoce instintivamente como auténtica.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Temperatura de color</strong><span>No es lo mismo la luz de un atardecer que la de mediodía. Ajustamos meticulosamente la temperatura de color para evocar la emoción exacta que buscamos en cada espacio, desde la calidez de un hogar hasta la sobriedad de una oficina.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Estudio solar</strong><span>Un render que no estudia la posición solar real pierde credibilidad. En JMM integramos las coordenadas geográficas del terreno para garantizar que la sombra proyectada sea la que realmente tendrá la construcción.</span></div></div>
+                    </div>
+
+                    <div class="jmm-note-box">
+                      <strong>Lectura espacial realista:</strong> La luz bien trabajada no solo embellece una imagen; permite anticipar cómo se sentirá el proyecto en diferentes momentos del día y tomar mejores decisiones de diseño.
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">II</div>
+                      <h2>La materia: detalle, color y ambientación</h2>
+                    </div>
+                    <p class="jmm-phase-intro">La visualización fotorrealista requiere que cada superficie se sienta real. El realismo no nace de la imagen general, sino del detalle micro-constructivo que integramos en cada propuesta.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Modelado detallado y uniones</strong><span>El realismo está en los bordes. Modelamos cada junta, moldura y marco de puerta. La perfección técnica radica en que el usuario pueda percibir, incluso en el render, la calidad constructiva de la obra.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Personalización de materiales y paleta de colores</strong><span>Proponemos paletas de colores que armonizan con la iluminación natural del sitio. Personalizamos texturas, desde la fibra natural de la madera hasta la porosidad del concreto, para que cada diseño tenga una identidad única y coherente.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Ambientación (staging)</strong><span>Un espacio vacío es solo una caja. Creamos escenas con elementos decorativos, vegetación y mobiliario que dan vida al proyecto, permitiendo que el cliente final se proyecte viviendo o invirtiendo en él.</span></div></div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:2rem;">
+                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png" alt="Ejemplo de visualización fotorrealista en cocina Hany" style="width:100%; display:block; object-fit:cover;" />
+                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Ejemplo 01 · Balance de materiales, luz natural y profundidad visual</figcaption>
+                      </figure>
+                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241851/hany-kitchen-2_wah70a.png" alt="Ejemplo de materiales y paleta de color del proyecto Hany Kitchen" style="width:100%; display:block; object-fit:cover;" />
+                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Ejemplo 02 · Variación de acabados, texturas y lectura de ambiente</figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="overflow-x-auto" style="margin-top:2rem;">
+                      <table class="jmm-pricing-table min-w-[600px]">
+                        <thead>
+                          <tr>
+                            <th style="width: 35%;">Concepto</th>
+                            <th style="width: 25%;">Referencia</th>
+                            <th>Detalle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="service-name">Modelado 3D base</span></td>
+                            <td><span class="service-price">Desde $600</span></td>
+                            <td><span class="service-desc">Creación del volumen digital con proporciones arquitectónicas exactas.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Personalización</span></td>
+                            <td><span class="service-price">Incluido</span></td>
+                            <td><span class="service-desc">Propuesta de paleta de colores y selección técnica de materiales.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Ambientación</span></td>
+                            <td><span class="service-price">Incluido</span></td>
+                            <td><span class="service-desc">Escenografía y estilismo para dar vida al proyecto.</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">III</div>
+                      <h2>Cierre estratégico</h2>
+                    </div>
+
+                    <div class="jmm-pillars">
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                        <h4>Fidelidad técnica</h4>
+                        <p>Eliminamos la brecha entre el diseño y la realidad. Un render que respeta el detalle constructivo es una herramienta de prevención para la obra.</p>
+                      </div>
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
+                        <h4>Visión integral</h4>
+                        <p>Unificamos materiales, colores y sensaciones espaciales para que la propuesta no solo sea estética, sino también funcional y ejecutable.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="jmm-footer-note">
+                    <div class="note-line"></div>
+                    <p><strong>Nota final -</strong> Cada proyecto es único. Una vez definido el alcance, realizamos una oferta económica formal con plazos de entrega garantizados. Para facilidad de nuestros clientes, ofrecemos esquemas de pagos en tractos. ¿Está listo para convertir su visión en realidad? Conversemos sobre su proyecto.</p>
+                  </div>
+                </div>
+              `,
+              en: `
+                <div class="jmm-guide">
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">I</div>
+                      <h2>Light as architecture</h2>
+                    </div>
+                    <p class="jmm-phase-intro">In high-end architectural visualization, light is not merely decorative; it is the fundamental language that defines volume, atmosphere, and spatial credibility. At JMM Render Studio, the difference between a computer-generated image and a believable visual experience lies in our physically based lighting simulation.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Global illumination and refraction</strong><span>We simulate the physical behavior of light bouncing across surfaces. Materials absorb and reflect real tones, creating the depth the human eye instinctively reads as authentic.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Color temperature</strong><span>Sunset light is not the same as midday light. We carefully tune color temperature to evoke the exact emotion each space requires, from residential warmth to the restraint of a professional office.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Solar study</strong><span>A render that ignores the real sun path loses credibility. We integrate the project's geographic coordinates so projected shadows correspond to the actual future construction.</span></div></div>
+                    </div>
+
+                    <div class="jmm-note-box">
+                      <strong>Real spatial reading:</strong> Well-crafted light does more than beautify an image; it helps anticipate how a project will feel throughout the day and supports stronger design decisions.
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">II</div>
+                      <h2>Matter: detail, color, and staging</h2>
+                    </div>
+                    <p class="jmm-phase-intro">Photorealistic visualization requires every surface to feel tangible. Realism does not emerge from the general image alone, but from the micro-constructive detail embedded in every proposal.</p>
+
+                    <div class="jmm-checklist">
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Detailed modeling and joints</strong><span>Realism lives in the edges. We model joints, trims, and door frames so the viewer can perceive, even in the render, the constructive quality of the final work.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Material customization and color palette</strong><span>We propose palettes that harmonize with the site's natural light. Textures are customized, from the organic grain of wood to the porosity of concrete, so every design has a unique and coherent identity.</span></div></div>
+                      <div class="jmm-check-item"><div class="jmm-check-dot"></div><div class="jmm-check-body"><strong>Staging</strong><span>An empty room is only a box. We build scenes with decor, vegetation, and furniture that give life to the project and help the final client imagine living or investing there.</span></div></div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:2rem;">
+                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241841/hany-kitchen-3_mvkibe.png" alt="Photorealistic kitchen visualization example from Hany project" style="width:100%; display:block; object-fit:cover;" />
+                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Example 01 · Material balance, natural light, and visual depth</figcaption>
+                      </figure>
+                      <figure style="margin:0; background:#101010; border:1px solid rgba(255,255,255,0.08); padding:0.75rem;">
+                        <img src="https://res.cloudinary.com/drqimcuhb/image/upload/v1775241851/hany-kitchen-2_wah70a.png" alt="Material and color palette example from Hany Kitchen project" style="width:100%; display:block; object-fit:cover;" />
+                        <figcaption style="margin-top:0.75rem; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#8b8b8b; font-family:var(--font-body);">Example 02 · Finish variations, texture work, and atmosphere reading</figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="overflow-x-auto" style="margin-top:2rem;">
+                      <table class="jmm-pricing-table min-w-[600px]">
+                        <thead>
+                          <tr>
+                            <th style="width: 35%;">Concept</th>
+                            <th style="width: 25%;">Reference</th>
+                            <th>Detail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span class="service-name">Base 3D modeling</span></td>
+                            <td><span class="service-price">From $600</span></td>
+                            <td><span class="service-desc">Creation of the digital volume with accurate architectural proportions.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Customization</span></td>
+                            <td><span class="service-price">Included</span></td>
+                            <td><span class="service-desc">Color palette proposal and technical material selection.</span></td>
+                          </tr>
+                          <tr>
+                            <td><span class="service-name">Staging</span></td>
+                            <td><span class="service-price">Included</span></td>
+                            <td><span class="service-desc">Scenography and styling to bring the project to life.</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="jmm-section">
+                    <div class="jmm-section-label">
+                      <div class="jmm-step-num">III</div>
+                      <h2>Strategic conclusion</h2>
+                    </div>
+
+                    <div class="jmm-pillars">
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                        <h4>Technical fidelity</h4>
+                        <p>We close the gap between design and reality. A render that respects constructive detail becomes a preventive tool for the execution phase.</p>
+                      </div>
+                      <div class="jmm-pillar">
+                        <div class="jmm-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path></svg></div>
+                        <h4>Integrated vision</h4>
+                        <p>We align materials, colors, and spatial sensations so the proposal is not only beautiful, but also functional and buildable.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="jmm-footer-note">
+                    <div class="note-line"></div>
+                    <p><strong>Final note -</strong> Every project is unique. Once the scope is defined, we prepare a formal proposal with guaranteed delivery timelines. For our clients' convenience, we also offer staged payment schemes. Ready to turn your vision into reality? Let's talk about your project.</p>
                   </div>
                 </div>
               `
