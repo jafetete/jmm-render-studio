@@ -146,6 +146,33 @@ const PORTFOLIO_ITEMS = [
               es: 'Excelente equipo de trabajo, personas muy respetuosas, brillantes, empáticas y sobre todo creativas, es un gusto poder trabajar con ustedes.',
               en: 'Excellent team to work with: very respectful, brilliant, empathetic, and above all creative people. It is a pleasure to work with you.'
             }
+          },
+          {
+            id: 4,
+            company: 'Melissa Santana Saenz',
+            logo: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1791778752/WhatsApp_Image_2026-10-05_at_3.45.15_PM_bfujpx.jpg',
+            text: {
+              es: 'Excelente equipo... En JMM Render Studio se nota que aman lo que hacen y trabajan con pasión.\n\nSu talento, creatividad y atención al detalle se reflejan en cada imagen, dando vida a los espacios de una manera impresionante.\n\nMás allá de la calidad de su trabajo, destaca la dedicación y el entusiasmo que ponen en cada proyecto... Los recomiendo con toda confianza!',
+              en: 'Excellent team... At JMM Render Studio, you can see that they love what they do and work with passion.\n\nTheir talent, creativity, and attention to detail are reflected in every image, bringing spaces to life in an impressive way.\n\nBeyond the quality of their work, their dedication and enthusiasm in every project truly stand out... I recommend them with complete confidence!'
+            }
+          },
+          {
+            id: 5,
+            company: 'Abdul Rahman Himida',
+            logo: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1791778792/WhatsApp_Image_2026-10-11_at_10.12.17_PM_uurdhe.jpg',
+            text: {
+              es: 'Muy profesionales, precios muy competitivos y muy buen servicio al cliente, me siento muy satisfecho. Los recomiendo al 100%',
+              en: 'Very professional, highly competitive prices, and excellent customer service. I am very satisfied and recommend them 100%.'
+            }
+          },
+          {
+            id: 6,
+            company: 'Fabricio Elizondo',
+            logo: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1791780363/WhatsApp_Image_2026-10-11_at_10.41.23_PM_fegf8c.jpg',
+            text: {
+              es: 'Excelentes profesionales, trabajan de manera muy eficiente y presentan resultados de alta calidad.',
+              en: 'Excellent professionals. They work very efficiently and deliver high-quality results.'
+            }
           }
         ];
 
