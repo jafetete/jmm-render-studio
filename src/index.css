@@ -121,6 +121,48 @@
             z-index: 9999; transform-origin: left; transition: none;
         }
 
+        .snow-effect {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 40;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -2rem;
+            left: var(--snow-left);
+            color: #fff;
+            font-size: var(--snow-size);
+            line-height: 1;
+            opacity: var(--snow-opacity);
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 0 7px rgba(255, 255, 255, 0.15);
+            will-change: transform, margin-left;
+            animation:
+                snowFall var(--snow-duration) linear var(--snow-delay) infinite,
+                snowSway 4.2s ease-in-out var(--snow-delay) infinite alternate;
+        }
+
+        @keyframes snowFall {
+            to {
+                transform: translate(var(--snow-sway), 110vh);
+            }
+        }
+
+        @keyframes snowSway {
+            from { margin-left: calc(var(--snow-sway) * -1); }
+            to { margin-left: var(--snow-sway); }
+        }
+
+        @media (max-width: 640px) {
+            .snowflake:nth-child(n + 15) { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow-effect { display: none; }
+        }
+
         .btn-ripple { position: relative; overflow: hidden; }
         .btn-ripple::after {
             content: ''; position: absolute; border-radius: 50%; background: rgba(255,255,255,0.15);

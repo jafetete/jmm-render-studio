@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import ImageSlider from './components/ImageSlider';
 import Navbar from './components/Navbar';
 import Reveal from './components/Reveal';
+import SnowEffect from './components/SnowEffect';
 import Viewer360 from './components/Viewer360';
 import Home from './pages/Home';
 import { ICONS, JOURNAL_ARTICLES, PORTFOLIO_ITEMS, TESTIMONIALS, TRANSLATIONS } from './data/siteData';
@@ -297,6 +298,7 @@ export default function App() {
               <div className="custom-cursor" id="customCursor"></div>
               <div className="custom-cursor-ring" id="customCursorRing"></div>
               <div className="scroll-progress" id="scrollProgress"></div>
+              <SnowEffect />
               <Navbar currentPage={currentPage} isMobileMenuOpen={isMobileMenuOpen} navigateTo={navigateTo} toggleLanguage={toggleLanguage} setIsMobileMenuOpen={setIsMobileMenuOpen} t={t} lang={lang} />
 
               <main className="pt-24 md:pt-28 relative z-10">
