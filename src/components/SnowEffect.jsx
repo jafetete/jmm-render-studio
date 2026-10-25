@@ -1,3 +1,5 @@
+import React from 'react';
+
 const SNOWFLAKES = [
   { left: '3%', size: 11, duration: 10.8, delay: -7.2, sway: 18, opacity: 0.42 },
   { left: '8%', size: 18, duration: 13.6, delay: -3.8, sway: -24, opacity: 0.76 },
