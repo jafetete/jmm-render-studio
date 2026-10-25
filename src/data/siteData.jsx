@@ -825,6 +825,7 @@ const PORTFOLIO_ITEMS = [
                 journal: { title: 'Journal', desc: 'Insights, technical guides, and news from the architectural visualization world.', label: 'Article' },
                 services: { 
                     title: 'Our Services', 
+                    intro: 'Photorealistic 3D renders, architectural visualization, plans, permits, interior design, and custom furniture for residential, commercial, and real estate development projects in Costa Rica.',
                     items: [
                         { title: 'Design and Drafting of Plans', desc: 'We transform ideas into precise technical specifications.' },
                         { title: 'On-Site Architectural Survey', desc: 'Exact measurements and digitization of your project\'s current state.' },
@@ -839,7 +840,7 @@ const PORTFOLIO_ITEMS = [
                         { text: 'Casa Valeria Kitchen, Alegría de Alajuela:', lbl1: '3D Render', lbl2: 'Real Result' },
                         { text: 'Comprehensive permit management with CFIA and local municipalities. We rigorously follow national regulations, processing approvals from Fire Departments, Ministry of Health, SENASA, and other corresponding entities to ensure your project starts without legal setbacks.' }
                     ],
-                    srvTitle: 'Services', srvDesc: 'Tap each service to explore technical details and visual examples.', srvB1: 'High precision and technical detail.', srvB2: 'Deliveries in industry-standard formats.' 
+                    srvTitle: 'Services', srvDesc: 'Photorealistic 3D renders, architectural plans, on-site surveys, interior design, custom furniture, and permit management in Costa Rica.', srvB1: 'High precision and technical detail.', srvB2: 'Deliveries in industry-standard formats.'
                 },
                 portfolio: { title: 'Portfolio', desc: 'The precision of our modeling reflected in every detail, material, and lighting.', featTitle: 'Featured Projects', featBtn: 'View Full Gallery', filters: { all: 'All', residential: 'Residential', comercial: 'Commercial' }, lblGallery: 'Gallery', viewMore: 'View Project' },
                 about: { 
@@ -868,6 +869,7 @@ const PORTFOLIO_ITEMS = [
                 journal: { title: 'Blog', desc: 'Conocimiento, guías técnicas y novedades del mundo de la visualización arquitectónica.', label: 'Artículo' },
                 services: { 
                     title: 'Nuestros Servicios', 
+                    intro: 'Renders 3D fotorrealistas, visualización arquitectónica, planos, permisos, diseño de interiores y mobiliario personalizado para proyectos residenciales, comerciales e inmobiliarios en Costa Rica.',
                     items: [
                         { title: 'Diseño y elaboración de planos', desc: 'Transformamos ideas en especificaciones técnicas precisas.' },
                         { title: 'Levantamiento arquitectónico en sitio', desc: 'Mediciones exactas y digitalización del estado actual de tu proyecto.' },
@@ -882,7 +884,7 @@ const PORTFOLIO_ITEMS = [
                         { text: 'Cocina Casa Valeria, Alegría de Alajuela:', lbl1: 'Render JMM', lbl2: 'Mueble Construido' },
                         { text: 'Gestión integral de permisos ante el CFIA y municipalidades. Damos seguimiento riguroso a las normativas nacionales vigentes, tramitando aprobaciones de Bomberos, Ministerio de Salud, SENASA y demás entidades para garantizar que tu obra inicie sin contratiempos legales.' }
                     ],
-                    srvTitle: 'Servicios', srvDesc: 'Toca cada servicio para explorar detalles técnicos y ejemplos visuales.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.' 
+                    srvTitle: 'Servicios', srvDesc: 'Renders 3D fotorrealistas, planos arquitectónicos, levantamientos en sitio, diseño de interiores, mobiliario personalizado y gestión de permisos en Costa Rica.', srvB1: 'Alta precisión y detalle técnico.', srvB2: 'Entregas en formatos estándar de la industria.'
                 },
                 portfolio: { title: 'Portafolio', desc: 'La precisión de nuestros modelados reflejada en cada detalle, material e iluminación.', featTitle: 'Proyectos Destacados', featBtn: 'Ver Galería Completa', filters: { all: 'Todos', residential: 'Residencial', comercial: 'Comercial' }, lblGallery: 'Galería', viewMore: 'Ver más' },
                 about: { 

@@ -52,6 +52,7 @@ export default function Home({ navigateTo, t, lang }) {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display tracking-wide text-white mb-4">{t.services.title}</h2>
             <div className="w-16 h-1 bg-teal-500 mx-auto"></div>
+            <p className="mt-6 max-w-3xl mx-auto text-neutral-400 text-base md:text-lg font-body leading-relaxed">{t.services.intro}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
             {t.services.items.map((srv, idx) => (
