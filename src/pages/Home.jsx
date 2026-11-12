@@ -80,13 +80,13 @@ export default function Home({ navigateTo, t, lang }) {
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {PORTFOLIO_ITEMS.filter((item) => [2, 6, 7].includes(item.id)).map((item, idx) => (
+            {[2, 6, 7].map((id) => PORTFOLIO_ITEMS.find((item) => item.id === id)).filter(Boolean).map((item, idx) => (
               <Reveal key={item.id} delay={idx * 200} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => navigateTo('portfolio')}>
-                <img src={item.img} alt={item.title} className="w-full aspect-[4/3] object-cover transition-transform duration-[1500ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
+                <img src={item.img} alt={typeof item.title === 'object' ? item.title[lang] : item.title} className="w-full aspect-[4/3] object-cover transition-transform duration-[1500ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
 
                 <div className="p-4 md:absolute md:inset-0 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-500 md:flex md:flex-col md:justify-end z-20 pointer-events-none">
                   <span className="text-teal-400 text-[10px] md:text-xs font-heading uppercase tracking-widest mb-1 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 text-shadow-strong">{t.portfolio.filters[item.category] || item.category}</span>
-                  <h4 className="text-white text-lg md:text-3xl font-display transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 md:delay-75 text-shadow-strong">{item.title}</h4>
+                  <h4 className="text-white text-lg md:text-3xl font-display transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 md:delay-75 text-shadow-strong">{typeof item.title === 'object' ? item.title[lang] : item.title}</h4>
                   <div className="mt-3 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 md:transition-transform md:duration-500 md:delay-100 hidden md:block">
                     <span className="inline-block px-5 py-1.5 bg-teal-600 text-white text-xs font-heading uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(20,184,166,0.5)] pointer-events-auto">{t.portfolio.viewMore}</span>
                   </div>

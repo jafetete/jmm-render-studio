@@ -9,6 +9,8 @@ import Viewer360 from './components/Viewer360';
 import Home from './pages/Home';
 import { ICONS, JOURNAL_ARTICLES, PORTFOLIO_ITEMS, TESTIMONIALS, TRANSLATIONS } from './data/siteData';
 
+const getProjectTitle = (project, lang) => typeof project.title === 'object' ? project.title[lang] : project.title;
+
 export default function App() {
           const [currentPage, setCurrentPage] = useState('home');
           const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -347,7 +349,7 @@ export default function App() {
                       <img
                         key={`img-${currentImageIndex}`}
                         src={activeProject.gallery[currentImageIndex].src}
-                        alt={`${activeProject.title} - View ${currentImageIndex + 1}`}
+                        alt={`${getProjectTitle(activeProject, lang)} - View ${currentImageIndex + 1}`}
                         className={`block w-full h-full object-contain md:max-w-full md:max-h-[85vh] md:w-auto md:h-auto drop-shadow-2xl md:rounded-sm transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                         draggable="false"
                         onLoad={() => setIsImageLoaded(true)}
@@ -370,7 +372,7 @@ export default function App() {
                             className="gallery-text-enter absolute bottom-10 left-4 md:bottom-8 md:left-8 text-left z-20 max-w-[85%] md:max-w-[70%]"
                           >
                             <h3 className="text-lg md:text-3xl text-white mb-1 font-display tracking-wide text-shadow-strong">
-                              {activeProject.title}
+                              {getProjectTitle(activeProject, lang)}
                             </h3>
                             <p className="text-[11px] md:text-base text-neutral-200 mb-1 md:mb-2 font-body italic text-shadow-strong leading-tight">
                               {activeProject.gallery[currentImageIndex].desc[lang] || t.portfolio.lblGallery}
@@ -467,7 +469,7 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {filteredItems.map((item, idx) => (
                     <Reveal key={item.id} delay={idx * 150} direction="up" className="group relative overflow-hidden bg-neutral-950 rounded-sm cursor-pointer block ring-1 ring-inset ring-white/5 transform-gpu" onClick={() => openGallery(item)}>
-                      <img src={item.img} alt={item.title} className="w-full aspect-square object-cover transition-transform duration-[2000ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
+                      <img src={item.img} alt={getProjectTitle(item, lang)} className="w-full aspect-square object-cover transition-transform duration-[2000ms] scale-[1.02] md:group-hover:scale-110" loading="lazy" />
                       
                       <img src="https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083643/Logo-JMM-blanco_vsie0i.png" alt="Watermark" className="absolute bottom-4 right-4 h-8 md:h-12 w-auto opacity-30 pointer-events-none z-20 transition-all duration-500 md:group-hover:opacity-60 md:group-hover:scale-110 drop-shadow-lg" />
                       
@@ -475,7 +477,7 @@ export default function App() {
                         <div className="md:text-center transform translate-y-0 md:translate-y-8 md:group-hover:translate-y-0 md:transition-transform md:duration-500 pointer-events-none flex flex-col items-center">
                           <Maximize className="text-white hidden md:mx-auto md:mb-3 md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-700 md:delay-100 text-shadow-strong" size={32} />
                           <span className="block text-teal-400 text-[10px] md:text-xs font-heading uppercase tracking-widest mb-1 text-shadow-strong">{t.portfolio.filters[item.category] || item.category}</span>
-                          <h4 className="text-white text-xl md:text-3xl font-display md:px-4 text-shadow-strong mb-2">{item.title}</h4>
+                          <h4 className="text-white text-xl md:text-3xl font-display md:px-4 text-shadow-strong mb-2">{getProjectTitle(item, lang)}</h4>
                           <span className="block text-neutral-300 font-heading text-[10px] leading-relaxed mb-4 md:hidden text-shadow-strong">{item.year} | {typeof item.area === 'object' ? item.area[lang] : item.area} | {item.location}</span>
                           <span className="mt-2 inline-block px-4 py-1.5 md:px-6 md:py-2 bg-teal-600 text-white text-[10px] md:text-xs font-heading uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(20,184,166,0.4)] pointer-events-auto transition-colors">
                             {t.portfolio.viewMore}

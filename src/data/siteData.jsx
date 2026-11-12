@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Armchair, FileText, Monitor, PenTool, Ruler } from 'lucide-react';
 
-const PORTFOLIO_ITEMS = [
+const PORTFOLIO_SOURCE_ITEMS = [
   { id: 1, category: 'residential', title: 'Casa Chris', year: '2023', area: '350 m²', location: 'Golfito, Puntarenas', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083612/casa-chris-portada_o74e1f.png', gallery: [
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083612/casa-chris-1_zsvvkl.png', desc: { es: 'Vista Exterior - Fachada Principal', en: 'Exterior View - Main Facade' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083611/casa-chris-2_ntp55i.png', desc: { es: 'Vista Interior - Dormitorio con balcón', en: 'Interior View - Bedroom with balcony' } },
@@ -115,7 +115,7 @@ const PORTFOLIO_ITEMS = [
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083618/alexis-4_ncikv8.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083619/alexis-5_t7xzw1.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
   ] },
-  { id: 13, category: 'residential', title: 'Peter - Apartamento 303', year: '2026', area: '106 m²', location: 'Punta Leona - Playa Blanca', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/4_hxc5sx.png', gallery: [
+  { id: 13, category: 'residential', title: { es: 'Peter - Apartamento 303', en: 'Peter - APT. 303' }, year: '2026', area: '106 m²', location: 'Punta Leona - Playa Blanca', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/4_hxc5sx.png', gallery: [
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/4_hxc5sx.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master Bedroom' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/5_d7da81.png', desc: { es: 'Vista Interior - Sala', en: 'Interior View - Living Room' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/2_wzbrpz.png', desc: { es: 'Vista Interior - Baño de visitas', en: 'Interior View - Guest Bathroom' } },
@@ -125,6 +125,11 @@ const PORTFOLIO_ITEMS = [
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794452349/Modelo_base_mnkeps.png', desc: { es: 'Modelo base original del apartamento', en: 'Original Base Model of the Apartment' } }
   ] }
 ];
+
+const PORTFOLIO_ORDER = [13, 1, 6, 9, 7, 5, 4, 3, 2, 8, 11, 10, 12];
+const PORTFOLIO_ITEMS = PORTFOLIO_ORDER
+  .map((id) => PORTFOLIO_SOURCE_ITEMS.find((item) => item.id === id))
+  .filter(Boolean);
 
         const ICONS = [ <PenTool size={32} />, <Ruler size={32} />, <Monitor size={32} />, <Armchair size={32} />, <FileText size={32} /> ];
 
