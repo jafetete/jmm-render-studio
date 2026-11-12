@@ -114,6 +114,15 @@ const PORTFOLIO_ITEMS = [
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083620/alexis-3_yudf0h.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083618/alexis-4_ncikv8.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } },
     { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/q_auto/f_auto/v1775083619/alexis-5_t7xzw1.png', desc: { es: 'Vista Exterior - Fachada externa', en: 'Exterior View - External Facade' } }
+  ] },
+  { id: 13, category: 'residential', title: 'Peter - Apartamento 303', year: '2026', area: '106 m²', location: 'Punta Leona - Playa Blanca', img: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/4_hxc5sx.png', gallery: [
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/4_hxc5sx.png', desc: { es: 'Vista Interior - Dormitorio principal', en: 'Interior View - Master Bedroom' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/5_d7da81.png', desc: { es: 'Vista Interior - Sala', en: 'Interior View - Living Room' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/2_wzbrpz.png', desc: { es: 'Vista Interior - Baño de visitas', en: 'Interior View - Guest Bathroom' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451571/3_wnia1g.png', desc: { es: 'Vista Interior - Baño principal', en: 'Interior View - Master Bathroom' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451570/6_elwjcs.png', desc: { es: 'Vista Interior - Cocina', en: 'Interior View - Kitchen' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794451570/1_ztjn9p.png', desc: { es: 'Vista Interior - Sala y cocina integradas', en: 'Interior View - Integrated Living Room and Kitchen' } },
+    { src: 'https://res.cloudinary.com/drqimcuhb/image/upload/v1794452349/Modelo_base_mnkeps.png', desc: { es: 'Modelo base original del apartamento', en: 'Original Base Model of the Apartment' } }
   ] }
 ];
 
