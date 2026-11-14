@@ -862,7 +862,8 @@ export default function App() {
                       
                       <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6 font-body">
                         <input type="hidden" name="access_key" value="48ba5078-b90c-46ba-8145-954c30e768e1" />
-                        <input type="hidden" name="subject" value="Nueva CotizaciÃ³n desde la Web JMM" />
+                        <input type="hidden" name="subject" value="Nueva Cotización desde la Web JMM" />
+                        <input type="hidden" name="from_name" value="JMM Render Studio" />
                         <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                         <div>
